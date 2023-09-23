@@ -10,6 +10,10 @@ const Main = () => {
         <div className={css.div1}>
             <img src={Batcave} alt="" />
         </div>
+        <div className={css.div2}>
+            <span>left span</span>
+            <span>Right span</span>
+        </div>
 
         </div>
       
