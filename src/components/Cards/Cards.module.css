@@ -4,18 +4,13 @@
     width: 100%;
     background: #010101;
     color: red;
-    height: 100vh;
+    min-height: 100vh;
     align-items: center;
 }
 .div2{
-    height: 200px;
-    width: 300px;
-    background: linear-gradient(0deg, rgba(0, 122, 255, 0.90) -0.1%, rgba(0, 66, 137, 0.90) 46.1%, rgba(0, 25, 52, 0.90) 100%);
-filter: blur(94.5px);
-color: rgb(194, 206, 206);
-position: relative;
-
+    margin-top: 2rem;
 }
+
 .div2>:nth-child(1){
     color: rgba(255, 255, 255, 0.06);
     font-family: K2D;
@@ -25,5 +20,41 @@ position: relative;
     line-height: normal;
     letter-spacing: 7.2px;
     text-transform: uppercase;
+    /* position: absolute; */
+}
+/* .div3{
+    height: 200px;
+    width: 300px;
+    background: linear-gradient(0deg, rgba(0, 122, 255, 0.90) -0.1%, rgba(0, 66, 137, 0.90) 46.1%, rgba(0, 25, 52, 0.90) 100%);
+backdrop-filter: blur(94.5px);
+color: rgb(194, 206, 206);
+z-index: 1;
+position: relative;
+} */
+/* .div3>img{
+
     position: absolute;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px; 
+    height: auto; 
+    z-index: 10;  
+} */
+.div3{
+    position: relative;
+}
+.div3>:nth-child(1){
+    right: -35%;
+    position: absolute;
+    z-index: 1;
+    top: -62%;
+}
+.div3>:nth-child(2){
+    /* position: absolute;
+    top: 28%;
+    right: 25%; */
+    position: relative;
+    z-index: 2;
 }
