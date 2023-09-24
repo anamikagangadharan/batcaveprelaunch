@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #010101;
+    color: red;
+    height: 100vh;
+    align-items: center;
+}
+.div2{
+    height: 200px;
+    width: 300px;
+    background: linear-gradient(0deg, rgba(0, 122, 255, 0.90) -0.1%, rgba(0, 66, 137, 0.90) 46.1%, rgba(0, 25, 52, 0.90) 100%);
+filter: blur(94.5px);
+color: rgb(194, 206, 206);
+position: relative;
+
+}
+.div2>:nth-child(1){
+    color: rgba(255, 255, 255, 0.06);
+    font-family: K2D;
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 7.2px;
+    text-transform: uppercase;
+    position: absolute;
+}
