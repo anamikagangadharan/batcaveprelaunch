@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import css from "./Register.module.css"
+import Tick from "../../assets/Tick.svg"
 
-import Line4 from "../../assets/Line 4.svg"
+// import Line4 from "../../assets/Line 4.svg"
 
 const Register = () => {
     const [state,setState]=useState(1)
@@ -10,7 +11,7 @@ const Register = () => {
     // const [selectedCity, setSelectedCity] = useState('');
 
     const [formData, setFormData] = useState({
-        name: '',
+        full_name: '',
         email: '',
         mobile: '',
         address: '',
@@ -19,18 +20,29 @@ const Register = () => {
         city: '',
       });
 
-      const handleChange = (e) => {
+       
+      const sendEmail = (e) => {
+        e.preventDefault();
+    }
+
+
+    
+       
+
+
+        const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-      };
+      };  
+     
 
 
       function isFormFilled(formData) {
         // Implement your form validation logic here
         // Check if required fields are not empty, etc.
-        const { name, email, /* add more fields */ } = formData;
-        return name.trim() !== '' && email.trim() !== '' /* && add more conditions */;
-      }
+        const { full_name, email, address,mobile, dob, gender, city,/* add more fields */ } = formData;
+        return full_name.trim() !== '' && email.trim() !== '' && mobile.length !== '' && address.trim() !== ''  && dob.trim() !== ''  && gender.trim() !== ''  && city.trim() !== ''  /* && add more conditions */;
+      } 
       
       // Usage:
       const formFilled = isFormFilled(formData);
@@ -42,9 +54,16 @@ const Register = () => {
     // const handleChangeTwo = (event) => {
     //   setSelectedCity(event.target.value);
     // };
-    const sendEmail = (e) => {
-        e.preventDefault();
-    }
+   
+     
+    const [isChecked, setIsChecked] = useState(false);
+
+    const handleToggleChange = () => {
+      setIsChecked(!isChecked);
+    };
+  
+
+      
   
   return (
     <div className={css.container}>
@@ -62,7 +81,7 @@ const Register = () => {
                     <div className={css.line}></div>
                 </div>
                 <div className={css.set}>
-                    <span >Car Details</span>
+                    <span onClick={()=>setState(2)}>Car Details</span>
                     <div className={css.line}></div>
                 </div>
                 </div>
@@ -72,7 +91,7 @@ const Register = () => {
           {state===1 &&    <form className={css.form1} action=""  onSubmit={sendEmail}>
 
            <div className={css.inputset}>
-            <input name='name'   onChange={handleChange} value={formData.name} className={css.contactinp} type="text" required placeholder='Full Name' />
+            <input name='full_name'   onChange={handleChange} value={formData.name} className={css.contactinp} type="text" required placeholder='Full Name' />
             <div className={css.inputline}></div>
             </div>
             
@@ -83,23 +102,23 @@ const Register = () => {
             </div>
 
             <div className={css.inputset}>
-            <input name='number' value={formData.number} className={css.contactinp} type="number" placeholder='mobile number' />
+            <input name='number' value={formData.number} onChange={handleChange} className={css.contactinp} type="number" required placeholder='mobile number' />
             <div className={css.inputline}></div>
             </div>
 
             <div className={css.inputset}>
-            <input name='address' value={formData.address} className={css.contactinp} type="text" placeholder='residential address' />
+            <input name='address' value={formData.address} onChange={handleChange} className={css.contactinp} type="text" required placeholder='residential address' />
             <div className={css.inputline}></div>
             </div>
 
             <div className={css.inputset}>
-            <input name='dob' value={formData.dob} className={css.contactinp} type="text" placeholder='date of birth' />
+            <input name='dob' value={formData.dob} onChange={handleChange} className={css.contactinp} type="text" required placeholder='date of birth' />
             <div className={css.inputline}></div>
             </div>
 
 
             <div className={css.inputset}>
-            <select name="gender" value={formData.gender} onChange={handleChange} className={css.contactinp}  id=""  placeholder='City'>
+            <select name="gender" value={formData.gender} onChange={handleChange} required className={css.contactinp}  id=""  placeholder='City'>
   <option  className={css.opt} value ="" disabled> Gender?</option>     
   <option className={css.opt} value="MALE">Male</option>
   <option className={css.opt} value="FEMALE">female</option> 
@@ -110,7 +129,7 @@ const Register = () => {
 
 
             <div className={css.inputset}>
-            <select name='city' value={formData.city} onChange={handleChange} className={css.contactinp}  id=""  >
+            <select name='city' value={formData.city} onChange={handleChange} required className={css.contactinp}  id=""  >
             <option className={css.opt} value ="" disabled> city</option>
 
   <option className={css.opt} value="Bengaluru">Bengaluru</option>
@@ -126,7 +145,7 @@ const Register = () => {
             <div className={css.inputline}></div>
             </div>
 
-            <button type='submit' onClick={()=> formFilled?   setState(2) :""} className={css.proceedbtn}>PROCEED</button>
+            <button type='submit' onClick={()=> formFilled ?   setState(2) :""} className={css.proceedbtn}>PROCEED</button>
 
           
 
@@ -137,7 +156,46 @@ const Register = () => {
 
                 </form> }
 
+
+
+
+
+                {/* form_2 */}
+
           {state===2 &&   <form className={css.form2} action="">
+
+            <div className={css.cinputset}>
+
+              <div className={css.togglediv}>
+                <input className={css.cinput} type="text" name="" id=""  placeholder='do u ow a car?'/>
+                <input className={css.checkinput} type="checkbox"  
+          checked={isChecked}
+          onChange={handleToggleChange} id="switch" />
+             </div>
+              <div className={css.descript}>
+                <span>
+                Your membership will cover one car. You can add more cars later in the Batcave Mobile App.</span> </div>
+
+            </div>
+
+            <div className={css.cinputset}>
+            <div className={css.regnumbbox}>
+              <input className={!isChecked ? css.inactive : css.cinput}  disabled={!isChecked} type="text" name="" id="" placeholder='Car registration number' />
+               <img src={Tick} alt="" />
+             </div>
+              <div className={css.inputline}> </div>
+            </div>
+
+            <div className={css.cinputset}>
+             
+              <input className={css.cinput}   disabled={!isChecked} type="text" name="" id="" placeholder='city' />
+             
+              <div className={css.inputline}> </div>
+            </div>
+
+
+
+
 
                </form> }
                </div>

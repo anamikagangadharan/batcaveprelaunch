@@ -115,8 +115,94 @@ background: linear-gradient(0deg, #007AFF -0.1%, #004289 46.1%, #001934 100%);
 
 
 .form2{
-    background-color: rgb(161, 76, 76);
+    background-color: rgb(48, 47, 47);
     width: 300px;
     height: 500px;
 }
+.cinputset{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.cinput{
+  
+    background: transparent;
+    border: none;
+    color: #666;
+font-family: K2D;
+font-size: 16px;
+font-style: normal;
+font-weight: 275;
+line-height: normal;
+letter-spacing: 0.96px;
+text-transform: uppercase;
+display: flex;
+justify-content: flex-start;
+/* width: 300px; */
+}
+.inputline{
+    width: 80%;
+height: 1px;
+/* flex-shrink: 0;
+stroke-width: 1px;
+stroke: #007AFF; */
 
+background-image: linear-gradient(rgba(0, 122, 255, 1), rgba(0, 66, 137, 1), rgba(0, 25, 52, 1));
+}
+.togglediv{
+    display: flex;
+  
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.checkinput {
+    -webkit-appearance: none;
+    position: relative;
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color:rgba(40, 40, 40, 1);
+    transition: background .3s;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkinput::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 1.25rem;
+    width: 1.25rem;
+    background-color:blue;
+    transition: left .3s;
+}
+
+.checkinput:checked {
+    background-color: rgb(52, 55, 52);
+}
+
+.checkinput:checked::after {
+    left: 70%;
+}
+.inactive{
+    
+    filter: blur(0.8px); 
+    pointer-events: none;
+    background: transparent;
+    border: none;
+    color: #666;
+font-family: K2D;
+font-size: 16px;
+font-style: normal;
+font-weight: 275;
+line-height: normal;
+letter-spacing: 0.96px;
+text-transform: uppercase;
+display: flex;
+justify-content: flex-start;
+}
