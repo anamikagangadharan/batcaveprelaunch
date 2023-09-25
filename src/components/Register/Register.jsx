@@ -164,10 +164,12 @@ const Register = () => {
 
           {state===2 &&   <form className={css.form2} action="">
 
-            <div className={css.cinputset}>
+          
+
+            <div className={css.carinputset}>
 
               <div className={css.togglediv}>
-                <input className={css.cinput} type="text" name="" id=""  placeholder='do u ow a car?'/>
+                <input className={css.carinput} type="text" name="" id=""  placeholder='do you own a car?'/>
                 <input className={css.checkinput} type="checkbox"  
           checked={isChecked}
           onChange={handleToggleChange} id="switch" />
@@ -178,25 +180,35 @@ const Register = () => {
 
             </div>
 
-            <div className={css.cinputset}>
+            <div className={css.carinputset}>
             <div className={css.regnumbbox}>
-              <input className={!isChecked ? css.inactive : css.cinput}  disabled={!isChecked} type="text" name="" id="" placeholder='Car registration number' />
+              <input className={!isChecked ? css.inactive : css.carinput}  disabled={!isChecked} type="text" name="" id="" placeholder='Car registration number' />
                <img src={Tick} alt="" />
              </div>
               <div className={css.inputline}> </div>
             </div>
+            <div className={css.dummy}>
+                <span>Content to be added</span>
+              </div>
 
-            <div className={css.cinputset}>
+            <div className={css.carinputset}>
              
-              <input className={css.cinput}   disabled={!isChecked} type="text" name="" id="" placeholder='city' />
+              <input className={css.carinput}   type="text" name="" id="" placeholder='Instagram id(opt)' />
              
               <div className={css.inputline}> </div>
+             
             </div>
 
+            <div className={css.agree}>
+              <span>by clicking, i agree WITH THE <span className={css.underline}>  privacy policy </span> and  <span className={css.underline}>TERMS & CONDITIONS </span></span>
+            </div>
+
+             <button className={css.proceedbtn}> proceed to checkout</button>
 
 
 
 
+ 
                </form> }
                </div>
 

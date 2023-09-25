@@ -115,16 +115,18 @@ background: linear-gradient(0deg, #007AFF -0.1%, #004289 46.1%, #001934 100%);
 
 
 .form2{
-    background-color: rgb(48, 47, 47);
-    width: 300px;
+    background-color:#141212;
+    gap: 1rem;
+    padding: 4% 4%;
+    width: 500px;
     height: 500px;
 }
-.cinputset{
+.carinputset{
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
 }
-.cinput{
+.carinput{
   
     background: transparent;
     border: none;
@@ -138,7 +140,7 @@ letter-spacing: 0.96px;
 text-transform: uppercase;
 display: flex;
 justify-content: flex-start;
-/* width: 300px; */
+width: 300px;
 }
 .inputline{
     width: 80%;
@@ -149,6 +151,7 @@ stroke: #007AFF; */
 
 background-image: linear-gradient(rgba(0, 122, 255, 1), rgba(0, 66, 137, 1), rgba(0, 25, 52, 1));
 }
+/* toggle div s */
 .togglediv{
     display: flex;
   
@@ -189,6 +192,9 @@ background-image: linear-gradient(rgba(0, 122, 255, 1), rgba(0, 66, 137, 1), rgb
 .checkinput:checked::after {
     left: 70%;
 }
+/* togglediv e */
+
+
 .inactive{
     
     filter: blur(0.8px); 
@@ -205,4 +211,44 @@ letter-spacing: 0.96px;
 text-transform: uppercase;
 display: flex;
 justify-content: flex-start;
+width: 300px;
+}
+.descript>:nth-child(1){
+    color: #999;
+font-family: K2D;
+font-size: 14px;
+font-style: normal;
+font-weight: 275;
+line-height: 23px; /* 164.286% */
+letter-spacing: 0.84px;
+}
+
+.regnumbbox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dummy>:nth-child(1){
+    color: #666;
+font-family: K2D;
+font-size: 12px;
+font-style: normal;
+font-weight: 275;
+line-height: 19px; /* 158.333% */
+letter-spacing: 0.72px;
+}
+
+.agree>:nth-child(1){
+    color: #B3B3B3;
+font-family: K2D;
+font-size: 12px;
+font-style: normal;
+font-weight: 300;
+line-height: 20px;
+letter-spacing: 0.72px;
+
+text-transform: uppercase;
+}
+.underline{
+    text-decoration-line: underline;
 }
