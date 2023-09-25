@@ -4,6 +4,7 @@ import Main from './components/Main/Main';
 import Header from './components/Header/Header';
 import YProgressbar from './components/YProgressbar/YProgressbar';
 import Cards from './components/Cards/Cards';
+import Register from './components/Register/Register';
 
 function App() {
   return (
@@ -11,9 +12,9 @@ function App() {
       <Header/>
      <Main/>
      <Cards/>
-     <Main/>
-     <Main/>
+   
      <YProgressbar/>
+     <Register/>
     </div>
   );
 }
