@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <div className={css.container}>
         {/* <span className={css.bt}>batcave</span> */}
-        <div className={css.wrap}>
+        {/* <div className={css.wrap}>
         <div className={css.div1}>
             <img src={Batcave} alt="" />
         </div>
@@ -15,7 +15,7 @@ const Main = () => {
             <span>Right span</span>
         </div>
 
-        </div>
+        </div> */}
       
     </div>
   )
