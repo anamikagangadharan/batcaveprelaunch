@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import YProgressbar from './components/YProgressbar/YProgressbar';
 import Cards from './components/Cards/Cards';
 import Register from './components/Register/Register';
+import Countdown from './components/Countdown/Countdown';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
    
      <YProgressbar/>
      <Register/>
+     <Countdown/>
     </div>
   );
 }
