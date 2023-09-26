@@ -12,7 +12,7 @@
     max-width: 1440px;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
     align-items: center;
     justify-content: center;
 }
@@ -56,5 +56,6 @@ letter-spacing: 0.96px;
 text-transform: uppercase;
 background-color: transparent;
 border: 1px solid #FFF;
+border-radius: 6px;
 color: #FFF;
 }

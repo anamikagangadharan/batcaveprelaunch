@@ -151,7 +151,7 @@ stroke: #007AFF; */
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
- background-color: #212223;
+ /* background-color: #212223; */
   padding: 4% 4%;
   width: 80%;
   height: 500px;
@@ -170,6 +170,7 @@ stroke: #007AFF; */
 .carinput {
   background: transparent;
   border: none;
+  outline: none;
   color: #666;
   font-family: K2D;
   font-size: 16px;
