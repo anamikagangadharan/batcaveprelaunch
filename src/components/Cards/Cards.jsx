@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import css from "./Cards.module.css"
-import Card1 from "../../assets/membershipcard.svg"
+import Card1 from "../../assets/card with shadow-2.svg"
 import Blur from "../../assets/blur-blue.svg"
 import LArrow from "../../assets/left-arrow.svg"
 import RArrow from "../../assets/right-arrow.svg"

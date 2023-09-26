@@ -9,12 +9,14 @@ import Countdown from './components/Countdown/Countdown';
 
 import Thankyou from './components/Thankyou/Thankyou';
 import About from './components/About/About';
+import MemberProgress from './components/MemberProgress/MemberProgress';
 
 function App() {
   return (
     <div className="App">
       <Header/>
      <Main/>
+     <MemberProgress/>
      <Cards/>
      <About/>
    

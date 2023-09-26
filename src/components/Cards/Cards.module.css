@@ -107,6 +107,7 @@ text-transform: capitalize;
     right: 25%; */
     position: relative;
     z-index: 2;
+    width: 100%;
 }
 .backline{
     width: 1131px;
@@ -119,6 +120,7 @@ position: absolute;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    align-items: center;
 }
 .rtop{
     display: flex;
@@ -136,6 +138,7 @@ position: absolute;
 }
 .bottomcontent{
     text-align: left;
+    margin-left: 2rem;
 }
 .bottomcontent>:nth-child(1){
     color: #666;
