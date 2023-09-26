@@ -3,9 +3,19 @@
     flex-direction: column;
     width: 100%;
     background: #010101;
-    color: red;
+    color: rgb(121, 118, 118);
     min-height: 100vh;
     align-items: center;
+}
+.div1>:nth-child(1){
+    color: #999;
+font-family: Bruno Ace SC;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 1.8px;
+text-transform: uppercase;
 }
 .div2{
     margin-top: 2rem;
@@ -13,13 +23,13 @@
 
 .div2>:nth-child(1){
     color: rgba(255, 255, 255, 0.06);
-    font-family: K2D;
-    font-size: 120px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-    letter-spacing: 7.2px;
-    text-transform: uppercase;
+font-family: K2D;
+font-size: 60px;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+letter-spacing: 3.6px;
+    /* text-transform: uppercase; */
     /* position: absolute; */
 }
 /* .div3{
@@ -44,17 +54,78 @@ position: relative;
 } */
 .div3{
     position: relative;
+    display: flex;
+    /* justify-content: space-between; */
 }
-.div3>:nth-child(1){
-    right: -35%;
+
+.left{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    text-align: left;
+}
+.left>:nth-child(1),.cities>:nth-child(1){
+    color: #666;
+font-family: K2D;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 171.429% */
+letter-spacing: 0.84px;
+text-transform: capitalize;
+}
+.cardline{
+    height: 2px;
+    width: 100%;
+    background-color: #323232;
+}
+
+
+.middle{
+    width: 33%;
+}
+.middle>:nth-child(1){
+    right: 22%;
     position: absolute;
     z-index: 1;
-    top: -62%;
+    top: -68%;
 }
-.div3>:nth-child(2){
+.middle>:nth-child(2){
     /* position: absolute;
     top: 28%;
     right: 25%; */
     position: relative;
     z-index: 2;
+}
+.backline{
+    width: 1131px;
+height: 1px;
+background: #323232;
+position: absolute;
+}
+.right{
+    width: 33%;
+}
+.rtop{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.sline{
+    width: 58px;
+    height: 1px;
+    background: #999;
+}
+.bottomcontent{
+    text-align: left;
+}
+.bottomcontent>:nth-child(1){
+    color: #666;
+font-family: K2D;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 171.429% */
+letter-spacing: 0.84px;
+text-transform: capitalize;
 }
