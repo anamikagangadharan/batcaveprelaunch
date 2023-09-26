@@ -6,7 +6,9 @@ import YProgressbar from './components/YProgressbar/YProgressbar';
 import Cards from './components/Cards/Cards';
 import Register from './components/Register/Register';
 import Countdown from './components/Countdown/Countdown';
+
 import Thankyou from './components/Thankyou/Thankyou';
+import About from './components/About/About';
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
       <Header/>
      <Main/>
      <Cards/>
+     <About/>
    
      <YProgressbar/>
      <Register/>

@@ -60,7 +60,7 @@ const Register = () => {
 
 
   const progressBarStyle = {
-    width: '400px', 
+    // width: '400px', 
     width: state === 1 ? '50%' : state === 2 ? '100%' : '0',
     background: 'linear-gradient(to bottom, rgba(0, 122, 255, 1) 0%, rgba(0, 66, 137, 1) 50%, rgba(0, 25, 52, 1) 100%)',
     transition: 'height 0.3s', // Add a smooth transition effect

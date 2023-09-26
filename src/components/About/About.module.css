@@ -1,0 +1,36 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #050505;
+    padding: 0 6%;
+    min-height: 100vh;
+}
+.wrap{
+    width: 100%;
+
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.wrap>:nth-child(1){
+    color: #999;
+font-family: Bruno Ace SC;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 1.8px;
+text-transform: uppercase;
+}
+.wrap>:nth-child(2){
+    color: #505050;
+text-align: center;
+font-family: K2D;
+font-size: 18px;
+font-style: normal;
+font-weight: 275;
+line-height: 32px; /* 177.778% */
+}
