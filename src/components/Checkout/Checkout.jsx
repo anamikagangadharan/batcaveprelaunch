@@ -158,22 +158,22 @@ const Checkout = () => {
 <span className={css.shead}> 2. Shipping Methods: </span>
 
 
-We offer the following shipping methods:
-- Standard Shipping: Estimated delivery time 7-14 Business Days.
-- Express Shipping: Estimated delivery time 4-7 Business Days.
+<span className={css.scontent1}> We offer the following shipping methods:  </span>
+ <span className={css.scontent1}> - Standard Shipping: Estimated delivery time 7-14 Business Days.</span>
+ <span className={css.scontent1}> - Express Shipping: Estimated delivery time 4-7 Business Days.</span>
 
  <span className={css.shead}>3. Order Processing:</span>
 
-- Orders are typically processed and shipped within 7-10 business days.
-- You will receive a confirmation email with tracking information once your order has shipped.
+<span className={css.scontent1}> - Orders are typically processed and shipped within 7-10 business days.</span>
+ <span className={css.scontent1}> - You will receive a confirmation email with tracking information once your order has shipped.</span>
 
  <span className={css.shead}>4. Shipping Costs:</span>
 
-Shipping costs are calculated based on the weight, dimensions, and destination of your order. The exact shipping cost will be displayed during the checkout process.
+ <span className={css.scontent1}> Shipping costs are calculated based on the weight, dimensions, and destination of your order. The exact shipping cost will be displayed during the checkout process.</span>
 
  <span className={css.shead}>5. Delivery Times:</span>
 
-Delivery times may vary depending on the shipping method selected and the destination. Estimated delivery times are provided for each shipping method, but please note that these are approximate and not guaranteed.
+<span className={css.scontent1}> Delivery times may vary depending on the shipping method selected and the destination. Estimated delivery times are provided for each shipping method, but please note that these are approximate and not guaranteed. </span>
 
             
         </div>
