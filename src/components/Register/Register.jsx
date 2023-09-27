@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import css from "./Register.module.css";
 import Tick from "../../assets/Tick.svg";
+import { motion } from "framer-motion";
+import Hclose from "../../assets/close-hexagon.svg"
 
 const Register = () => {
   
+
   const [state, setState] = useState(1);
+
+  const[openedt,setOpenedt]=useState(false)
+  const[openedp,setOpenedp]=useState(false)
+
 
 
   const [formData, setFormData] = useState({
@@ -305,8 +312,8 @@ const Register = () => {
                 <div className={css.agree}>
                   <span>
                     by clicking, i agree WITH THE{" "}
-                    <span className={css.underline}> privacy policy </span> and{" "}
-                    <span className={css.underline}>TERMS & CONDITIONS </span>
+                    <span onClick={()=>setOpenedp(!openedp)} className={css.underline}> privacy policy </span> and{" "}
+                    <span onClick={()=>setOpenedt(!openedt)} className={css.underline}>TERMS & CONDITIONS </span>
                   </span>
                 </div>
 
@@ -317,6 +324,122 @@ const Register = () => {
           </div>
         </div>
       </div>
+
+      {/* terms and conditions */}
+
+      {openedt && <motion.div className={css.tandc}
+       initial={{opacity:0,x:130}}
+       whileInView={{opacity:1, x:0}}
+       transition={{duration:1.5}}
+      ><div className={css.head}>
+      <span>Shipping policy</span>
+      <img onClick={()=>setOpenedt(false)} src={Hclose} alt="" />
+  </div>
+  <div className={css.content}>
+<span className={css.thead}>Batcave Membership Terms and Conditions</span>
+
+<span className={css.tcontent}>These terms and conditions ("Terms") govern your membership with Batcave ("Club"). By registering and becoming a member, you agree to comply with these Terms. Please read them carefully.</span>
+
+<span className={css.thead}>1. Membership Eligibility:</span>
+ <span className={css.tcontent}>- Membership is open to individuals who meet the Club's criteria.</span>
+<span className={css.tcontent}>- Members must be at least 18 years old.</span>
+
+<span className={css.thead}>2. Membership Benefits:</span>
+<span className={css.tcontent}>- Members gain access to exclusive Club events, discounts, and privileges as outlined by the Club.</span>
+<span className={css.tcontent}>- Benefits may be subject to change at the discretion of the Club.</span>
+
+<span className={css.thead}>3. Membership Duration:</span>
+ <span className={css.tcontent}>- Membership duration for Batcave OGs is Lifetime from the date of registration.</span>
+ <span className={css.tcontent}>- Memberships are only transferable to the heir for the holder and attract a nominal transfer fee.</span>
+
+<span className={css.thead}>4. Registration and Fees:</span>
+ <span className={css.tcontent}>- Membership registration requires payment of the specified fee.</span>
+ <span className={css.tcontent}>- Membership fees are non-refundable.</span>
+
+<span className={css.thead}>5. Code of Conduct:</span>
+<span className={css.tcontent}>- Members must adhere to the Club's code of conduct during Club events and interactions.</span>
+ <span className={css.tcontent}>- Inappropriate behaviour may result in membership termination.</span>
+
+<span className={css.thead}>6. Privacy and Data:</span>
+ <span className={css.tcontent}>- The Club will handle your personal information in accordance with its privacy policy.</span>
+ <span className={css.tcontent}>- Your information may be used for Club communications and promotions.</span>
+
+<span className={css.thead}>7. Termination:</span>
+ <span className={css.tcontent}>- The Club reserves the right to terminate or suspend a membership for violation of these Terms or any disruptive behaviour.</span>
+
+<span className={css.thead}>8. Disclaimers:</span>
+ <span className={css.tcontent}>- The Club is not responsible for any accidents, damage, or loss that may occur during Club events.</span>
+ <span className={css.tcontent}>- Members are responsible for their own safety and the safety of their property.</span>
+
+<span className={css.thead}>9. Changes to Terms:</span>
+ <span className={css.tcontent}>- The Club may modify these Terms at any time. Members will be notified of changes.</span>
+
+<span className={css.thead}>10. Governing Law and Jurisdiction:</span>
+ <span className={css.tcontent}>- These Terms are governed by the laws of the State of Tamil Nadu, India.</span>
+ <span className={css.tcontent}>- Any disputes or legal proceedings arising from these Terms will be subject to the exclusive jurisdiction of the courts located in Coimbatore, Tamil Nadu, India.</span>
+�
+<span className={css.tcontent}>By registering for Batcave OGs membership, you acknowledge that you have read, understood, and agreed to these Terms and Conditions.</span>
+</div>
+        </motion.div>}
+
+
+{/* privacy */} 
+{openedp && <motion.div className={css.privacypolicy}
+       initial={{opacity:0,x:130}}
+       whileInView={{opacity:1, x:0}}
+       transition={{duration:1.5}}
+      >
+        <div className={css.head}>
+      <span>Shipping policy</span>
+      <img onClick={()=>setOpenedp(false)} src={Hclose} alt="" />
+  </div>
+  <div className={css.content}>
+  <span className={css.phead}>Effective Date: 10-10-2023</span>
+
+<span className={css.phead}>1. Introduction:</span>
+
+<span className={css.pcontent}>Welcome to Batcave ("Club"). This Privacy Policy outlines how we collect, use, and protect your personal information. By becoming a member of our club, you agree to the terms and practices described in this policy.</span>
+
+<span className={css.phead}>2. Information We Collect:</span>
+
+<span className={css.pcontent}>We may collect the following types of personal information:</span>
+<span className={css.pcontent}>- Contact Information: Name, email address, phone number, and address.</span>
+<span className={css.pcontent}>- Membership Information: Details related to your membership, including payment information and details relevant to your car.</span>
+<span className={css.pcontent}>- Communication Preferences: Your preferences for receiving communications from the Club.</span>
+<span className={css.pcontent}>- Event Participation: Information related to your participation in club events and activities.</span>
+
+<span className={css.phead}>3. How We Use Your Information:</span>
+
+<span className={css.pcontent}>We use your personal information for the following purposes:</span>
+<span className={css.pcontent}>- To manage and administer your club membership.</span>
+<span className={css.pcontent}>- To communicate with you about club events, news, and updates.</span>
+<span className={css.pcontent}>- To personalise your club experience.</span>
+<span className={css.pcontent}>- To process payments for membership fees and event registrations.</span>
+<span className={css.pcontent}>- To comply with legal obligations.</span>
+
+<span className={css.phead}>4. Data Security:</span>
+
+<span className={css.pcontent}>We take reasonable measures to protect your personal information from unauthorised access, disclosure, alteration, or destruction.</span>
+
+<span className={css.phead}>5. Third-Party Disclosure:</span>
+
+<span className={css.pcontent}>We do not sell or share your personal information with third parties for marketing purposes.</span>
+
+<span className={css.phead}>6. Your Choices:</span>
+
+<span className={css.pcontent}>You can update your communication preferences or request the deletion of your personal information by contacting us at support@batcave.co.in.</span>
+
+<span className={css.phead}>7. Changes to Privacy Policy:</span>
+
+<span className={css.pcontent}>We may update this Privacy Policy to reflect changes in our data practices. The revised policy will be effective from the date posted on our website.</span>
+
+<span className={css.phead}>8. Contact Us:</span>
+
+<span className={css.pcontent}>If you have any questions or concerns about our Privacy Policy or data practices, please contact us at support@batcave.co.in.</span>
+
+  </div>
+  </motion.div>}
+
     </div>
   );
 };

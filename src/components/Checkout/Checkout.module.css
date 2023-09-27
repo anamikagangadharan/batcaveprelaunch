@@ -145,6 +145,7 @@ text-transform: uppercase;
   }
   .spaninside{
     text-decoration: underline;
+    cursor: pointer;
   }
 
   .proceedbtn {
