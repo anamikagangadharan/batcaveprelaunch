@@ -243,6 +243,8 @@ margin-top: 0.6rem;
     backdrop-filter: blur(77px);
     padding: 2% 2%;
     right: 0;
+    overflow-y: scroll;
+    height: 100%;
   }
   .shead{
     color: #999;

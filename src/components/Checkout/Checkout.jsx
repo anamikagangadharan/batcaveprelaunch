@@ -175,7 +175,21 @@ const Checkout = () => {
 
 <span className={css.scontent1}> Delivery times may vary depending on the shipping method selected and the destination. Estimated delivery times are provided for each shipping method, but please note that these are approximate and not guaranteed. </span>
 
-            
+ <span className={css.shead}>6. International Shipping:</span>
+ <span className={css.scontent1}>For international orders, please be aware of any import duties, taxes, or customs fees that may be applicable in your country. These fees are the responsibility of the recipient. </span>
+
+
+ <span className={css.shead}>7. Lost or Damaged Shipments:</span>
+ <span className={css.scontent1}> In the event of a lost or damaged shipment, please contact us at support@batcave.co.in as soon as possible. We will work with the shipping carrier to resolve the issue. </span>
+
+
+ <span className={css.shead}>8. Tracking Orders:</span>
+ <span className={css.scontent1}>You can track the status of your order by using the tracking information provided in your order confirmation email. </span>
+
+
+ <span className={css.shead}>9. Contact Us:</span>
+ <span className={css.scontent1}> If you have any questions or concerns about our shipping policy, please contact us at support@batcave.co.in.  </span>
+ 
         </div>
 
 
