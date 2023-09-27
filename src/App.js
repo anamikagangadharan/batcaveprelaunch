@@ -11,6 +11,7 @@ import Thankyou from './components/Thankyou/Thankyou';
 import About from './components/About/About';
 import MemberProgress from './components/MemberProgress/MemberProgress';
 import Checkout from './components/Checkout/Checkout';
+import PageNotFound from './components/PageNotFound/PageNotFound';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
      <Countdown/> 
      <Thankyou/>
      <Checkout/> 
+     <PageNotFound/>
     </div>
   );
 }
