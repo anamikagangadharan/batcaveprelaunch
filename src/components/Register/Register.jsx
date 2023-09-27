@@ -74,6 +74,11 @@ const Register = () => {
     transformOrigin: 'bottom',
     height:"4px"
   }
+  // const spanStylePersonal = {
+  //   color: state===1 ? 'yellow;' : '#505050',
+  // };
+ 
+
 
   return (
     <div className={css.container}>
@@ -87,7 +92,7 @@ const Register = () => {
  
             <div className={css.rotatehead}>
             <span onClick={() => setState(1)}>Personal Details</span>
-            <span onClick={() => setState(2)}>Car Details</span>
+            <span   onClick={() => setState(2)}>Car Details</span>
             </div>
 
             <div className={css.progresscontainer}> 
