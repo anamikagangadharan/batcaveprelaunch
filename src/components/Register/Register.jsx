@@ -332,7 +332,7 @@ const Register = () => {
        whileInView={{opacity:1, x:0}}
        transition={{duration:1.5}}
       ><div className={css.head}>
-      <span>Shipping policy</span>
+      <span>Terms & conditions</span>
       <img onClick={()=>setOpenedt(false)} src={Hclose} alt="" />
   </div>
   <div className={css.content}>
@@ -390,7 +390,7 @@ const Register = () => {
        transition={{duration:1.5}}
       >
         <div className={css.head}>
-      <span>Shipping policy</span>
+      <span>privacy policy</span>
       <img onClick={()=>setOpenedp(false)} src={Hclose} alt="" />
   </div>
   <div className={css.content}>
