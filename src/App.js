@@ -10,6 +10,7 @@ import Countdown from './components/Countdown/Countdown';
 import Thankyou from './components/Thankyou/Thankyou';
 import About from './components/About/About';
 import MemberProgress from './components/MemberProgress/MemberProgress';
+import Checkout from './components/Checkout/Checkout';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
      <Register/>
      <Countdown/> 
      <Thankyou/>
+     <Checkout/> 
     </div>
   );
 }
