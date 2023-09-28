@@ -3,6 +3,7 @@
   background: #050505;
   display: flex;
   justify-content: center;
+  min-height: 100vh;
 }
 .wrap {
   width: 100%;
@@ -18,8 +19,12 @@
 .right {
   width: 50%;
   display: flex;
-  position: relative;
+ 
   justify-content: center;
+}
+.relativediv{
+  width: 100%;
+  position: relative;
 }
 .formdiv{
     width: 100%;
@@ -35,8 +40,9 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 48%;
-  left: -50%;
+  top: 80%;
+  left: -2%;
+  transform-origin: bottom left;
 }
 .rotate {
   display: flex;
@@ -79,7 +85,7 @@ text-transform: uppercase;
 }
 .form1 {
   /* background-color: #141212; */
-  width: 80%;
+  width: 88%;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -153,7 +159,7 @@ stroke: #007AFF; */
     justify-content: space-between; 
  /* background-color: #212223; */
   padding: 4% 4%;
-  width: 80%;
+  width: 88%;
   height: 500px;
 }
 .form2top,.form2bottom{
@@ -414,4 +420,10 @@ font-weight: 400;
 line-height: 20px; /* 142.857% */
 letter-spacing: 0.84px;
 /* margin-top: 0.6rem; */
+}
+
+
+
+@media scren and (max-width:768px){
+
 }

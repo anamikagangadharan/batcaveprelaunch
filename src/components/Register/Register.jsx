@@ -88,6 +88,7 @@ const Register = () => {
         </div>
 
         <div className={css.right}>
+          <div className={css.relativediv}>
           <div className={css.rotate}>
  
             <div className={css.rotatehead}>
@@ -327,6 +328,7 @@ const Register = () => {
               </form>
             )}
           </div>
+          </div> 
         </div>
       </div>
 
