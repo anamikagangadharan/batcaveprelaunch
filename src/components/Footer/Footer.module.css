@@ -1,0 +1,29 @@
+.container{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 4% 6%;
+    z-index: 1000;
+ 
+}
+.wrap{
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+}
+.left>:nth-child(1){
+    color: #E0E0E0;
+font-family: K2D;
+font-size: 16px;
+font-style: normal;
+font-weight: 275;
+line-height: normal;
+letter-spacing: 0.96px;
+text-transform: uppercase;
+}
+.right{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}

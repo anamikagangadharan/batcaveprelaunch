@@ -1,7 +1,7 @@
 import React from 'react'
 import css from "./Header.module.css"
-import Logo from "../../assets/logo-bat.svg"
-import Insta from "../../assets/instagram.svg"
+import Logo from "../../assets/VectorBat.svg"
+
 
 const Header = () => {
   return (
@@ -12,8 +12,7 @@ const Header = () => {
         </div>
 
         <div className={css.right}>
-            <span>REGISTER</span>
-            <img src={Insta} alt="" />
+           <button className={css.registermainbtn}>REGISTER</button>
 
         </div>
       

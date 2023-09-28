@@ -12,6 +12,7 @@ import About from './components/About/About';
 import MemberProgress from './components/MemberProgress/MemberProgress';
 import Checkout from './components/Checkout/Checkout';
 import PageNotFound from './components/PageNotFound/PageNotFound';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
      <Thankyou/>
      <Checkout/> 
      <PageNotFound/>
+     <Footer/>
     </div>
   );
 }
