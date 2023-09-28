@@ -1,0 +1,88 @@
+.container{
+    background-image: url(../../assets/main-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: azure;
+}
+.wrap{
+    width: 80%;
+    max-width: 1440px;
+    border-radius: 20px;
+border: 1px solid rgba(255, 255, 255, 0.12);
+background: rgba(0, 0, 0, 0.60);
+backdrop-filter: blur(6px);
+height: 400px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 4% 4%;
+
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    width: 40%;
+}
+.line{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.line>:nth-child(1){
+    color: #666;
+font-family: K2D;
+font-size: 16px;
+font-style: normal;
+font-weight: 275;
+line-height: normal;
+letter-spacing: 0.96px;
+text-transform: uppercase;
+}
+.line>:nth-child(2){
+    color: #B3B3B3;
+font-family: K2D;
+font-size: 16px;
+font-style: normal;
+font-weight: 275;
+line-height: normal;
+letter-spacing: 0.96px;
+text-transform: uppercase;
+}
+.lines{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.lines>:nth-child(1){
+    color: #666;
+    font-family: K2D;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 275;
+    line-height: normal;
+    letter-spacing: 0.96px;
+    text-transform: uppercase;
+}
+.lines>:nth-child(2){
+    color: #B3B3B3;
+font-family: K2D;
+font-size: 16px;
+font-style: normal;
+font-weight: 275;
+line-height: normal;
+letter-spacing: 0.96px;
+text-transform: lowercase;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    width: 40%;
+}

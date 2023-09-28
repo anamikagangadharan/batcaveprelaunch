@@ -14,6 +14,7 @@ import Checkout from './components/Checkout/Checkout';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import Footer from './components/Footer/Footer';
 import RegistrationClosed from './components/RegistrationClosed/RegistrationClosed';
+import Profile from './components/Profile/Profile';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
      <Checkout/> 
      <PageNotFound/>
      <RegistrationClosed/>
+     <Profile/>
      <Footer/>
     </div>
   );
