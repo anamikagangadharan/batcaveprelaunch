@@ -6,7 +6,7 @@ const Profile = () => {
     <div className={css.container}>
         <div className={css.wrap}>
         <div className={css.left}>
-            <span>Personal Details</span>
+            <span className={css.pheading}>Personal Details</span>
             <div className={css.line}> 
             <span> Name</span>
             <span>JAMES</span>
@@ -33,7 +33,7 @@ const Profile = () => {
 
 
         <div className={css.right}>
-            <span>Car Details</span>
+            <span className={css.pheading}>Car Details</span>
            
             <div className={css.line}> 
             <span> car registration number</span>

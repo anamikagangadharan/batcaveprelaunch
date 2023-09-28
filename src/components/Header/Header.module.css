@@ -13,8 +13,9 @@
     justify-content: flex-start;
     width: 50%;
 }
-.left>img{
-    margin-left: -6%;
+.left>a>img{
+    /* margin-left: -6%; */
+    margin-left: -25%;
 }
 .right{
     display: flex;
@@ -54,7 +55,7 @@ font-size: 14px;
 letter-spacing: 0.84px;
 
     }
-    .left>img{
+    .left>a>img{
         height: 64px;
         width: 104px;
     }

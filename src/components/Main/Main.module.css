@@ -1,6 +1,6 @@
 .container{
-    background-image: url(../../assets/mainbg-new.svg);
-    /* background-color: white; */
+    /* background-image: url(../../assets/mainbg-new.svg); */
+    background-image: url(../../assets/newmainbgpng.png);
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -40,4 +40,8 @@
     justify-content: space-around;
     gap: 6rem;
     color: white;
+}
+
+@media screen and (max-width:768px){
+    
 }
