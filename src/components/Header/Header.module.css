@@ -40,3 +40,22 @@ line-height: normal;
 letter-spacing: 0.96px;
 text-transform: uppercase;
 }
+@media screen and (max-width:768px){
+    .registermainbtn{
+        display: flex;
+height: 32px;
+padding: 0px 16px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 10px;
+color: #E0E0E0;
+font-size: 14px;
+letter-spacing: 0.84px;
+
+    }
+    .left>img{
+        height: 64px;
+        width: 104px;
+    }
+}

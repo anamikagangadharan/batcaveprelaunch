@@ -3,7 +3,7 @@ import css from "./Register.module.css";
 import Tick from "../../assets/Tick.svg";
 import { motion } from "framer-motion";
 import Hclose from "../../assets/close-hexagon.svg"
-
+import { Link } from "react-router-dom";
 const Register = () => {
   
 
@@ -25,6 +25,9 @@ const Register = () => {
   });
 
   const sendEmail = (e) => {
+    e.preventDefault();
+  };
+  const sendEmail2 = (e) => {
     e.preventDefault();
   };
 
@@ -92,8 +95,8 @@ const Register = () => {
           <div className={css.rotate}>
  
             <div className={css.rotatehead}>
-            <span onClick={() => setState(1)}>Personal Details</span>
-            <span   onClick={() => setState(2)}>Car Details</span>
+            <span className={state===1 ? css.p1: css.p2} onClick={() => setState(1)}>Personal info</span>
+            <span className={state===2 ? css.c1: css.c2}   onClick={() => setState(2)}>car & social info</span>
             </div>
 
             <div className={css.progresscontainer}> 
@@ -254,7 +257,7 @@ const Register = () => {
             {/* form_2 */}
 
             {state === 2 && (
-              <form className={css.form2} action="">
+              <form className={css.form2} action="" onSubmit={sendEmail2}>
 
                 <div className={css.form2top}>
                 
@@ -266,7 +269,7 @@ const Register = () => {
                       name=""
                       id=""
                       placeholder="do you own a car?"
-                    />
+                    /> 
                     <input
                       className={css.checkinput}
                       type="checkbox"
@@ -323,7 +326,7 @@ const Register = () => {
                   </span>
                 </div>
 
-                <button className={css.proceedbtn}> proceed to checkout</button>
+              <Link to="/checkout"> <button className={css.proceedbtn}> proceed to checkout</button></Link>  
                 </div>
               </form>
             )}
