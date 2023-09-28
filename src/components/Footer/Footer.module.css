@@ -27,3 +27,17 @@ text-transform: uppercase;
     align-items: center;
     gap: 0.6rem;
 }
+@media screen and (max-width:768px){
+    .left>:nth-child(1){
+        font-size: 13px;
+        letter-spacing: 0.84px;
+    }
+    .right>:nth-child(1), .right>:nth-child(3){
+        width: 20px;
+        height: 20px;
+    }
+    .right>:nth-child(2){
+        width: 17px;
+       
+    }
+}

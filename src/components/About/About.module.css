@@ -34,3 +34,17 @@ font-style: normal;
 font-weight: 275;
 line-height: 32px; /* 177.778% */
 }
+@media screen and (max-width:768px){
+    .wrap{
+        gap: 2rem;
+    }
+    .wrap>:nth-child(1){
+font-size: 20px;
+letter-spacing: 1.2px;
+    }
+    .wrap>:nth-child(2){
+        font-size: 14px;
+line-height: 24px;
+    }
+
+}

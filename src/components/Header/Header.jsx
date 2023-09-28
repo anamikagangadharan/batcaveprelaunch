@@ -8,12 +8,12 @@ const Header = () => {
   return (
     <div className={css.container}>
         <div className={css.left}>
-          <Link to="/">  <img src={Logo} alt="" /> </Link> 
+          <Link to="/">  <img onClick={()=>window.scrollTo(0,0)} src={Logo} alt="" /> </Link> 
             
         </div>
 
         <div className={css.right}>
-       <Link to="/register"><button className={css.registermainbtn}>REGISTER</button> </Link>    
+       <Link to="/register"><button  className={css.registermainbtn}>REGISTER</button> </Link>    
 
         </div>
       

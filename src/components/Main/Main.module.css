@@ -43,5 +43,8 @@
 }
 
 @media screen and (max-width:768px){
-    
+    .container{
+        background-image: url(../../assets/mainbg-mobile.png);
+    }
+
 }

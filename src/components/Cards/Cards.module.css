@@ -94,13 +94,14 @@ text-transform: capitalize;
     width: 50%;
     height: 230px;
 }
-.middle>:nth-child(1){
+.blurdesktop{
     right: 23%;
     position: absolute;
     z-index: 1;
     top: -64%;
     width: 60%;
 }
+
 .middle>:nth-child(2){
     /* position: absolute;
     top: 28%;
@@ -126,6 +127,8 @@ position: absolute;
     display: flex;
     align-items: center;
     gap: 0.4rem;
+    position: inherit;
+    z-index: 99;
 }
 .sline{
     width: 58px;
@@ -149,4 +152,66 @@ font-weight: 400;
 line-height: 24px; /* 171.429% */
 letter-spacing: 0.84px;
 text-transform: capitalize;
+}  
+
+@media screen and (max-width:768px){
+    .container{
+        padding: 0;
+        padding: 4% 0;
+    }
+    .div1{
+        padding: 4%;
+    }
+    .div1>:nth-child(1){
+font-size: 20px;
+
+letter-spacing: 1.2px;
+
+    }
+
+    .div2>:nth-child(1){
+
+font-size: 36px;
+
+letter-spacing: 2.16px;
+    }
+
+    .div3{
+        flex-direction: column;
+        gap: 2.4rem;
+        padding: 4%;
+    }
+    .leftmiddlewrap{
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .left{
+        width: 100%;
+
+    }
+    .cities{
+        width: 100%;
+    }
+    .middle{
+        width: 100%;
+    }
+    .middle>:nth-child(2){
+        width: 80%;
+    }
+    .blurmobile{
+        right: 0;
+    position: absolute;
+    z-index: 1;
+    top: -30%;
+    width: 100%;
+    }
+   
+    .cardline{
+        display: none;
+    }
+
+    .right{
+        width: 100%;
+    }
+    
 }

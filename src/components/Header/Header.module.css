@@ -42,6 +42,9 @@ letter-spacing: 0.96px;
 text-transform: uppercase;
 }
 @media screen and (max-width:768px){
+    .container{
+        width: 100%;
+    }
     .registermainbtn{
         display: flex;
 height: 32px;

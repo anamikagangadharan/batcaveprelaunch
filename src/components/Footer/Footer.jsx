@@ -9,7 +9,7 @@ const Footer = () => {
     <div className={css.container}>
         <div className={css.wrap}>
         <div className={css.left}>
-            <span>©2023</span>
+            <span>©batcave2023</span>
 
         </div>
 

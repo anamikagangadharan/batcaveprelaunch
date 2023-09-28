@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import css from "./Cards.module.css"
 import Card1 from "../../assets/card with shadow-2.svg"
 import Blur from "../../assets/blur-blue.svg"
+import BlurM from "../../assets/blurmobile.png"
 import LArrow from "../../assets/left-arrow.svg"
 import RArrow from "../../assets/right-arrow.svg"
 import { motion } from 'framer-motion'
@@ -20,6 +21,7 @@ const Cards = () => {
       setCards(cards - 1);
     }
   };
+  const mobile = window.innerWidth <= 768 ? true : false;
 
   return (
     <div className={css.container}>
@@ -37,15 +39,16 @@ const Cards = () => {
             <span>Presence</span>
             <div className={css.cardline}></div>
             <div className={css.cities}>
-             <span> Coimbatore,Chennai,Bengaluru,Mysore,Kochi ,Trivandrum,
-              Hyderabad,Visakhapatnam </span>
+             <span> Coimbatore, Chennai, Bengaluru, Mysore, Kochi, Trivandrum,
+               Hyderabad, Visakhapatnam </span>
             </div>
           </div>
 
 {/* middle */}
           <div className={css.middle}>
-          <img src={Blur} alt="" />
-        <img src={Card1} alt="" />
+    {mobile?   <img className={css.blurmobile} src={BlurM} alt="" /> : <img className={css.blurdesktop} src={Blur} alt="" /> }      
+        <img  src={Card1} alt="" />
+       
           </div>
           {/* <div className={css.backline}></div> */}
 
