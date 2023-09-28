@@ -532,7 +532,7 @@ font-size: 14px;
   .tandc{
     width: 100%;
     top: 0;
-    height: 100%;
+    position: fixed;
     /* bottom: 0; */
   }
   .thead{
@@ -544,6 +544,7 @@ font-size: 14px;
   .privacypolicy{
     width: 100%;
     top: 0;
+    position: fixed;
   }
   .phead{
     font-size: 12px;
