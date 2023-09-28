@@ -27,6 +27,13 @@ text-transform: uppercase;
     align-items: center;
     gap: 0.6rem;
 }
+/* .middle{
+    background: linear-gradient(0deg, rgba(0, 122, 255, 0.90) -0.1%, rgba(0, 66, 137, 0.90) 46.1%, rgba(0, 25, 52, 0.90) 100%);
+filter: blur(90.27738189697266px);
+width: 336.273px;
+height: 221.634px;
+flex-shrink: 0;
+} */
 @media screen and (max-width:768px){
     .left>:nth-child(1){
         font-size: 13px;

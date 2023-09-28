@@ -13,8 +13,10 @@ const Footer = () => {
 
         </div>
 
+        {/* <div className={css.middle}>hi</div> */}
 
-        <div className={css.right}>
+
+        <div className={css.right}> 
             <img src={Insta} alt="" />
             <img src={Phone} alt="" />
             <img src={Mail} alt="" />
