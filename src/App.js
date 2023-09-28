@@ -13,6 +13,7 @@ import MemberProgress from './components/MemberProgress/MemberProgress';
 import Checkout from './components/Checkout/Checkout';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import Footer from './components/Footer/Footer';
+import RegistrationClosed from './components/RegistrationClosed/RegistrationClosed';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
      <Thankyou/>
      <Checkout/> 
      <PageNotFound/>
+     <RegistrationClosed/>
      <Footer/>
     </div>
   );
