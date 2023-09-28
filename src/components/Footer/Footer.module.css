@@ -3,7 +3,7 @@
     position: fixed;
     bottom: 0;
     padding: 4% 6%;
-    z-index: 1000;
+    z-index: 100;
  
 }
 .wrap{

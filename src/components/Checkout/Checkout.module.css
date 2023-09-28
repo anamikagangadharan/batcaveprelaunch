@@ -180,6 +180,7 @@ text-transform: uppercase;
     backdrop-filter: blur(77px);
     padding: 2% 2%;
     right: 0;
+    z-index: 101;
   }
   .head{
     display: flex;
@@ -246,6 +247,7 @@ margin-top: 0.6rem;
     right: 0;
     overflow-y: scroll;
     height: 100%;
+    z-index: 101;
   }
   .shead{
     color: #999;
