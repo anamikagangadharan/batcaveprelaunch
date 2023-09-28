@@ -1,6 +1,7 @@
 import React from 'react'
 import css from "./Header.module.css"
 import Logo from "../../assets/VectorBat.svg"
+import { Link } from 'react-router-dom'
 
 
 const Header = () => {
@@ -12,7 +13,7 @@ const Header = () => {
         </div>
 
         <div className={css.right}>
-           <button className={css.registermainbtn}>REGISTER</button>
+       <Link to="/register"><button className={css.registermainbtn}>REGISTER</button> </Link>    
 
         </div>
       

@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   min-height: 100vh;
+  padding-top: 20px;
 }
 .wrap {
   width: 100%;
@@ -16,7 +17,7 @@
 .left {
   width: 50%;
 }
-.videobox {
+.videobox { 
   width: 60%;
   height: 500px;
   flex-shrink: 0;
@@ -339,7 +340,7 @@ background: linear-gradient(0deg, #007AFF -0.1%, #004289 46.1%, #001934 100%), #
   position: absolute;
   background: rgba(0, 0, 0, 0.50);
   backdrop-filter: blur(77px);
-  padding: 2% 2%;
+  padding: 4% 2%;
   right: 0;
   height: 100%;
   overflow-y: scroll;
@@ -397,7 +398,7 @@ letter-spacing: 0.84px;
   position: absolute;
   background: rgba(0, 0, 0, 0.50);
   backdrop-filter: blur(77px);
-  padding: 2% 2%;
+  padding: 4% 2%;
   right: 0;
   height: 100%;
   overflow-y: scroll;
@@ -449,7 +450,8 @@ letter-spacing: 0.84px;
 
 @media screen and (max-width:768px){
   .container{
-    padding: 10% 0;
+    padding-bottom: 8%;
+    padding-top: 60px;
   }
   .wrap{
     flex-direction: column;

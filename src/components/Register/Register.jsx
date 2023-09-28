@@ -113,7 +113,7 @@ const Register = () => {
                 <div className={css.inputset}>
                   <input
                     name="full_name"
-                    onChange={handleChange}
+                    onChange={handleChange} 
                     value={formData.name}
                     className={css.contactinp}
                     type="text"
