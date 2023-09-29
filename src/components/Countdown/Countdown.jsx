@@ -1,5 +1,6 @@
 import React, { useState ,useEffect} from 'react'
 import css from "./Countdown.module.css"
+import { Link } from 'react-router-dom';
 
 const Countdown = () => {
 
@@ -39,6 +40,8 @@ const Countdown = () => {
   return (
     <div className={css.container}>
         <div className={css.wrap}>
+          <div className={css.top}>
+         
             <div className={css.div1}>
                 <span>Get Ready to Ignite Your Passion </span>
                 <span>The Countdown Begins</span>
@@ -68,6 +71,11 @@ const Countdown = () => {
       </div>
       
     </div>
+    </div>
+
+    <div className={css.bottom}>
+    <Link to ="/"><button className={css.btohomebtn}>BACK TO HOME</button> </Link> 
+          </div>
            
         </div>
       

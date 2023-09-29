@@ -28,20 +28,12 @@ function App() {
       <Route path="/thankyou" element={     <Thankyou />}/>
       <Route path="/registrationclosed" element={  <RegistrationClosed />}/>
       <Route path="/profile" element={  <Profile/>}/>
-      {/* <Route path="/not" element={  <PageNotFound />}/> */}
       <Route path="*" element={<PageNotFound/>} />
       
       </Routes>
       
        
       <YProgressbar />
-    
-   
-   
-    
-    
-    
-     
       <Footer />
       </Router>
     </div>

@@ -261,7 +261,7 @@ letter-spacing: 2.16px;
         object-fit: cover;
         position: inherit;
         z-index: 2;
-        left: 7%;
+        left: 10%;
         
     }
     .middle>:nth-child(2){
