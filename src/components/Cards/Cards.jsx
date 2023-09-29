@@ -47,7 +47,7 @@ const Cards = () => {
 {/* middle */}
           <div className={css.middle}>
     {/* {mobile?   <img className={css.blurmobile} src={BlurM} alt="" /> : <img className={css.blurdesktop} src={Blur} alt="" /> }       */}
-      <div className={css.card}><img  src={Card1} alt="" /> </div>  
+      <div className={css.cardblurbg}><img  src={Card1} alt="" /> </div>  
        
           </div>
           {/* <div className={css.backline}></div> */}
