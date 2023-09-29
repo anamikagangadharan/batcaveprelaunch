@@ -1,5 +1,6 @@
 import React from 'react'
 import css from "./Thankyou.module.css"
+import { Link } from 'react-router-dom'
 
 const Thankyou = () => {
   return (
@@ -11,7 +12,7 @@ const Thankyou = () => {
            </div>
 
            <div className={css.div2}>
-            <button className={css.btohomebtn}>BACK TO HOME</button>
+           <Link to ="/"><button className={css.btohomebtn}>BACK TO HOME</button> </Link> 
             <span>Follow us on instagram to hop into our giveaway</span>
            </div>
 
