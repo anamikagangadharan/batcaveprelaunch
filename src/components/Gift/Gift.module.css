@@ -59,9 +59,13 @@ letter-spacing: 1.8px;
 .div2>img{
     position: inherit;
 }
+.imgauto{
+    height: 220px;
+    width: 100%;
+}
 .pagination{
     display: flex;
-    gap: 1rem;
+    gap: 0.4rem;
     justify-content: center;
     align-items: center;
 }
@@ -76,6 +80,24 @@ letter-spacing: 1.8px;
 .active{
     fill: rgb(59, 59, 194);
 }
+.active>:nth-child(1){
+fill: yellow;
+stroke: yellow;
+}
+.active>:nth-child(2){
+fill: yellow;
+stroke: yellow;
+stroke-width: 30px;
+}
+.active>:nth-child(3){
+fill: yellow;
+stroke: yellow;
+}
+.active>:nth-child(4){
+fill: yellow;
+stroke: yellow;
+}
+
 
 
 /* div3 */
@@ -141,4 +163,9 @@ font-style: normal;
 font-weight: 400;
 line-height: 28px; /* 175% */
 letter-spacing: 0.96px;
+}
+.linebtw{
+    width: 16px;
+height: 1px;
+background: #666;
 }
