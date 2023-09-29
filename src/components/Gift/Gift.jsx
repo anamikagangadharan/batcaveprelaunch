@@ -48,7 +48,8 @@ const Gift = () => {
             </div>
 
             <div className={css.div2}>
-                <img src={content[currentIndex].image} alt="" />
+                {/* <img src={content[currentIndex].image} alt="" /> */}
+                <img src={Gift1} alt="" />
 
             </div>
 
