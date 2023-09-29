@@ -86,12 +86,10 @@ letter-spacing: 0.96px;
 }
 @media screen and (max-width:768px){
     .wrap{
-        padding-bottom: 10%;
+        padding-bottom: 2.8rem;
        
     }
-    /* .div1{
-        padding-top: 4rem;
-    } */
+ 
     .div1{
         gap: 0.8rem;
     }
