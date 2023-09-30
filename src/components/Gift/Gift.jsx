@@ -9,9 +9,9 @@ const Gift = () => {
 
     // Define your content, images, and spans here
     const content = [
-      { text: 'Content 1', image: Gift1},
-      { text: 'Content 2', image: Gift2 },
-      { text: 'Content 3', image: Gift3 },
+      { text: 'Mahindra Thar',text2:"Diesel, 117 BHP 300NM for",text3:"2 lucky members" ,image: Gift1},
+      { text: 'MSI Stealth 16 Mercedes-AMG',text2:"MSI AMG Stealth 16 Laptops for",text3:"5 lucky members" , image: Gift2 },
+      { text: 'All-expenses-paid BMW Museum tri',text2:"Munich, Germany, for ",text3:"10 lucky members" , image: Gift3 },
     ];
   
  const handleNext = () => {
@@ -55,11 +55,16 @@ const Gift = () => {
 
             <div className={css.div3}>
                 <div className={css.left}>
+                   
+          <span>{content[currentIndex].text}</span>
+          <span>{content[currentIndex].text2}</span>
+          <span>{content[currentIndex].text3}</span>
+        </div>
   
-        <span>Heading</span>
-        <span>This is the description of the car</span>
+        {/* <span>Heading</span>
+        <span>This is the description of the car</span> */}
 
-                </div>
+               
 
 
 
@@ -70,7 +75,6 @@ const Gift = () => {
         {content.map((_, index) => (
        <React.Fragment  key={index}  >
           <svg 
-         
           className={index === currentIndex ? css.active : ''}
           onClick={() => handlePaginationClick(index)}
            width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
