@@ -34,6 +34,16 @@ font-style: normal;
 font-weight: 275;
 line-height: 32px; /* 177.778% */
 }
+.wrap>:nth-child(3){
+    color: #323232;
+    text-align: center;
+    font-family: K2D;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 275;
+    line-height: 32px; /* 228.571% */
+    margin-top: 2rem;
+}
 @media screen and (max-width:768px){
     .wrap{
         gap: 2rem;
@@ -45,6 +55,11 @@ letter-spacing: 1.2px;
     .wrap>:nth-child(2){
         font-size: 14px;
 line-height: 24px;
+    }
+    .wrap>:nth-child(3){
+    font-size: 12px;
+
+    line-height: 24px; /* 200% */
     }
 
 }

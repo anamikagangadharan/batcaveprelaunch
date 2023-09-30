@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import css from "./Gift.module.css";
-import Gift1 from "../../assets/gift1.png";
-import Gift2 from "../../assets/gift2.png";
-import Gift3 from "../../assets/gift3.png";
+import Gift1 from "../../assets/gift1.svg";
+import Gift2 from "../../assets/gift2.svg";
+import Gift3 from "../../assets/gift33.png";
 const Gift = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -45,7 +45,7 @@ const Gift = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext();
-    }, 2000); // Change content every 5 seconds
+    }, 3000); // Change content every 5 seconds
 
     return () => clearInterval(timer); // Cleanup the timer on unmount
   }, []);
