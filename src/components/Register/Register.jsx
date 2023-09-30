@@ -316,7 +316,46 @@ const Register = () => {
 
                   <div className={css.inputline}> </div>
                 </div>
+
+                <div className={css.carinputset}>
+                  <select
+                    name="size"
+                    required
+                    className={css.carinput}
+                    id=""
+                    placeholder="t - shirt size"
+                  >
+                    <option className={css.opt} value="" disabled>
+                      {" "}
+                      t - shirt size
+                    </option>
+                    <option className={css.opt} value="s">
+                      S
+                    </option>
+                    <option className={css.opt} value="m">
+                      M
+                    </option>
+                    <option className={css.opt} value="l">
+                      L
+                    </option>
+                    <option className={css.opt} value="xx">
+                      xl
+                    </option>
+                    <option className={css.opt} value="xxl">
+                      xxl
+                    </option>
+                  </select>
+                  <div className={css.inputline}></div>
                 </div>
+
+                <div className={css.btns}>
+                  <button className={css.yrbtn}>yearly subscription</button>
+                  <button className={css.labtn}>Lifetime access</button>
+                </div>
+
+                </div>
+
+
                 <div className={css.form2bottom}>
                 <div className={css.agree}>
                   <span>

@@ -36,11 +36,13 @@ const Cards = () => {
  {/* left */}
  <div className={css.leftmiddlewrap}>
           <div className={css.left}>
-            <span>Presence</span>
+            <span>BATCAVE OGs</span>
             <div className={css.cardline}></div>
             <div className={css.cities}>
              <span> Coimbatore, Chennai, Bengaluru, Mysore, Kochi, Trivandrum,
-               Hyderabad, Visakhapatnam </span>
+               Hyderabad, Visakhapatnam 
+               
+               </span>
             </div>
           </div>
 
@@ -106,6 +108,12 @@ Get VIP entry to thrilling car meets and rides.</motion.span> }
 
 
 
+            </div>
+
+            <div className={css.newbottom}>
+            <span>Pricing</span>
+            <span>₹ 49,999 /- (Lifetime access)</span>
+            <span>₹ 14,999 /- (Yearly subscription)</span>
             </div>
 
           

@@ -193,6 +193,20 @@ line-height: 24px; /* 171.429% */
 letter-spacing: 0.84px;
 text-transform: capitalize;
 }  
+.newbottom{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.newbottom>span{
+    color: #999;
+    font-family: K2D;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 275;
+    line-height: normal;
+    letter-spacing: 0.84px;
+}
 
 @media screen and (max-width:768px){
     .container{
