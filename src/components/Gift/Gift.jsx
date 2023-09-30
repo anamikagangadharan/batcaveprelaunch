@@ -3,6 +3,8 @@ import css from "./Gift.module.css";
 import Gift1 from "../../assets/gift1.svg";
 import Gift2 from "../../assets/gift2.svg";
 import Gift3 from "../../assets/gift33.png";
+
+import { motion ,AnimatePresence} from "framer-motion";
 const Gift = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -45,10 +47,12 @@ const Gift = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext();
-    }, 3000); // Change content every 5 seconds
+    }, 2000); // Change content every 5 seconds
 
     return () => clearInterval(timer); // Cleanup the timer on unmount
   }, []);
+
+  
 
   return (
     <div className={css.container}>
@@ -58,12 +62,31 @@ const Gift = () => {
         </div>
 
         <div className={css.div2}>
-          <img
+          {/* <img
+        
             className={css.imgauto}
             src={content[currentIndex].image}
             alt=""
-          />
-          {/* <img src={Gift1} alt="" /> */}
+          /> */}
+          <AnimatePresence >
+  <motion.img
+    key={currentIndex}
+    className={css.imgauto}
+    src={content[currentIndex].image}
+    alt=""
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    // transition={{ duration: 1.5 }} /
+    // mode="wait" 
+    // exit={{ opacity: 0 }} 
+    exit={{
+      transition: { duration: 0.5 }, // Specify the exit animation duration
+    }}
+    transition={{ duration: 1 , scale:1}} 
+    mode="crossfade"
+  />
+</AnimatePresence>
+         
         </div>
 
         <div className={css.div3}>
