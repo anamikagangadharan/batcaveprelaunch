@@ -11,6 +11,8 @@
       color: aliceblue;
       padding: 6% 6%;
       position: relative;
+      display: flex;
+      justify-content: center;
 }
 .container::before {
     content: "";
@@ -84,18 +86,10 @@ letter-spacing: 1.8px;
     fill: #007AFF;
 stroke: #007AFF;
 }
-.active>:nth-child(2){
-fill: #007AFF;;
-stroke: #007AFF;;
-stroke-width: 30px;
-}
-.active>:nth-child(3){
-fill: rgb(59, 59, 194);
-stroke: rgb(59, 59, 194);
-}
+
 .active circle:last-child{
     fill: #007AFF;
-stroke: rgb(59, 59, 194);
+stroke: #007AFF;;
 }
 
 /* svg circle:last-child {
@@ -111,12 +105,18 @@ stroke: rgb(59, 59, 194);
     justify-content: center;
     width: 100%;
 }
+.leftmiddlewrap{
+    width: 66%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .left{
     display: flex;
     flex-direction: column;
     text-align: left;
     gap: 0.4rem;
-    width: 33%;
+    width: 50%;
 }
 .left>:nth-child(1){
     color: #999;
@@ -149,7 +149,21 @@ text-decoration-line: underline;
 
 /* middle */
 .middle{
-    width: 33%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.middle>:nth-child(1){
+    color: #E0E0E0;
+text-align: center;
+font-family: K2D;
+font-size: 24px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+letter-spacing: 1.44px;
+text-transform: uppercase;
 }
 
 
@@ -181,4 +195,62 @@ letter-spacing: 0.96px;
     width: 16px;
 height: 1px;
 background: #666;
+}
+
+
+
+@media screen and (max-width:768px){
+    .div1>:nth-child(1){
+
+font-family: Bruno Ace SC;
+font-size: 20px;
+
+line-height: 32px; /* 160% */
+letter-spacing: 1.2px;
+    }
+
+    .imgauto{
+        height: 181px;
+        width: 100%;
+    }
+    .div3{
+       
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2% 2%;
+    }
+    .leftmiddlewrap{
+        flex-direction: column-reverse;
+        width: 100%;
+        gap: 2rem;
+    }
+    .left,.middle,.right{
+        width: 100%;
+    }
+    .left>:nth-child(1){
+        font-size: 14px;
+        
+    }
+    .left>:nth-child(2){
+        font-size: 14px;
+        
+
+    }
+    .left>:nth-child(3){
+        font-size: 14px;
+        
+
+    }
+    .middle>:nth-child(1){
+        font-size: 18px;
+    }
+    .right{
+        align-items: flex-start;
+    }
+    .right>:nth-child(1){
+        font-size: 14px;
+    }
+    .rspan{
+        font-size: 14px;
+    }
 }

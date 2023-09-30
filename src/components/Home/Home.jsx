@@ -6,6 +6,7 @@ import Cards from '../Cards/Cards'
 import About from '../About/About'
 import Gift from '../Gift/Gift'
 
+
 const Home = () => {
   return (
     <div>
@@ -13,8 +14,8 @@ const Home = () => {
         <Main/>
         <MemberProgress/>
         <Cards/>
-        <About/>
         <Gift/>
+        <About/>
       
     </div>
   )
