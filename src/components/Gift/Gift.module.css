@@ -222,7 +222,7 @@ letter-spacing: 1.2px;
         flex-direction: column;
         gap: 2rem;
         padding: 2% 2%;
-        height: 200px;
+       
     }
     .leftmiddlewrap{
         flex-direction: column-reverse;

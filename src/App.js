@@ -13,7 +13,7 @@ import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 
 import { BrowserRouter as Router , Routes, Route } from "react-router-dom";
-import Carousel from "./components/Carousel/Carousel";
+// import Carousel from "./components/Carousel/Carousel";
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
       <Route path="/thankyou" element={     <Thankyou />}/>
       <Route path="/registrationclosed" element={  <RegistrationClosed />}/>
       <Route path="/profile" element={  <Profile/>}/>
-      <Route path="/caro" element={  <Carousel/>}/>
+      {/* <Route path="/caro" element={  <Carousel/>}/> */}
       <Route path="*" element={<PageNotFound/>} />
       
       </Routes>
