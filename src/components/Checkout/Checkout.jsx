@@ -4,7 +4,8 @@ import css from "./Checkout.module.css"
 import Tick from "../../assets/Tick.svg";
 import Hclose from '../../assets/close-hexagon.svg'
 import { motion } from 'framer-motion';
-
+import Barrow from "../../assets/backarrow.svg"
+import { Link } from 'react-router-dom';
 
 const Checkout = () => {
 
@@ -14,6 +15,14 @@ const Checkout = () => {
     <div className={css.container}>
 
        <div className={css.wrap}>
+
+     <Link to ="/">  <div className={css.wtop}>
+        <img src={Barrow} alt="" />
+          <span>Back</span> 
+        </div> </Link> 
+        
+        
+        <div className={css.wbottom}>
 
         <div className={css.left}>
           
@@ -90,6 +99,7 @@ const Checkout = () => {
 
 
 
+        </div>
         </div>
 
        </div>
