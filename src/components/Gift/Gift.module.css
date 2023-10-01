@@ -57,6 +57,7 @@ letter-spacing: 1.8px;
 /* div2 */
 .div2{
     z-index: 2;
+    height: 250px;
 }
 .div2>img{
     position: inherit;
@@ -200,6 +201,9 @@ background: #666;
 
 
 @media screen and (max-width:768px){
+    .wrap{
+        gap: 1rem;
+    }
     .div1>:nth-child(1){
 
 font-family: Bruno Ace SC;
@@ -218,6 +222,7 @@ letter-spacing: 1.2px;
         flex-direction: column;
         gap: 2rem;
         padding: 2% 2%;
+        height: 200px;
     }
     .leftmiddlewrap{
         flex-direction: column-reverse;
