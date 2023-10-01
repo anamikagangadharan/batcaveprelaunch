@@ -324,6 +324,7 @@ const Register = () => {
                     className={css.carinput}
                     id=""
                     placeholder="t - shirt size"
+                    defaultValue="" 
                   >
                     <option className={css.opt} value="" disabled>
                       {" "}
