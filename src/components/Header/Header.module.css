@@ -71,6 +71,10 @@ text-transform: uppercase;
 @media screen and (max-width:768px){
     .container{
         width: 100%;
+        height: 50px;
+    }
+    .newcontainer{
+        height: 50px;
     }
     .registermainbtn{
         display: flex;

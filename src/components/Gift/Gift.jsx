@@ -108,8 +108,10 @@ const Gift = () => {
               {content.map((_, index) => (
                 <React.Fragment key={index}>
                   <svg
+                   onClick={() => handlePaginationClick(index)}
+                 
                     className={index === currentIndex ? css.active : ""}
-                    onClick={() => handlePaginationClick(index)}
+                   
                     width="14"
                     height="13"
                     viewBox="0 0 14 13"
