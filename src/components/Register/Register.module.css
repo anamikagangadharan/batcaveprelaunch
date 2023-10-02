@@ -15,7 +15,10 @@
   padding: 6% 6%;
 }
 .left {
-  width: 50%;
+  width: 40%;
+}
+.left>img{
+  width: 100%;
 }
 .videobox { 
   width: 60%;
@@ -170,6 +173,12 @@ stroke: #007AFF; */
   border: none;
   background: linear-gradient(0deg, #007aff -0.1%, #004289 46.1%, #001934 100%);
   cursor: pointer;
+  position: inherit;
+  z-index: 101;
+}
+ .buttonWithZIndex{
+  position: relative;
+  z-index: 101;
 }
 
 .form2 {

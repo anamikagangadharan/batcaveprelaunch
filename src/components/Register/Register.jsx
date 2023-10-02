@@ -4,6 +4,9 @@ import Tick from "../../assets/Tick.svg";
 import { motion } from "framer-motion";
 import Hclose from "../../assets/close-hexagon.svg"
 import { Link } from "react-router-dom";
+import RegImg from "../../assets/reg-image.svg"
+
+
 const Register = () => {
   
 
@@ -87,7 +90,8 @@ const Register = () => {
     <div className={css.container}>
       <div className={css.wrap}>
         <div className={css.left}>
-          <div className={css.videobox}></div>
+          {/* <div className={css.videobox}></div> */}
+          <img src={RegImg} alt="" />
         </div>
 
         <div className={css.right}>
@@ -366,7 +370,7 @@ const Register = () => {
                   </span>
                 </div>
 
-              <Link to="/checkout"> <button className={css.proceedbtn}> proceed to checkout</button></Link>  
+              <Link to="/checkout"> <button type="submit" className={`${css.proceedbtn} ${css.buttonWithZIndex}`}> proceed to checkout</button></Link>  
                 </div>
               </form>
             )}

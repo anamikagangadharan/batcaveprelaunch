@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import css from "./Gift.module.css";
-import Gift1 from "../../assets/jeepnew1.png";
+import Gift1 from "../../assets/new-thar.svg";
 import Gift2 from "../../assets/gift2.svg";
 import Gift3 from "../../assets/gift33.png";
 
