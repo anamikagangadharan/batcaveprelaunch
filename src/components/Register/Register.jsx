@@ -84,6 +84,16 @@ const Register = () => {
   //   color: state===1 ? 'yellow;' : '#505050',
   // };
  
+  const [isFocused, setIsFocused] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
 
 
   return (
@@ -122,9 +132,20 @@ const Register = () => {
                     className={css.contactinp}
                     type="text"
                     required
-                    placeholder="Full Name"
+                   
                   />
-                  <div className={css.inputline}></div>
+                  <label className={css.label}>
+                  <span className={css.char} style={{ transitionDelay: '00ms' }}>F</span>
+        <span className={css.char} style={{ transitionDelay: '50ms' }}>U</span> 
+        <span className={css.char} style={{ transitionDelay: '100ms' }}>L</span>
+        <span  className={css.char}style={{ transitionDelay: '150ms' }}>L</span>
+        <span className={css.char} style={{ transitionDelay: '200ms' }}>N</span>
+        <span className={css.char} style={{ transitionDelay: '250ms' }}>A</span>
+        <span className={css.char} style={{ transitionDelay: '300ms' }}>M</span>
+        <span className={css.char} style={{ transitionDelay: '350ms' }}>E</span>
+      
+    </label>
+                  {/* <div className={css.inputline}></div> */}
                 </div>
 
                 <div className={css.inputset}>
@@ -133,11 +154,22 @@ const Register = () => {
                     value={formData.email}
                     onChange={handleChange}
                     className={css.contactinp}
-                    type="mail"
+                    type="email"
                     required
-                    placeholder="Email id"
+                    placeholder=""
                   />
-                  <div className={css.inputline}></div>
+                             <label className={css.label}>
+        <span className={css.char} style={{ transitionDelay: '00ms' }}>E</span>
+        <span className={css.char} style={{ transitionDelay: '50ms' }}>M</span> 
+        <span className={css.char} style={{ transitionDelay: '100ms' }}>A</span>
+        <span  className={css.char}style={{ transitionDelay: '150ms' }}>I</span>
+        <span className={css.char} style={{ transitionDelay: '200ms' }}>L</span>
+        <span className={css.char} style={{ transitionDelay: '250ms' }}></span>
+        <span className={css.char} style={{ transitionDelay: '300ms' }}>I</span>
+        <span className={css.char} style={{ transitionDelay: '350ms' }}>D</span>
+      
+    </label>
+                  {/* <div className={css.inputline}></div> */}
                 </div>
 
                 <div className={css.inputset}>
@@ -148,9 +180,25 @@ const Register = () => {
                     className={css.contactinp}
                     type="number"
                     required
-                    placeholder="mobile number"
+                    placeholder=""
                   />
-                  <div className={css.inputline}></div>
+                                         <label className={css.label}>
+        <span className={css.char} style={{ transitionDelay: '00ms' }}>M</span>
+        <span className={css.char} style={{ transitionDelay: '50ms' }}>O</span> 
+        <span className={css.char} style={{ transitionDelay: '100ms' }}>B</span>
+        <span  className={css.char}style={{ transitionDelay: '150ms' }}>I</span>
+        <span className={css.char} style={{ transitionDelay: '200ms' }}>L</span>
+        <span className={css.char} style={{ transitionDelay: '250ms' }}>E</span>
+        <span className={css.char} style={{ transitionDelay: '300ms' }}></span>
+        <span className={css.char} style={{ transitionDelay: '350ms' }}>N</span>
+        <span className={css.char} style={{ transitionDelay: '400ms' }}>U</span>
+        <span className={css.char} style={{ transitionDelay: '450ms' }}>M</span>
+        <span className={css.char} style={{ transitionDelay: '500ms' }}>B</span>
+        <span className={css.char} style={{ transitionDelay: '550ms' }}>E</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>R</span>
+      
+    </label>
+                  {/* <div className={css.inputline}></div> */}
                 </div>
 
                 <div className={css.inputset}>
@@ -161,9 +209,31 @@ const Register = () => {
                     className={css.contactinp}
                     type="text"
                     required
-                    placeholder="residential address"
+                    placeholder=""
                   />
-                  <div className={css.inputline}></div>
+                                                   <label className={css.label}>
+        <span className={css.char} style={{ transitionDelay: '00ms' }}>R</span>
+        <span className={css.char} style={{ transitionDelay: '50ms' }}>E</span> 
+        <span className={css.char} style={{ transitionDelay: '100ms' }}>S</span>
+        <span  className={css.char}style={{ transitionDelay: '150ms' }}>I</span>
+        <span className={css.char} style={{ transitionDelay: '200ms' }}>D</span>
+        <span className={css.char} style={{ transitionDelay: '250ms' }}>E</span>
+        <span className={css.char} style={{ transitionDelay: '300ms' }}>N</span>
+        <span className={css.char} style={{ transitionDelay: '350ms' }}>T</span>
+        <span className={css.char} style={{ transitionDelay: '400ms' }}>I</span>
+        <span className={css.char} style={{ transitionDelay: '450ms' }}>A</span>
+        <span className={css.char} style={{ transitionDelay: '500ms' }}>L</span>
+        <span className={css.char} style={{ transitionDelay: '550ms' }}></span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>A</span>
+        <span className={css.char} style={{ transitionDelay: '650ms' }}>D</span>
+        <span className={css.char} style={{ transitionDelay: '700ms' }}>D</span>
+        <span className={css.char} style={{ transitionDelay: '750ms' }}>R</span>
+        <span className={css.char} style={{ transitionDelay: '800ms' }}>E</span>
+        <span className={css.char} style={{ transitionDelay: '850ms' }}>S</span>
+        <span className={css.char} style={{ transitionDelay: '900ms' }}>S</span>
+      
+    </label>
+                  {/* <div className={css.inputline}></div> */}
                 </div>
 
                 <div className={css.inputset}>
@@ -174,9 +244,25 @@ const Register = () => {
                     className={css.contactinp}
                     type="text"
                     required
-                    placeholder="date of birth"
+                    placeholder=""
                   />
-                  <div className={css.inputline}></div>
+                                                     <label className={css.label}>
+        <span className={css.char} style={{ transitionDelay: '00ms' }}>D</span>
+        <span className={css.char} style={{ transitionDelay: '50ms' }}>A</span> 
+        <span className={css.char} style={{ transitionDelay: '100ms' }}>T</span>
+        <span  className={css.char}style={{ transitionDelay: '150ms' }}>E</span>
+        <span className={css.char} style={{ transitionDelay: '200ms' }}></span>
+        <span className={css.char} style={{ transitionDelay: '250ms' }}>O</span>
+        <span className={css.char} style={{ transitionDelay: '300ms' }}>F</span>
+        <span className={css.char} style={{ transitionDelay: '350ms' }}></span>
+        <span className={css.char} style={{ transitionDelay: '400ms' }}>B</span>
+        <span className={css.char} style={{ transitionDelay: '450ms' }}>I</span>
+        <span className={css.char} style={{ transitionDelay: '500ms' }}>R</span>
+        <span className={css.char} style={{ transitionDelay: '550ms' }}>T</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>H</span>
+      
+    </label>
+                  {/* <div className={css.inputline}></div> */}
                 </div>
 
                 <div className={css.inputset}>
@@ -187,7 +273,7 @@ const Register = () => {
                     required
                     className={css.contactinp}
                     id=""
-                    placeholder="City"
+                    placeholder=""
                   >
                     <option className={css.opt} value="" disabled>
                       {" "}
@@ -203,7 +289,8 @@ const Register = () => {
                       other
                     </option>
                   </select>
-                  <div className={css.inputline}></div>
+        
+                  {/* <div className={css.inputline}></div> */}
                 </div>
 
                 <div className={css.inputset}>
@@ -220,16 +307,16 @@ const Register = () => {
                       city
                     </option>
 
-                    <option className={css.opt} value="Bengaluru">
+                    {/* <option className={css.opt} value="Bengaluru">
                       Bengaluru
-                    </option>
+                    </option> */}
                     <option className={css.opt} value="Chennai">
                       Chennai
                     </option>
                     <option className={css.opt} value="Coimbatore">
                       Coimbatore
                     </option>
-                    <option className={css.opt} value="Hyderabad">
+                    {/* <option className={css.opt} value="Hyderabad">
                       Hyderabad
                     </option>
                     <option className={css.opt} value="Kochi">
@@ -243,9 +330,9 @@ const Register = () => {
                     </option>
                     <option className={css.opt} value="Visakhapatanam">
                       Visakhapatanam
-                    </option>
+                    </option> */}
                   </select>
-                  <div className={css.inputline}></div>
+                 
                 </div>
 
                 <button
@@ -266,6 +353,7 @@ const Register = () => {
                 <div className={css.form2top}>
                 
                 <div className={css.carinputset}>
+            
                   <div className={css.togglediv}>
                     <input
                       className={css.carinput}
@@ -290,7 +378,7 @@ const Register = () => {
                   </div>
                 </div>
 
-                <div className={css.carinputset}>
+                <div className={css.carinputsets}>
                   <div className={css.regnumbbox}>
                     <input
                       className={!isChecked ? css.inactive : css.carinput}
@@ -298,30 +386,77 @@ const Register = () => {
                       type="text"
                       name=""
                       id=""
-                      placeholder="Car registration number"
+                      placeholder=""
                     />
+                             <label className={css.label}>
+        <span className={css.char} style={{ transitionDelay: '00ms' }}>C</span>
+        <span className={css.char} style={{ transitionDelay: '50ms' }}>A</span> 
+        <span className={css.char} style={{ transitionDelay: '100ms' }}>R</span>
+        <span  className={css.char}style={{ transitionDelay: '150ms' }}></span>
+        <span className={css.char} style={{ transitionDelay: '200ms' }}>R</span>
+        <span className={css.char} style={{ transitionDelay: '250ms' }}>E</span>
+        <span className={css.char} style={{ transitionDelay: '300ms' }}>G</span>
+        <span className={css.char} style={{ transitionDelay: '350ms' }}>I</span>
+        <span className={css.char} style={{ transitionDelay: '400ms' }}>S</span>
+        <span className={css.char} style={{ transitionDelay: '450ms' }}>T</span>
+        <span className={css.char} style={{ transitionDelay: '500ms' }}>R</span>
+        <span className={css.char} style={{ transitionDelay: '550ms' }}>A</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>T</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>I</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>O</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>N</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}></span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>N</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>U</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>M</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>B</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>E</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>R</span>
+      
+    </label>
                     <img src={Tick} alt="" />
                   </div>
-                  <div className={css.inputline}> </div>
+         
+                  {/* <div className={css.inputline}> </div> */}
                   <div className={css.dummy}>
                   <span>Content to be added</span>
                 </div>
                 </div>
                 
 
-                <div className={css.carinputset}>
+                <div className={css.carinputsets}>
                   <input
                     className={css.carinput}
                     type="text"
                     name=""
                     id=""
-                    placeholder="Instagram id(opt)"
+                    placeholder=""
+                    onFocus={handleInputFocus}
+                    onChange={handleInputChange}
+                    value={inputValue}
                   />
-
-                  <div className={css.inputline}> </div>
+                               <label className={`${css.label} ${isFocused || inputValue ? css.labelFocused : ''}`}>
+        <span className={css.char} style={{ transitionDelay: '00ms' }}>I</span>
+        <span className={css.char} style={{ transitionDelay: '50ms' }}>N</span> 
+        <span className={css.char} style={{ transitionDelay: '100ms' }}>S</span>
+        <span  className={css.char}style={{ transitionDelay: '150ms' }}>T</span>
+        <span className={css.char} style={{ transitionDelay: '200ms' }}>A</span>
+        <span className={css.char} style={{ transitionDelay: '250ms' }}>G</span>
+        <span className={css.char} style={{ transitionDelay: '300ms' }}>R</span>
+        <span className={css.char} style={{ transitionDelay: '350ms' }}>A</span>
+        <span className={css.char} style={{ transitionDelay: '400ms' }}>M</span>
+        <span className={css.char} style={{ transitionDelay: '450ms' }}></span>
+        <span className={css.char} style={{ transitionDelay: '500ms' }}>I</span>
+        <span className={css.char} style={{ transitionDelay: '550ms' }}>D</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}></span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>(0PT)</span>
+       
+      
+    </label>
+                  {/* <div className={css.inputline}> </div> */}
                 </div>
 
-                <div className={css.carinputset}>
+                {/* <div className={css.carinputset}>
                   <select
                     name="size"
                     required
@@ -351,12 +486,12 @@ const Register = () => {
                     </option>
                   </select>
                   <div className={css.inputline}></div>
-                </div>
+                </div> */}
 
-                <div className={css.btns}>
+                {/* <div className={css.btns}>
                   <button className={css.yrbtn}>yearly subscription</button>
                   <button className={css.labtn}>Lifetime access</button>
-                </div>
+                </div> */}
 
                 </div>
 

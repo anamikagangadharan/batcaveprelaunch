@@ -16,7 +16,7 @@ const Checkout = () => {
 
        <div className={css.wrap}>
 
-     <Link to ="/">  <div className={css.wtop}>
+     <Link to ="/register">  <div className={css.wtop}>
         <img src={Barrow} alt="" />
           <span>Back</span> 
         </div> </Link> 

@@ -110,7 +110,7 @@ cursor: pointer;
   height: 500px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   padding: 4% 4%;
 }
 .inputset {
@@ -118,6 +118,7 @@ cursor: pointer;
   flex-direction: column;
   gap: 0.4rem;
   width: 100%;
+  position: relative;
 }
 .contactinp {
   background: transparent;
@@ -134,7 +135,75 @@ cursor: pointer;
   display: flex;
   justify-content: flex-start;
  width: 100%;
+/* padding: 4% 0; */
+padding: 15px 0;
+border-bottom:1px solid blue ;
+ 
 }
+
+
+
+/* new */
+
+
+/* .form-control */
+.inputset {
+  position: relative;
+  /* margin: 6px 0 6px; */
+  width: 100%;
+}
+
+/* .form-control input */
+.inputset input {
+  background-color: transparent;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #fff;
+  border-bottom:1px solid blue ;
+}
+
+/* .form-control input:focus, .form-control input:valid */
+.inputset input:focus,
+.inputset input:valid {
+  outline: 0;
+ 
+}
+
+/* .form-control label */
+.inputset label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
+
+/* .form-control label span */
+.inputset label span {
+  display: inline-block;
+  font-size: 16px;
+  min-width: 5px;
+  color: #666;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-family: k2D;
+}
+
+/* .form-control input:focus+label span, .form-control input:valid+label span */
+.inputset input:focus + label span,
+.inputset input:valid + label span {
+  color: lightblue;
+  transform: translateY(-20px);
+}
+
+/* .char */
+.char {
+  transition-delay: 0ms; /* Default transition delay */
+}
+
+/* new */
+
 .inputline {
   width: 100%;
   height: 1px;
@@ -202,6 +271,13 @@ stroke: #007AFF; */
   gap: 0.4rem;
   width: 100%;
 }
+.carinputsets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
 .carinput {
   background: transparent;
   border: none;
@@ -217,7 +293,88 @@ stroke: #007AFF; */
   display: flex;
   justify-content: flex-start;
   width: 100%;
+ 
 }
+
+/* new2starts */
+
+
+
+/* .form-control */
+.carinputsets {
+  position: relative;
+  /* margin: 6px 0 6px; */
+  width: 100%;
+}
+
+/* .form-control input */
+.carinputsets input {
+  background-color: transparent;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #fff;
+  border-bottom:1px solid blue ;
+  filter: blur(1px);
+}
+
+/* .form-control input:focus, .form-control input:valid */
+.carinputsets input:focus,
+.carinputsets input:valid {
+  outline: 0;
+ 
+}
+
+/* .form-control label */
+.carinputsets label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
+.carinputsets label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.label{
+  /* position: relative; */
+} 
+
+
+/* .form-control label span */
+.carinputsets label span {
+  display: inline-block;
+  font-size: 16px;
+  min-width: 5px;
+  color: #666;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-family: k2D;
+}
+
+/* .form-control input:focus+label span, .form-control input:valid+label span */
+.carinputsets input:focus + label span,
+.carinputsets input:valid + label span {
+  color: lightblue;
+  transform: translateY(-20px);
+}
+/* .carinputsets input:focus + label span,
+.carinputsets input:valid + label span {
+  color: lightblue;
+  transform: translateY(-20px);
+} */
+
+/* .char */
+.char {
+  transition-delay: 0ms; /* Default transition delay */
+}
+
+
+/* new2end */
 .inputline {
   /* width: 80%;
   height: 1px; */

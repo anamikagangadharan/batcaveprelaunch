@@ -10,7 +10,7 @@ const Countdown = () => {
     const [seconds, setSeconds] = useState(0);
   
     // Set the target date and time for the countdown
-    const targetDate = new Date("2023-10-14T11:00:00").getTime();
+    const targetDate = new Date("2023-10-18T10:00:00").getTime();
   
     useEffect(() => {
       const interval = setInterval(() => {
