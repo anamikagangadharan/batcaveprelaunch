@@ -73,6 +73,10 @@ letter-spacing: 1.8px;
     align-items: center;
     cursor: pointer;
 }
+.pagination{
+    -webkit-tap-highlight-color: transparent; /* Webkit browsers */
+    tap-highlight-color: transparent; /* Modern browsers */
+  }
 
 .active{
     fill: #007AFF;

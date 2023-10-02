@@ -1,5 +1,6 @@
 import React from 'react'
 import css from "./PageNotFound.module.css"
+import { Link } from 'react-router-dom'
 
 const PageNotFound = () => {
   return (
@@ -12,7 +13,7 @@ const PageNotFound = () => {
            </div>
 
            <div className={css.div2}>
-            <button className={css.btohomebtn}>BACK TO HOME</button>
+        <Link to ="/"> <button className={css.btohomebtn}>BACK TO HOME</button> </Link>    
             <span>Follow us on instagram to hop into our giveaway</span>
            
            </div>

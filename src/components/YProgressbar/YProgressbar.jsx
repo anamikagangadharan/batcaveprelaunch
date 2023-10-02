@@ -28,11 +28,13 @@ const isHomePage = location.pathname ==="/"
 
 
   return (
+    <div className={css.progresswrap}>
     <div className={isHomePage? "" + css.progresscontainer : ""}>
       <div
         className={css.progress}
-        style={{ height: `${scrollPercentage}%` }}
-      ></div> 
+        style={{ height: `${scrollPercentage}%` }}>
+        </div> 
+    </div>
     </div>
   )
 }

@@ -126,6 +126,10 @@ cursor: pointer;
 }
 
 @media screen and (max-width:768px){
+  .container{
+    background-image: url(../../assets/bg-mobile.png);
+}
+
   .wrap{
       padding-bottom: 2.8rem;
      

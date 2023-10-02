@@ -86,6 +86,10 @@ line-height: 19px; /* 118.75% */
 letter-spacing: 0.96px;
 }
 @media screen and (max-width:768px){
+    .container{
+        background-image: url(../../assets/bg-mobile.png);
+    }
+
     .wrap{
         padding-bottom: 2.8rem;
        

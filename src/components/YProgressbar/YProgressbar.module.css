@@ -1,11 +1,21 @@
+.progresswrap{
+  position: fixed;
+  height: 100%;
+  width: 3px;
+  top: 55%;
+  right: 5%;
+  bottom: 0;
+  display: flex;
+ 
+}
 .progresscontainer{
-    position: fixed;
+    /* position: fixed; */
     top: 55%;
     right: 5%;
     bottom: 0;
     width: 3px;
-height: 200px;
-flex-shrink: 0;
+   height: 200px;
+   flex-shrink: 0;
     background-color: #7c7575;
     display: flex;
     /* justify-content: flex-end;
@@ -15,14 +25,12 @@ flex-shrink: 0;
     filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.29));
     z-index: 4;
   }
-  .pgchidden{
-    display: none;
-  }
+ 
   .progress{
     width: 100%;
     background-color: #007bff;
     transition: height 0.1s ease-in-out;
     filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.29));
-   
+    border-radius: 20px;
   }
   
