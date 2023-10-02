@@ -314,10 +314,11 @@ stroke: #007AFF; */
   display: block;
   width: 100%;
   padding: 15px 0;
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: 14px;
   color: #fff;
   border-bottom:1px solid blue ;
-  filter: blur(1px);
+
 }
 
 /* .form-control input:focus, .form-control input:valid */
@@ -354,6 +355,7 @@ stroke: #007AFF; */
   color: #666;
   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   font-family: k2D;
+  filter: blur(1px);
 }
 
 /* .form-control input:focus+label span, .form-control input:valid+label span */
@@ -361,6 +363,7 @@ stroke: #007AFF; */
 .carinputsets input:valid + label span {
   color: lightblue;
   transform: translateY(-20px);
+  filter: blur(0px);
 }
 /* .carinputsets input:focus + label span,
 .carinputsets input:valid + label span {
