@@ -1,15 +1,6 @@
-.progresswrap{
-  position: fixed;
-  height: 100%;
-  width: 3px;
-  top: 55%;
-  right: 5%;
-  bottom: 0;
-  display: flex;
- 
-}
+
 .progresscontainer{
-    /* position: fixed; */
+    position: fixed;
     top: 55%;
     right: 5%;
     bottom: 0;
@@ -32,5 +23,11 @@
     transition: height 0.1s ease-in-out;
     filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.29));
     border-radius: 20px;
+  }
+  @media screen and (max-width:768px){
+    .progresscontainer{
+      height: 167px;
+      top: 277px;
+    }
   }
   
