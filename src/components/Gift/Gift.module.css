@@ -57,7 +57,7 @@ letter-spacing: 1.8px;
 /* div2 */
 .div2{
     z-index: 2;
-    height: 250px;
+    height: 185px;
 }
 .div2>img{
     position: inherit;

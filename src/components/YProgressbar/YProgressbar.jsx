@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import css from "./YProgressbar.module.css"
+import { useLocation } from 'react-router-dom';
+
 
 const YProgressbar = () => {
     const [scrollPercentage, setScrollPercentage] = useState(0);
 
+const location=useLocation()
 
+const isHomePage = location.pathname ==="/"
     
   useEffect(() => {
     const updateScrollPercentage = () => {
@@ -24,11 +28,11 @@ const YProgressbar = () => {
 
 
   return (
-    <div className={css.progresscontainer}>
+    <div className={isHomePage? "" + css.progresscontainer : ""}>
       <div
         className={css.progress}
         style={{ height: `${scrollPercentage}%` }}
-      ></div>
+      ></div> 
     </div>
   )
 }

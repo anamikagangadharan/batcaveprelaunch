@@ -39,8 +39,10 @@ const Cards = () => {
             <span>BATCAVE OGs</span>
             <div className={css.cardline}></div>
             <div className={css.cities}>
-             <span> Coimbatore, Chennai, Bengaluru, Mysore, Kochi, Trivandrum,
-               Hyderabad, Visakhapatnam 
+             <span>
+             Elevate Your Car Enthusiast Status with the Batcave OGs Membership Card. 
+             An OG is the Original Gearhead, and This Card Grants You Access to Exclusive
+              Events, Savings, and Automotive Adventure!
                
                </span>
             </div>
@@ -72,8 +74,9 @@ const Cards = () => {
           {/* top */}
 
  
-            <div className={css.cardline}></div>
+            {/* <div className={css.cardline}></div> */}
             {/* bottom */}
+            <div className={css.bottomwrap}>
             <div className={css.bottomcontent}>
            {cards===0 &&   <motion.span
              initial={{ opacity: 0}}
@@ -97,8 +100,7 @@ Get VIP entry to thrilling car meets and rides.</motion.span> }
       initial={{ opacity: 0}}
       whileInView={{ opacity: 1}}
        transition={{ duration: 1.4 }}>
-      Lifetime Access to Club Facilities: Batcave sets up dedicated car club facilities,
-       and members get lifetime free access.</motion.span>}
+      Lifetime Access to Club Facilities: Batcave sets up dedicated car club facilities, & members get lifetime access.</motion.span>}
 
        {cards===4 && <motion.span
          initial={{ opacity: 0}}
@@ -112,8 +114,9 @@ Get VIP entry to thrilling car meets and rides.</motion.span> }
 
             <div className={css.newbottom}>
             <span>Pricing</span>
-            <span>₹ 49,999 /- (Lifetime access)</span>
+            {/* <span>₹ 49,999 /- (Lifetime access)</span> */}
             <span>₹ 14,999 /- (Yearly subscription)</span>
+            </div>
             </div>
 
           

@@ -35,6 +35,12 @@ height: 221.634px;
 flex-shrink: 0;
 } */
 @media screen and (max-width:768px){
+    .container{
+        position: absolute;
+        background-color: #050505;
+        bottom: auto;
+        padding: 4% 6%;
+    }
     .left>:nth-child(1){
         font-size: 13px;
         letter-spacing: 0.84px;

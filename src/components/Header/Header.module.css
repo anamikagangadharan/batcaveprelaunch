@@ -7,6 +7,32 @@
     padding: 0% 6%;
     width: 100%;
     z-index: 100;
+    height: 80px;
+ 
+}
+.newcontainer{
+   
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 6%;
+    width: 100%;
+    z-index: 100;
+    height: 80px;
+    background-color: #050505;
+    animation: fadeIn 1s ease-in both;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 .left{
     display: flex;
@@ -16,6 +42,7 @@
 .left>a>img{
     /* margin-left: -6%; */
     margin-left: -25%;
+    margin-top: 1rem;
 }
 .right{
     display: flex;

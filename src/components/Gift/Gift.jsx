@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import css from "./Gift.module.css";
-import Gift1 from "../../assets/gift1.svg";
+import Gift1 from "../../assets/jeepnew1.png";
 import Gift2 from "../../assets/gift2.svg";
 import Gift3 from "../../assets/gift33.png";
 
@@ -47,7 +47,7 @@ const Gift = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext();
-    }, 2000); // Change content every 5 seconds
+    }, 4000); // Change content every 5 seconds
 
     return () => clearInterval(timer); // Cleanup the timer on unmount
   }, []);
