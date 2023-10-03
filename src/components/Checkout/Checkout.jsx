@@ -11,6 +11,12 @@ const Checkout = () => {
 
     const [opened,setOpened]=useState(false)
     const [sopened,setsOpened]=useState(false)
+    const [inputValue, setInputValue] = useState(''); // Define inputValue state
+
+    const handleInputChange = (e) => {
+      setInputValue(e.target.value); // Update inputValue when the input changes
+    };
+  
   return (
     <div className={css.container}>
 
@@ -32,31 +38,98 @@ const Checkout = () => {
           </div>
           <div className={css.line}>
             <span>COST</span>
-            <span>₹ 15,000</span>
+            <span>₹ 14,999</span>
           </div>
 
           <div className={css.checkoutform}>
           <div className={css.inputset}>
-                  <input className={css.contactinp} type="text" required placeholder="Full Name" />
-                  <div className={css.inputline}></div>
+                  <input className={css.contactinp} type="text" required placeholder=" " />
+                  <label className={css.label}>
+                  <span className={css.char} style={{ transitionDelay: '00ms' }}>F</span>
+        <span className={css.char} style={{ transitionDelay: '50ms' }}>U</span> 
+        <span className={css.char} style={{ transitionDelay: '100ms' }}>L</span>
+        <span  className={css.char}style={{ transitionDelay: '150ms' }}>L</span>
+        <span  className={css.char}style={{ transitionDelay: '150ms' }}></span>
+        <span className={css.char} style={{ transitionDelay: '200ms' }}>N</span>
+        <span className={css.char} style={{ transitionDelay: '250ms' }}>A</span>
+        <span className={css.char} style={{ transitionDelay: '300ms' }}>M</span>
+        <span className={css.char} style={{ transitionDelay: '350ms' }}>E</span>
+      
+    </label>
+                  {/* <div className={css.inputline}></div> */}
         </div>
           <div className={css.inputset}>
-                  <input className={css.contactinp} type="text" required placeholder="Mobile" />
-                  <div className={css.inputline}></div>
+                  <input className={css.contactinp} type="text" required placeholder=" " />
+                  <label className={css.label}>
+        <span className={css.char} style={{ transitionDelay: '00ms' }}>M</span>
+        <span className={css.char} style={{ transitionDelay: '50ms' }}>O</span> 
+        <span className={css.char} style={{ transitionDelay: '100ms' }}>B</span>
+        <span  className={css.char}style={{ transitionDelay: '150ms' }}>I</span>
+        <span className={css.char} style={{ transitionDelay: '200ms' }}>L</span>
+        <span className={css.char} style={{ transitionDelay: '250ms' }}>E</span>
+        <span className={css.char} style={{ transitionDelay: '300ms' }}></span>
+        <span className={css.char} style={{ transitionDelay: '350ms' }}>N</span>
+        <span className={css.char} style={{ transitionDelay: '400ms' }}>U</span>
+        <span className={css.char} style={{ transitionDelay: '450ms' }}>M</span> 
+        <span className={css.char} style={{ transitionDelay: '500ms' }}>B</span>
+        <span className={css.char} style={{ transitionDelay: '550ms' }}>E</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>R</span>
+      
+    </label>
+                  {/* <div className={css.inputline}></div> */}
         </div>
           <div className={css.inputset}>
-                  <input className={css.contactinp} type="text" required placeholder="Shipping address" />
-                  <div className={css.inputline}></div>
+                  <input className={css.contactinp} type="text" required placeholder="" />
+                  <label className={css.label}>
+        <span className={css.char} style={{ transitionDelay: '00ms' }}>S</span>
+        <span className={css.char} style={{ transitionDelay: '50ms' }}>H</span> 
+        <span className={css.char} style={{ transitionDelay: '100ms' }}>I</span>
+        <span  className={css.char}style={{ transitionDelay: '150ms' }}>P</span>
+        <span className={css.char} style={{ transitionDelay: '200ms' }}>P</span>
+        <span className={css.char} style={{ transitionDelay: '250ms' }}>I</span>
+        <span className={css.char} style={{ transitionDelay: '300ms' }}>N</span>
+        <span className={css.char} style={{ transitionDelay: '350ms' }}>G</span>
+        <span className={css.char} style={{ transitionDelay: '400ms' }}></span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>A</span>
+        <span className={css.char} style={{ transitionDelay: '650ms' }}>D</span>
+        <span className={css.char} style={{ transitionDelay: '700ms' }}>D</span>
+        <span className={css.char} style={{ transitionDelay: '750ms' }}>R</span>
+        <span className={css.char} style={{ transitionDelay: '800ms' }}>E</span>
+        <span className={css.char} style={{ transitionDelay: '850ms' }}>S</span>
+        <span className={css.char} style={{ transitionDelay: '900ms' }}>S</span>
+      
+    </label>
+                  {/* <div className={css.inputline}></div> */}
                <div className={css.checkboxdiv}> <input className={css.check} type="checkbox"  />
-                  <label className={css.shippinglabel} htmlFor="">My shipping address same as my residential address</label>
+                  <p className={css.shippinglabel} htmlFor="">My shipping address same as my residential address</p>
                   </div>  
 
   <div className={css.inputset}>
                   <div className={css.applydiv}>
-                    <input className={css.contactinp} type="text" placeholder='apply coupon' />
-                    <img src={Tick} alt="" />
+                    <input className={css.contactinp} type="text" placeholder="" required
+                    onChange={(e) => handleInputChange(e)}/>
+                   
+                              <label className={css.label}>
+                              {/* <span className={`${css.char} ${inputValue ? css.showImage : ''}`} style={{ transitionDelay: '00ms' }}>Abbb</span> */}
+
+        <span className={css.char} style={{ transitionDelay: '00ms' }}>A</span>
+        <span className={css.char} style={{ transitionDelay: '50ms' }}>P</span> 
+        <span className={css.char} style={{ transitionDelay: '100ms' }}>P</span>
+        <span  className={css.char}style={{ transitionDelay: '150ms' }}>L</span>
+        <span className={css.char} style={{ transitionDelay: '200ms' }}>Y</span>
+        <span className={css.char} style={{ transitionDelay: '250ms' }}></span>
+        <span className={css.char} style={{ transitionDelay: '300ms' }}>C</span>
+        <span className={css.char} style={{ transitionDelay: '350ms' }}>O</span>
+        <span className={css.char} style={{ transitionDelay: '400ms' }}>U</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>P</span>
+        <span className={css.char} style={{ transitionDelay: '650ms' }}>O</span>
+        <span className={css.char} style={{ transitionDelay: '700ms' }}>N</span>
+      
+    </label>
+    <img className={`${css.tickImage} ${inputValue ? css.showImage : css.hideImage}`} src={Tick} alt="" />
                   </div>
-                  <div className={css.inputline}></div>
+        
+                  {/* <div className={css.inputline}></div> */}
 
                   </div>
         </div>
@@ -74,21 +147,21 @@ const Checkout = () => {
 
             <div className={css.line}>
                 <span>membership cost</span>
-                <span>₹ 15,000</span>
+                <span>₹ 14,999</span>
             </div>
-            <div className={css.line}>
+            {/* <div className={css.line}>
                 <span>standard discount</span>
                 <span>-₹ 3,000</span>
-            </div>
+            </div> */}
             <div className={css.line}>
                 <span>coupon</span>
-                <span>-₹ 2,000</span>
+                <span>₹ 14,999</span>
             </div>
             <div className={css.plainline}></div>
 
             <div className={css.gtotal}>
                 <span>grand total</span>
-                <span>₹ 10,000</span>
+                <span>₹ 13,001</span>
             </div>
 
             <span className={css.agreespan}>by clicking, I AGREE WITH THE <span onClick={()=>setOpened(!opened)} className={css.spaninside}>refund policy </span> &  <span onClick={()=>setsOpened(!opened)} className={css.spaninside}>shipping policy </span></span>
@@ -106,9 +179,9 @@ const Checkout = () => {
 
        {/* refund policy popup */}
      {opened && <motion.div 
-     initial={{opacity:0,x:130}}
-     whileInView={{opacity:1, x:0}}
-     transition={{duration:1.5}}
+     initial={{x:130}}
+     whileInView={{ x:0}}
+     transition={{duration:0.8}}
      className={css.refund} >
         <div className={css.head}>
             <span>Refund policy</span>
@@ -149,9 +222,9 @@ const Checkout = () => {
        {/* shipping policy */}
 
        {sopened && <motion.div 
-     initial={{opacity:0,x:130}}
-     whileInView={{opacity:1, x:0}}
-     transition={{duration:1.5}}
+     initial={{x:130}}
+     whileInView={{ x:0}}
+     transition={{duration:0.8}}
      className={css.shipping} >
         <div className={css.head}>
             <span>Shipping policy</span>

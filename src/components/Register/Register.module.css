@@ -191,7 +191,7 @@ border-bottom:1px solid blue ;
 /* .form-control label span */
 .inputset label span {
   display: inline-block;
-  font-size: 16px;
+  font-size: 16px; 
   min-width: 5px;
   color: #666;
   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -588,11 +588,12 @@ width: 48%;
   /* width: 700px; */
   width: 60%;
   height: auto;
-  position: absolute;
+  position: fixed;
   background: rgba(0, 0, 0, 0.50);
   backdrop-filter: blur(77px);
-  padding: 4% 2%;
+  padding: 2% 2%;
   right: 0;
+  top: 0;
   height: 100%;
   overflow-y: scroll;
   z-index: 101;
@@ -625,7 +626,7 @@ font-style: normal;
 font-weight: 400;
 line-height: 20px; /* 142.857% */
 letter-spacing: 0.84px;
-margin-top: 0.6rem;
+margin-top: 1.6rem;
 margin-bottom: 0.6rem;
 }
 .tcontent{
@@ -646,11 +647,12 @@ letter-spacing: 0.84px;
   /* width: 700px; */
   width: 60%;
   height: auto;
-  position: absolute;
+  position: fixed;
   background: rgba(0, 0, 0, 0.50);
   backdrop-filter: blur(77px);
-  padding: 4% 2%;
+  padding: 2% 2%;
   right: 0;
+  top: 0;
   height: 100%;
   overflow-y: scroll;
   z-index: 101;
@@ -683,7 +685,7 @@ font-style: normal;
 font-weight: 400;
 line-height: 20px; /* 142.857% */
 letter-spacing: 0.84px;
-margin-top: 0.6rem;
+margin-top: 1.6rem;
 margin-bottom: 0.6rem;
 }
 .pcontent{
@@ -696,7 +698,10 @@ line-height: 20px; /* 142.857% */
 letter-spacing: 0.84px;
 /* margin-top: 0.6rem; */
 }
-
+.forfade{
+  opacity: 0.6;
+  
+}
 
 
 @media screen and (max-width:768px){

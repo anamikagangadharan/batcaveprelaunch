@@ -53,8 +53,21 @@ const Register = () => {
   const [isValidEmail, setIsValidEmail] = useState(true);
   const [number, setNumber] = useState('');
   const [isValidNumber, setIsValidNumber] = useState(true);
+
   const handleChange = (e) => {
+
+    
+
     const { name, value } = e.target;
+
+   
+
+  
+
+
+
+ 
+
     setFormData({ ...formData, [name]: value });
     const inputEmail = e.target.value;
     setEmail(inputEmail);
@@ -63,14 +76,9 @@ const Register = () => {
     
     setIsValidEmail(emailPattern.test(inputEmail));
 
-    //  const inputNumber = e.target.value;
-
-    // const cleanedNumber = inputNumber.replace(/[^-0-9]/g, '');
-    // setNumber(cleanedNumber);
-
-   
-    // setIsValidNumber(cleanedNumber.length <= 10);
   };
+  
+
  
   function isFormFilled(formData) {
     // Implement your form validation logic here
@@ -204,6 +212,7 @@ const Register = () => {
         <span className={css.char} style={{ transitionDelay: '50ms' }}>U</span> 
         <span className={css.char} style={{ transitionDelay: '100ms' }}>L</span>
         <span  className={css.char}style={{ transitionDelay: '150ms' }}>L</span>
+        <span  className={css.char}style={{ transitionDelay: '150ms' }}></span>
         <span className={css.char} style={{ transitionDelay: '200ms' }}>N</span>
         <span className={css.char} style={{ transitionDelay: '250ms' }}>A</span>
         <span className={css.char} style={{ transitionDelay: '300ms' }}>M</span>
@@ -316,6 +325,8 @@ const Register = () => {
                     type="text"
                     required
                     placeholder=""
+                    maxLength="8"
+  pattern="\d{2}/\d{2}/\d{2}"
                   />
                                                      <label className={css.label}>
         <span className={css.char} style={{ transitionDelay: '00ms' }}>D</span>
@@ -471,6 +482,7 @@ const Register = () => {
                   <div className={css.regnumbbox}>
                     <input
                       className={!isChecked ? css.inactive : css.carinput}
+                      // className={ `${css.carinput} ${css.forfade}`}
                       disabled={!isChecked}
                       type="text"
                       name=""
@@ -478,29 +490,29 @@ const Register = () => {
                       placeholder=""
                     />
                              <label className={css.label}>
-        <span className={css.char} style={{ transitionDelay: '00ms' }}>C</span>
-        <span className={css.char} style={{ transitionDelay: '50ms' }}>A</span> 
-        <span className={css.char} style={{ transitionDelay: '100ms' }}>R</span>
-        <span  className={css.char}style={{ transitionDelay: '150ms' }}></span>
-        <span className={css.char} style={{ transitionDelay: '200ms' }}>R</span>
-        <span className={css.char} style={{ transitionDelay: '250ms' }}>E</span>
-        <span className={css.char} style={{ transitionDelay: '300ms' }}>G</span>
-        <span className={css.char} style={{ transitionDelay: '350ms' }}>I</span>
-        <span className={css.char} style={{ transitionDelay: '400ms' }}>S</span>
-        <span className={css.char} style={{ transitionDelay: '450ms' }}>T</span>
-        <span className={css.char} style={{ transitionDelay: '500ms' }}>R</span>
-        <span className={css.char} style={{ transitionDelay: '550ms' }}>A</span>
-        <span className={css.char} style={{ transitionDelay: '600ms' }}>T</span>
-        <span className={css.char} style={{ transitionDelay: '600ms' }}>I</span>
-        <span className={css.char} style={{ transitionDelay: '600ms' }}>O</span>
-        <span className={css.char} style={{ transitionDelay: '600ms' }}>N</span>
-        <span className={css.char} style={{ transitionDelay: '600ms' }}></span>
-        <span className={css.char} style={{ transitionDelay: '600ms' }}>N</span>
-        <span className={css.char} style={{ transitionDelay: '600ms' }}>U</span>
-        <span className={css.char} style={{ transitionDelay: '600ms' }}>M</span>
-        <span className={css.char} style={{ transitionDelay: '600ms' }}>B</span>
-        <span className={css.char} style={{ transitionDelay: '600ms' }}>E</span>
-        <span className={css.char} style={{ transitionDelay: '600ms' }}>R</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '00ms' }}>C</span>
+        <span className={`${css.char} ${css.forfade}`}  style={{ transitionDelay: '50ms' }}>A</span> 
+        <span className={`${css.char} ${css.forfade}`}  style={{ transitionDelay: '100ms' }}>R</span>
+        <span  className={`${css.char} ${css.forfade}`}style={{ transitionDelay: '150ms' }}></span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '200ms' }}>R</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '250ms' }}>E</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '300ms' }}>G</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '350ms' }}>I</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '400ms' }}>S</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '450ms' }}>T</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '500ms' }}>R</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '550ms' }}>A</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '600ms' }}>T</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '600ms' }}>I</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '600ms' }}>O</span>
+        <span className={`${css.char} ${css.forfade}`}style={{ transitionDelay: '600ms' }}>N</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '600ms' }}></span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '600ms' }}>N</span>
+        <span className={`${css.char} ${css.forfade}`}style={{ transitionDelay: '600ms' }}>U</span>
+        <span className={`${css.char} ${css.forfade}`}style={{ transitionDelay: '600ms' }}>M</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '600ms' }}>B</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '600ms' }}>E</span>
+        <span className={`${css.char} ${css.forfade}`}style={{ transitionDelay: '600ms' }}>R</span>
       
     </label>
                     <img src={Tick} alt="" />
@@ -515,7 +527,7 @@ const Register = () => {
 
                 <div className={css.carinputsets}>
                   <input
-                    className={css.carinput}
+                    className={ css.carinput}
                     // className={css.carinputoptional}
                     type="text"
                     name=""
@@ -610,9 +622,9 @@ const Register = () => {
       {/* terms and conditions */}
 
       {openedt && <motion.div className={css.tandc}
-       initial={{opacity:0,x:130}}
-       whileInView={{opacity:1, x:0}}
-       transition={{duration:1.5}}
+       initial={{x:130}}
+       whileInView={{ x:0}}
+       transition={{duration:0.8}}
       ><div className={css.head}>
       <span>Terms & conditions</span>
       <img onClick={()=>setOpenedt(false)} src={Hclose} alt="" />
@@ -667,9 +679,9 @@ const Register = () => {
 
 {/* privacy */} 
 {openedp && <motion.div className={css.privacypolicy}
-       initial={{opacity:0,x:130}}
-       whileInView={{opacity:1, x:0}}
-       transition={{duration:1.5}}
+       initial={{x:130}}
+       whileInView={{ x:0}}
+       transition={{duration:0.8}}
       >
         <div className={css.head}>
       <span>privacy policy</span>
