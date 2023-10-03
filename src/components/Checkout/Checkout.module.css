@@ -442,6 +442,12 @@ border: 1px solid #666 !important;
   letter-spacing: 0.84px;
   /* margin-top: 1rem; */
 }
+.inputset.hasContent label span{
+  color:#666666;
+  font-size: 12px;
+  transform: translateY(-20px);
+}
+
 
 @media screen and (max-width: 768px) {
   .wrap {
@@ -499,6 +505,10 @@ border: 1px solid #666 !important;
   .inputset input:focus + label span,
 .inputset input:valid + label span{
   font-size: 10px;
+}
+.inputset.hasContent label span{
+  font-size: 10px;
+
 }
 
 

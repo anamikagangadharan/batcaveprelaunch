@@ -12,9 +12,15 @@ const Checkout = () => {
     const [opened,setOpened]=useState(false)
     const [sopened,setsOpened]=useState(false)
     const [inputValue, setInputValue] = useState(''); // Define inputValue state
+    const [inputValueApply, setInputValueApply] = useState(''); // Define inputValue state
 
+
+    
     const handleInputChange = (e) => {
       setInputValue(e.target.value); // Update inputValue when the input changes
+    };
+    const handleInputChangeApply = (e) => {
+      setInputValueApply(e.target.value); // Update inputValue when the input changes
     };
   
   return (
@@ -58,8 +64,13 @@ const Checkout = () => {
     </label>
                   {/* <div className={css.inputline}></div> */}
         </div>
-          <div className={css.inputset}>
-                  <input className={css.contactinp} type="text" required placeholder=" " />
+          <div className={`${css.inputset} ${inputValue ? css.hasContent : ""}`}>
+                  <input className={css.contactinp} 
+                   name="number"
+                   value={inputValue} 
+                   onChange={handleInputChange}
+                  type="text" required placeholder=" " 
+                  pattern="[1-9]{1}[0-9]{9}"  maxLength="10"/>
                   <label className={css.label}>
         <span className={css.char} style={{ transitionDelay: '00ms' }}>M</span>
         <span className={css.char} style={{ transitionDelay: '50ms' }}>O</span> 
@@ -107,7 +118,8 @@ const Checkout = () => {
   <div className={css.inputset}>
                   <div className={css.applydiv}>
                     <input className={css.contactinp} type="text" placeholder="" required
-                    onChange={(e) => handleInputChange(e)}/>
+                    value={inputValueApply}
+                    onChange={(e) => handleInputChangeApply(e)}/>
                    
                               <label className={css.label}>
                               {/* <span className={`${css.char} ${inputValue ? css.showImage : ''}`} style={{ transitionDelay: '00ms' }}>Abbb</span> */}
