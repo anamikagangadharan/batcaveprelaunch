@@ -127,6 +127,7 @@ border: 1px solid #666 !important;
 .applydiv {
   display: flex;
   justify-content: space-between;
+  margin-top: 1rem;
 }
 
 .right {
@@ -470,7 +471,7 @@ border: 1px solid #666 !important;
     text-align: left;
   }
   .applydiv {
-    margin-top: 0.8rem;
+    margin-top: 0rem;
   }
 
   .right {

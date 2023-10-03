@@ -65,33 +65,39 @@ const Register = () => {
 
 
 
-    // dob12am
-
-    const inputDate = e.target.value;
-
-    // Remove any non-numeric characters
-    const numericDate = inputDate.replace(/[^0-9]/g, '');
-
-    // Format the date with slashes
-    if (numericDate.length <= 2) {
-      // Format: dd
-      setDate(numericDate);
-    } else if (numericDate.length <= 4) {
-      // Format: dd/mm
-      setDate(`${numericDate.slice(0, 2)}/${numericDate.slice(2)}`);
-    } else if (numericDate.length <= 6) {
-      // Format: dd/mm/yy
-      setDate(
-        `${numericDate.slice(0, 2)}/${numericDate.slice(2, 4)}/${numericDate.slice(4, 6)}`
-      );
-    } else if (numericDate.length <= 8) {
-      // Format: dd/mm/yyyy
-      setDate(
-        `${numericDate.slice(0, 2)}/${numericDate.slice(2, 4)}/${numericDate.slice(4, 8)}`
-      );
-    }
+   
   };
 
+  const handleDateChange = (e) => {
+    const inputDate = e.target.value;
+
+
+   // dob12am this is latest, worked
+
+   
+
+   // Remove any non-numeric characters
+   const numericDate = inputDate.replace(/[^0-9]/g, '');
+
+   // Format the date with slashes
+   if (numericDate.length <= 2) {
+     // Format: dd
+     setDate(numericDate);
+   } else if (numericDate.length <= 4) {
+     // Format: dd/mm
+     setDate(`${numericDate.slice(0, 2)}/${numericDate.slice(2)}`);
+   } else if (numericDate.length <= 6) {
+     // Format: dd/mm/yy
+     setDate(
+       `${numericDate.slice(0, 2)}/${numericDate.slice(2, 4)}/${numericDate.slice(4, 6)}`
+     );
+   } else if (numericDate.length <= 8) {
+     // Format: dd/mm/yyyy
+     setDate(
+       `${numericDate.slice(0, 2)}/${numericDate.slice(2, 4)}/${numericDate.slice(4, 8)}`
+     );
+   }
+  }
   
   function isFormFilled(formData) {
     // Implement your form validation logic here
@@ -162,24 +168,9 @@ const Register = () => {
     dob: "",
   });
 
-  const handleInputChangeDate = (e) => {
-    const { name, value } = e.target;
-    // Check if the input value matches the date format (dd/mm/yy) before updating the state
-    if (/^\d{0,2}\/\d{0,2}\/\d{0,2}$/.test(value)) {
-      setFormDate({ ...formDate, [name]: value });
-    } 
-  };
+ 
 
-  const formatDOB = (dob) => {
-    // Format the input value with slashes (dd/mm/yy)
-    const trimmedDOB = dob.replace(/[^0-9]/g, "").slice(0, 6);
-    const parts = [];
-    if (trimmedDOB.length >= 2) parts.push(trimmedDOB.slice(0, 2));
-    if (trimmedDOB.length >= 4) parts.push(trimmedDOB.slice(2, 4));
-    if (trimmedDOB.length >= 6) parts.push(trimmedDOB.slice(4, 6));
-    return parts.join("/");
-  };
-
+ 
 
   return (
     <div className={css.container}>
@@ -195,7 +186,7 @@ const Register = () => {
  
             <div className={css.rotatehead}> 
             <span className={showFirstForm ? css.p1: css.p2}  onClick={() => { setShowFirstForm(true); setShowSecondForm(false); }}>Personal info</span>
-            <span className={showSecondForm ? css.c1: css.c2}    onClick={() => { setShowFirstForm(false); setShowSecondForm(true); }}>car & social info</span>
+            <span className={showSecondForm ? css.c1: css.c2}  >car & social info</span>
             </div>
 
             <div className={css.progresscontainer}> 
@@ -336,7 +327,7 @@ const Register = () => {
                     // value={formData.dob}
                     value={date} 
                     // onChange={handleInputChangeDate}
-                    onChange={handleChange}
+                    onChange={handleDateChange}
                     className={css.contactinp}
                     type="text"
                     required 
@@ -358,7 +349,8 @@ const Register = () => {
         <span className={css.char} style={{ transitionDelay: '500ms' }}>R</span>
         <span className={css.char} style={{ transitionDelay: '550ms' }}>T</span>
         <span className={css.char} style={{ transitionDelay: '600ms' }}>H</span>
-        <span className={css.char} style={{ transitionDelay: '600ms' }}> (dd/mm/yy)</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}></span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}> (dd/mm/yyyy)</span>
 
       
     </label>
