@@ -12,13 +12,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6% 6%;
+  padding: 6% 10%;
 }
 .left {
   width: 40%;
 }
 .left>img{
   width: 100%;
+  height: 500px;
+  object-fit: cover;
 }
 .videobox { 
   width: 60%;
@@ -88,7 +90,7 @@ cursor: pointer;
   color: #505050;
 }
 .progresscontainer {
-  width: 400px;
+  width: 428px;
   height: 4px;
   background-color: #666;
   display: inline-block;
@@ -106,12 +108,13 @@ cursor: pointer;
 }
 .form1 {
   /* background-color: #141212; */
-  width: 88%;
+  width: 100%;
   height: 500px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 4% 4%;
+  padding: 0 4%;
+  justify-content: space-between;
 }
 .inputset {
   display: flex;
@@ -136,7 +139,9 @@ cursor: pointer;
   justify-content: flex-start;
  width: 100%;
 /* padding: 4% 0; */
-padding: 15px 0;
+/* padding: 15px 0; */
+padding-top: 15px;
+padding-bottom: 2px;
 border-bottom:1px solid blue ;
  
 }
@@ -159,10 +164,13 @@ border-bottom:1px solid blue ;
   border: 0;
   display: block;
   width: 100%;
-  padding: 15px 0;
+  /* padding: 15px 0; */
+  padding-bottom: 2px;
+  padding-top: 15px;
   /* font-size: 18px;
   color: #fff; */
   border-bottom:1px solid blue ;
+  color: #FFF;
 }
 
 /* .form-control input:focus, .form-control input:valid */
@@ -188,12 +196,14 @@ border-bottom:1px solid blue ;
   color: #666;
   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   font-family: k2D;
+  font-weight: 275;
 }
 
 /* .form-control input:focus+label span, .form-control input:valid+label span */
 .inputset input:focus + label span,
 .inputset input:valid + label span {
-  color: lightblue;
+  color:#666666;
+  font-size: 12px;
   transform: translateY(-20px);
 }
 
@@ -255,8 +265,8 @@ stroke: #007AFF; */
     flex-direction: column;
     justify-content: space-between; 
  /* background-color: #212223; */
-  padding: 4% 4%;
-  width: 88%;
+  padding: 0 4%;
+  width: 100%;
   height: 500px;
   gap: 0.5rem;
 }
@@ -295,7 +305,7 @@ stroke: #007AFF; */
   width: 100%;
  
 }
-
+/*  */
 /* new2starts */
 
 
@@ -313,8 +323,26 @@ stroke: #007AFF; */
   border: 0;
   display: block;
   width: 100%;
-  padding: 15px 0;
+  /* padding: 15px 0; */
   /* font-size: 18px; */
+  padding-top: 15px;
+  /* padding-bottom: 2px; */
+  padding-bottom: 6px;
+  font-size: 14px;
+  color: #fff;
+  border-bottom:1px solid blue ;
+
+}
+.carinputsets.carinputoptional input{
+  background-color: transparent;
+  border: 0;
+  display: block;
+  width: 100%;
+  /* padding: 15px 0; */
+  /* font-size: 18px; */
+  padding-top: 15px;
+  /* padding-bottom: 2px; */
+  padding-bottom: 6px;
   font-size: 14px;
   color: #fff;
   border-bottom:1px solid blue ;
@@ -324,6 +352,11 @@ stroke: #007AFF; */
 /* .form-control input:focus, .form-control input:valid */
 .carinputsets input:focus,
 .carinputsets input:valid {
+  outline: 0;
+ 
+}
+.carinputsets.carinputoptional input:focus,
+.carinputsets.carinputoptionalinput:valid {
   outline: 0;
  
 }
@@ -355,29 +388,32 @@ stroke: #007AFF; */
   color: #666;
   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   font-family: k2D;
-  filter: blur(1px);
+  /* filter: blur(1px); */
+  opacity: 0.2;
 }
 
 /* .form-control input:focus+label span, .form-control input:valid+label span */
 .carinputsets input:focus + label span,
 .carinputsets input:valid + label span {
-  color: lightblue;
+  color: #666;
   transform: translateY(-20px);
-  filter: blur(0px);
+  opacity: 1;
 }
-/* .carinputsets input:focus + label span,
-.carinputsets input:valid + label span {
-  color: lightblue;
+.carinputsets.carinputoptional input:focus + label span,
+.carinputsets.carinputoptional input:valid + label span {
+  color: #666;
   transform: translateY(-20px);
-} */
+  opacity: 1;
+}
 
-/* .char */
 .char {
   transition-delay: 0ms; /* Default transition delay */
 }
 
 
 /* new2end */
+
+
 .inputline {
   /* width: 80%;
   height: 1px; */
@@ -425,7 +461,9 @@ background: linear-gradient(0deg, #007AFF -0.1%, #004289 46.1%, #001934 100%), #
 }
 
 .checkinput:checked {
-  background-color: rgb(52, 55, 52);
+
+ background: linear-gradient(to bottom, rgba(0, 122, 255, 0.3), rgba(0, 66, 137, 0.3), rgba(0, 25, 52, 0.3));
+
 }
 
 .checkinput:checked::after {

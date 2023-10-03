@@ -327,10 +327,13 @@ const Register = () => {
                     className={css.contactinp}
                     id=""
                     placeholder=""
+                    style={{
+                      color: formData.gender === "" ? "#666" : "#fff",
+                    }}
                   >
                     <option className={css.opt} value="" disabled>
                       {" "}
-                      Gender?
+                      Gender
                     </option>
                     <option className={css.opt} value="MALE">
                       Male
@@ -354,6 +357,9 @@ const Register = () => {
                     required
                     className={css.contactinp}
                     id=""
+                    style={{
+                      color: formData.city === "" ? "#666" : "#fff",
+                    }}
                   >
                     <option className={css.opt} value="" disabled>
                       {" "}
@@ -480,6 +486,7 @@ const Register = () => {
                 <div className={css.carinputsets}>
                   <input
                     className={css.carinput}
+                    // className={css.carinputoptional}
                     type="text"
                     name=""
                     id=""
@@ -487,6 +494,7 @@ const Register = () => {
                     onFocus={handleInputFocus}
                     onChange={handleInputChange}
                     value={inputValue}
+                   required
                   />
                                <label className={`${css.label} ${isFocused || inputValue ? css.labelFocused : ''}`}>
         <span className={css.char} style={{ transitionDelay: '00ms' }}>I</span>
