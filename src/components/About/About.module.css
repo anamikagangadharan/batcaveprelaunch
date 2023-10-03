@@ -13,6 +13,7 @@
     max-width: 1440px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 4rem;
 }
 .wrap>:nth-child(1){
@@ -33,6 +34,7 @@ font-size: 18px;
 font-style: normal;
 font-weight: 275;
 line-height: 32px; /* 177.778% */
+width: 82%;
 }
 .wrap>:nth-child(3){
     color: #323232;
@@ -55,6 +57,7 @@ letter-spacing: 1.2px;
     .wrap>:nth-child(2){
         font-size: 14px;
 line-height: 24px;
+width: 100%;
     }
     .wrap>:nth-child(3){
     font-size: 12px;

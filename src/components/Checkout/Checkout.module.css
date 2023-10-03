@@ -33,7 +33,7 @@ text-transform: uppercase;
 .wbottom{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
 }
 .back{
   position: absolute;
@@ -44,7 +44,7 @@ text-transform: uppercase;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 40%;
+  width: 44%;
 }
 .line {
   display: flex;
@@ -133,7 +133,8 @@ border: 1px solid #666 !important;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 40%;
+  width: 44%;
+  justify-content: space-between;
 }
 .checkoutspan {
   color: #fff;

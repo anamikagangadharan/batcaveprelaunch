@@ -8,14 +8,14 @@ import RegImg from "../../assets/reg-image.svg"
 import { useFormContext } from '../FormContext/FormContext';
 
 import { useParams } from 'react-router-dom';
+import DOBInput from "../DOBInput/DOBInput";
+// import DateofBirth from "../Dateofbirthpicker/DateofBirth";
 
 
 const Register = () => { 
   
 
   const [state, setState] = useState(1);
-  // const [showFirstForm, setShowFirstForm] = useState(true);
-  // const [showSecondForm, setShowSecondForm] = useState(false);
  
   const[openedt,setOpenedt]=useState(false)
   const[openedp,setOpenedp]=useState(false)
@@ -34,11 +34,6 @@ const Register = () => {
     city: "",
   });
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-  //   setShowFirstForm(false);
-  //   setShowSecondForm(true);
-  // };
   const handleSubmitFirstForm = (e) => {
     e.preventDefault();
     setShowFirstForm(false);
@@ -56,17 +51,7 @@ const Register = () => {
 
   const handleChange = (e) => {
 
-    
-
     const { name, value } = e.target;
-
-   
-
-  
-
-
-
- 
 
     setFormData({ ...formData, [name]: value });
     const inputEmail = e.target.value;
@@ -74,12 +59,10 @@ const Register = () => {
     // Check if the input email is in a valid format
     const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     
-    setIsValidEmail(emailPattern.test(inputEmail));
-
+    setIsValidEmail(emailPattern.test(inputEmail));    
   };
-  
 
- 
+  
   function isFormFilled(formData) {
     // Implement your form validation logic here
     // Check if required fields are not empty, etc.
@@ -121,10 +104,7 @@ const Register = () => {
     transformOrigin: 'bottom',
     height:"4px"
   }
-  // const spanStylePersonal = {
-  //   color: state===1 ? 'yellow;' : '#505050',
-  // };
- 
+
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
@@ -148,25 +128,28 @@ const Register = () => {
 
   const [isMobileValid, setIsMobileValid] = useState(false);
 
-  // const handleMobileNumberBlur = () => {
-  //   const mobileNumber = formData.number;
-  //   if (mobileNumber.length === 10) {
-  //     setIsMobileValid(true);
-  //   } else {
-  //     setIsMobileValid(false);
-  //   }
-  // };
-  // const handleMobileNumberBlur = () => {
-  //   const mobileNumber = formData.number;
-  //   if (/^\d{10}$/.test(mobileNumber)) {
-  //     setIsMobileValid(true);
-  //   } else {
-  //     setIsMobileValid(false);
-  //   }
-  // };
- 
+  const [formDate, setFormDate] = useState({
+    dob: "",
+  });
 
-  
+  const handleInputChangeDate = (e) => {
+    const { name, value } = e.target;
+    // Check if the input value matches the date format (dd/mm/yy) before updating the state
+    if (/^\d{0,2}\/\d{0,2}\/\d{0,2}$/.test(value)) {
+      setFormDate({ ...formDate, [name]: value });
+    } 
+  };
+
+  const formatDOB = (dob) => {
+    // Format the input value with slashes (dd/mm/yy)
+    const trimmedDOB = dob.replace(/[^0-9]/g, "").slice(0, 6);
+    const parts = [];
+    if (trimmedDOB.length >= 2) parts.push(trimmedDOB.slice(0, 2));
+    if (trimmedDOB.length >= 4) parts.push(trimmedDOB.slice(2, 4));
+    if (trimmedDOB.length >= 6) parts.push(trimmedDOB.slice(4, 6));
+    return parts.join("/");
+  };
+
 
   return (
     <div className={css.container}>
@@ -222,7 +205,7 @@ const Register = () => {
                   {/* <div className={css.inputline}></div> */}
                 </div>
 
-                <div className={css.inputset}>
+                <div className={`${css.inputset} ${formData.email ? css.hasContent : ""}`}>
                   <input
                     name="email"
                     value={formData.email}
@@ -246,7 +229,7 @@ const Register = () => {
                   {/* <div className={css.inputline}></div> */}
                 </div>
 
-                <div className={css.inputset}>
+                <div className={`${css.inputset} ${formData.number ? css.hasContent : ""}`}>
                   <input
                     name="number"
                     value={formData.number}
@@ -316,17 +299,19 @@ const Register = () => {
                   {/* <div className={css.inputline}></div> */}
                 </div>
 
-                <div className={css.inputset}>
+                <div className={`${css.inputset} ${formData.dob ? css.hasContent : ""}`}>
                   <input
                     name="dob"
+                    // value={formatDOB(formDate.dob)}
                     value={formData.dob}
+                    // onChange={handleInputChangeDate}
                     onChange={handleChange}
                     className={css.contactinp}
                     type="text"
-                    required
+                    required 
                     placeholder=""
-                    maxLength="8"
-  pattern="\d{2}/\d{2}/\d{2}"
+                    maxLength="10"
+                    pattern="\d{2}/\d{2}/\d{4}"
                   />
                                                      <label className={css.label}>
         <span className={css.char} style={{ transitionDelay: '00ms' }}>D</span>
@@ -344,6 +329,8 @@ const Register = () => {
         <span className={css.char} style={{ transitionDelay: '600ms' }}>H</span>
       
     </label>
+    <DOBInput />
+    {/* <DateofBirth selectedDate={dob} handleDateChange={handleDateChange} /> */}
                   {/* <div className={css.inputline}></div> */}
                 </div>
 
