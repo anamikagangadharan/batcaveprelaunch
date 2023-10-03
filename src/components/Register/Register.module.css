@@ -160,8 +160,8 @@ border-bottom:1px solid blue ;
   display: block;
   width: 100%;
   padding: 15px 0;
-  font-size: 18px;
-  color: #fff;
+  /* font-size: 18px;
+  color: #fff; */
   border-bottom:1px solid blue ;
 }
 

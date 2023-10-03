@@ -13,13 +13,14 @@ import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 
 import { BrowserRouter as Router , Routes, Route } from "react-router-dom";
+import { FormProvider } from './components/FormContext/FormContext';
 // import Carousel from "./components/Carousel/Carousel";
 
 function App() {
   return (
     <div className="App">
       <Router>
-
+      <FormProvider>
       <Header />
      <Routes>
       <Route path="/" exact element={<Home />}/>
@@ -37,6 +38,7 @@ function App() {
        
       <YProgressbar />
       <Footer />
+      </FormProvider>
       </Router>
     </div>
   );

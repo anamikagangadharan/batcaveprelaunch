@@ -1,20 +1,27 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import css from "./Register.module.css";
 import Tick from "../../assets/Tick.svg";
 import { motion } from "framer-motion";
 import Hclose from "../../assets/close-hexagon.svg"
 import { Link } from "react-router-dom";
 import RegImg from "../../assets/reg-image.svg"
+import { useFormContext } from '../FormContext/FormContext';
+
+import { useParams } from 'react-router-dom';
 
 
-const Register = () => {
+const Register = () => { 
   
 
   const [state, setState] = useState(1);
-
+  // const [showFirstForm, setShowFirstForm] = useState(true);
+  // const [showSecondForm, setShowSecondForm] = useState(false);
+ 
   const[openedt,setOpenedt]=useState(false)
   const[openedp,setOpenedp]=useState(false)
 
+  const { showFirstForm, showSecondForm, setShowFirstForm, setShowSecondForm } = useFormContext();
+  const { formId } = useParams(); // Get the URL parameter
 
 
   const [formData, setFormData] = useState({
@@ -27,9 +34,18 @@ const Register = () => {
     city: "",
   });
 
-  const sendEmail = (e) => {
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+  //   setShowFirstForm(false);
+  //   setShowSecondForm(true);
+  // };
+  const handleSubmitFirstForm = (e) => {
     e.preventDefault();
+    setShowFirstForm(false);
+    setShowSecondForm(true);
   };
+
+  
   const sendEmail2 = (e) => {
     e.preventDefault();
   };
@@ -74,7 +90,7 @@ const Register = () => {
 
   const progressBarStyle = {
     // width: '400px', 
-    width: state === 1 ? '50%' : state === 2 ? '100%' : '0',
+    width: showFirstForm === true ? '50%' : showSecondForm  === true ? '100%' : '0',
     background: 'linear-gradient(to bottom, rgba(0, 122, 255, 1) 0%, rgba(0, 66, 137, 1) 50%, rgba(0, 25, 52, 1) 100%)',
     transition: 'height 0.3s', // Add a smooth transition effect
     transformOrigin: 'bottom',
@@ -94,7 +110,38 @@ const Register = () => {
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
+  useEffect(() => {
+    // Depending on the URL parameter, set the form state
+    if (formId === '1') {
+      setShowFirstForm(true);
+      setShowSecondForm(false);
+    } else if (formId === '2') {
+      setShowFirstForm(false);
+      setShowSecondForm(true);
+    }
+  }, [formId, setShowFirstForm, setShowSecondForm]);
 
+  const [isMobileValid, setIsMobileValid] = useState(false);
+
+  // const handleMobileNumberBlur = () => {
+  //   const mobileNumber = formData.number;
+  //   if (mobileNumber.length === 10) {
+  //     setIsMobileValid(true);
+  //   } else {
+  //     setIsMobileValid(false);
+  //   }
+  // };
+  // const handleMobileNumberBlur = () => {
+  //   const mobileNumber = formData.number;
+  //   if (/^\d{10}$/.test(mobileNumber)) {
+  //     setIsMobileValid(true);
+  //   } else {
+  //     setIsMobileValid(false);
+  //   }
+  // };
+ 
+
+  
 
   return (
     <div className={css.container}>
@@ -108,9 +155,9 @@ const Register = () => {
           <div className={css.relativediv}>
           <div className={css.rotate}>
  
-            <div className={css.rotatehead}>
-            <span className={state===1 ? css.p1: css.p2} onClick={() => setState(1)}>Personal info</span>
-            <span className={state===2 ? css.c1: css.c2}   onClick={() => setState(2)}>car & social info</span>
+            <div className={css.rotatehead}> 
+            <span className={showFirstForm ? css.p1: css.p2}  onClick={() => { setShowFirstForm(true); setShowSecondForm(false); }}>Personal info</span>
+            <span className={showSecondForm ? css.c1: css.c2}    onClick={() => { setShowFirstForm(false); setShowSecondForm(true); }}>car & social info</span>
             </div>
 
             <div className={css.progresscontainer}> 
@@ -119,19 +166,20 @@ const Register = () => {
           
           </div>
 
-          <div className={css.formdiv}>
+          <div className={css.formdiv}> 
 
             {/* form-1 */}
-            {state === 1 && (
-              <form className={css.form1} action="" onSubmit={sendEmail}>
+            {showFirstForm && (
+              <form className={css.form1} action="" onSubmit={handleSubmitFirstForm}>
                 <div className={css.inputset}>
                   <input
+                   required
                     name="full_name"
                     onChange={handleChange} 
                     value={formData.name}
                     className={css.contactinp}
                     type="text"
-                    required
+                   
                    
                   />
                   <label className={css.label}>
@@ -178,9 +226,14 @@ const Register = () => {
                     value={formData.number}
                     onChange={handleChange}
                     className={css.contactinp}
-                    type="number"
+                    type="text"
                     required
                     placeholder=""
+                    pattern="[0-9]{10}" 
+                    minLength={10}
+                    maxLength={10} 
+                    //  onBlur={handleMobileNumberBlur}
+                   
                   />
                                          <label className={css.label}>
         <span className={css.char} style={{ transitionDelay: '00ms' }}>M</span>
@@ -192,7 +245,7 @@ const Register = () => {
         <span className={css.char} style={{ transitionDelay: '300ms' }}></span>
         <span className={css.char} style={{ transitionDelay: '350ms' }}>N</span>
         <span className={css.char} style={{ transitionDelay: '400ms' }}>U</span>
-        <span className={css.char} style={{ transitionDelay: '450ms' }}>M</span>
+        <span className={css.char} style={{ transitionDelay: '450ms' }}>M</span> 
         <span className={css.char} style={{ transitionDelay: '500ms' }}>B</span>
         <span className={css.char} style={{ transitionDelay: '550ms' }}>E</span>
         <span className={css.char} style={{ transitionDelay: '600ms' }}>R</span>
@@ -347,7 +400,7 @@ const Register = () => {
 
             {/* form_2 */}
 
-            {state === 2 && (
+            {showSecondForm  && (
               <form className={css.form2} action="" onSubmit={sendEmail2}>
 
                 <div className={css.form2top}>
@@ -449,7 +502,7 @@ const Register = () => {
         <span className={css.char} style={{ transitionDelay: '500ms' }}>I</span>
         <span className={css.char} style={{ transitionDelay: '550ms' }}>D</span>
         <span className={css.char} style={{ transitionDelay: '600ms' }}></span>
-        <span className={css.char} style={{ transitionDelay: '600ms' }}>(0PT)</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}>(0ptional)</span>
        
       
     </label>
@@ -505,13 +558,15 @@ const Register = () => {
                   </span>
                 </div>
 
-              <Link to="/checkout"> <button type="submit" className={`${css.proceedbtn} ${css.buttonWithZIndex}`}> proceed to checkout</button></Link>  
+              <Link to="/checkout"> <button 
+              type="submit"
+               className={`${css.proceedbtn} ${css.buttonWithZIndex}`}> proceed to checkout</button></Link>   
                 </div>
-              </form>
+              </form> 
             )}
           </div>
           </div> 
-        </div>
+        </div> 
       </div>
 
       {/* terms and conditions */}
