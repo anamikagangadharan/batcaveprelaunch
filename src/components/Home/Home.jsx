@@ -16,6 +16,7 @@ const Home = () => {
         <Cards/>
         <Gift/>
         <About/>
+        
       
     </div>
   )

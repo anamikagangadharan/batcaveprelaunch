@@ -49,6 +49,8 @@ const Register = () => {
   const [number, setNumber] = useState('');
   const [isValidNumber, setIsValidNumber] = useState(true);
 
+
+  const [date, setDate] = useState('');
   const handleChange = (e) => {
 
     const { name, value } = e.target;
@@ -60,6 +62,34 @@ const Register = () => {
     const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     
     setIsValidEmail(emailPattern.test(inputEmail));    
+
+
+
+    // dob12am
+
+    const inputDate = e.target.value;
+
+    // Remove any non-numeric characters
+    const numericDate = inputDate.replace(/[^0-9]/g, '');
+
+    // Format the date with slashes
+    if (numericDate.length <= 2) {
+      // Format: dd
+      setDate(numericDate);
+    } else if (numericDate.length <= 4) {
+      // Format: dd/mm
+      setDate(`${numericDate.slice(0, 2)}/${numericDate.slice(2)}`);
+    } else if (numericDate.length <= 6) {
+      // Format: dd/mm/yy
+      setDate(
+        `${numericDate.slice(0, 2)}/${numericDate.slice(2, 4)}/${numericDate.slice(4, 6)}`
+      );
+    } else if (numericDate.length <= 8) {
+      // Format: dd/mm/yyyy
+      setDate(
+        `${numericDate.slice(0, 2)}/${numericDate.slice(2, 4)}/${numericDate.slice(4, 8)}`
+      );
+    }
   };
 
   
@@ -303,7 +333,8 @@ const Register = () => {
                   <input
                     name="dob"
                     // value={formatDOB(formDate.dob)}
-                    value={formData.dob}
+                    // value={formData.dob}
+                    value={date} 
                     // onChange={handleInputChangeDate}
                     onChange={handleChange}
                     className={css.contactinp}
@@ -327,6 +358,8 @@ const Register = () => {
         <span className={css.char} style={{ transitionDelay: '500ms' }}>R</span>
         <span className={css.char} style={{ transitionDelay: '550ms' }}>T</span>
         <span className={css.char} style={{ transitionDelay: '600ms' }}>H</span>
+        <span className={css.char} style={{ transitionDelay: '600ms' }}> (dd/mm/yy)</span>
+
       
     </label>
     <DOBInput />
@@ -403,21 +436,7 @@ const Register = () => {
                     <option className={css.opt} value="Telangana">
                    telangana
                     </option>
-                    {/* <option className={css.opt} value="Hyderabad">
-                      Hyderabad
-                    </option>
-                    <option className={css.opt} value="Kochi">
-                      Kochi
-                    </option>
-                    <option className={css.opt} value="Mysore">
-                      Mysore
-                    </option>
-                    <option className={css.opt} value="Thiruvananthapuram">
-                      Thiruvananthapuram
-                    </option>
-                    <option className={css.opt} value="Visakhapatanam">
-                      Visakhapatanam
-                    </option> */}
+                   
                   </select>
                  
                 </div>
@@ -590,7 +609,7 @@ const Register = () => {
                 <div className={css.agree}>
                   <span>
                     by clicking, i agree WITH THE{" "}
-                    <span onClick={()=>setOpenedp(!openedp)} className={css.underline}> privacy policy </span> and{" "}
+                    <span onClick={()=>setOpenedp(!openedp)} className={css.underline}> privacy policy</span> and{" "}
                     <span onClick={()=>setOpenedt(!openedt)} className={css.underline}>TERMS & CONDITIONS </span>
                   </span>
                 </div>

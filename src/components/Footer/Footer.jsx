@@ -17,9 +17,15 @@ const Footer = () => {
 
 
         <div className={css.right}> 
-            <img src={Insta} alt="" />
-            <img src={Phone} alt="" />
-            <img src={Mail} alt="" />
+        <a href="https://www.instagram.com/batcave.in/"  target="_blank" rel="noopener noreferrer">    <img src={Insta} alt="" /> </a>
+           
+            <div className={css.tooltipcontainer}>
+            <img onclick="window.open('tel:+91 8877880101');" className={css.phone} src={Phone} alt="" />
+            <span className={css.tooltip}>+91 8877880101</span>
+            </div>
+           
+
+            <a href="mailto: connect@invicious.in">    <img src={Mail} alt="" /> </a>
 
         </div>
         </div>

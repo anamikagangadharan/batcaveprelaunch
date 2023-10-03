@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  /* position: relative; */
+  
 }
 
 * {
@@ -16,10 +18,27 @@ a{
   
 }
 
-input:-webkit-autofill,
+/* input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active{
-    /* -webkit-box-shadow: 0 0 0 30px rgb(0, 0, 0) inset !important; */
-    -webkit-box-shadow:  red inset !important;
+    -webkit-box-shadow: 0 0 0 30px rgb(5, 5, 5,1) inset !important;
+   
+    border: none;
+    color: aliceblue !important;
+}
+input:-webkit-autofill {
+  background-color: transparent !important; 
+} */
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+}
+
+input:-moz-autofill {
+  background-color: transparent !important;
+}
+
+input:-ms-autofill {
+  background-color: transparent !important;
 }

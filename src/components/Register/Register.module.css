@@ -752,7 +752,7 @@ letter-spacing: 0.84px;
     justify-content: space-between;
   }
   .rotatehead>span{
-font-size: 14px;
+font-size: 13px;
 letter-spacing: 0.84px;
 
   }
@@ -763,6 +763,7 @@ letter-spacing: 0.84px;
     align-items: center;
     width: 100%;
     height: auto;
+    padding: 0;
   }
   .form2{
     /* align-items: center; */
@@ -770,6 +771,7 @@ letter-spacing: 0.84px;
     justify-content: flex-start;
     gap: 1.4rem;
     height: auto;
+    padding: 0;
   }
   .contactinp{
     font-size: 12px;
@@ -816,6 +818,11 @@ font-size: 14px;
   .inputset input:focus + label span,
 .inputset input:valid + label span{
   font-size: 10px;
+}
+.inputset.hasContent label span{
+
+  font-size: 10px;
+
 }
 .carinputsets label span{
   font-size: 12px;
