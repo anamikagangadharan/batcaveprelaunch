@@ -389,7 +389,7 @@ stroke: #007AFF; */
   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   font-family: k2D;
   /* filter: blur(1px); */
-  opacity: 0.2;
+  /* opacity: 0.2; */
 }
 
 /* .form-control input:focus+label span, .form-control input:valid+label span */
@@ -711,6 +711,9 @@ letter-spacing: 0.84px;
   .left{
     width: 100%;
   }
+  .left>img{
+    height: auto;
+  }
 
   .videobox{
     height: 200px;
@@ -790,6 +793,26 @@ font-size: 14px;
     height: 34px;
     font-size: 10px;
   }
+
+
+  .inputset input{
+    padding-bottom: 10px;
+  }
+  .inputset label span {
+    font-size: 12px;
+  }
+  .inputset input:focus + label span,
+.inputset input:valid + label span{
+  font-size: 10px;
+}
+.carinputsets label span{
+  font-size: 12px;
+}
+.carinputsets input:focus + label span,
+.carinputsets input:valid + label span{
+  font-size: 10px;
+}
+
   /* t and c */
   .tandc{
     width: 100%;

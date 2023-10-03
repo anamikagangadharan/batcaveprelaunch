@@ -49,12 +49,29 @@ const Register = () => {
   const sendEmail2 = (e) => {
     e.preventDefault();
   };
-
+  const [email, setEmail] = useState('');
+  const [isValidEmail, setIsValidEmail] = useState(true);
+  const [number, setNumber] = useState('');
+  const [isValidNumber, setIsValidNumber] = useState(true);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-  };
+    const inputEmail = e.target.value;
+    setEmail(inputEmail);
+    // Check if the input email is in a valid format
+    const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    
+    setIsValidEmail(emailPattern.test(inputEmail));
 
+    //  const inputNumber = e.target.value;
+
+    // const cleanedNumber = inputNumber.replace(/[^-0-9]/g, '');
+    // setNumber(cleanedNumber);
+
+   
+    // setIsValidNumber(cleanedNumber.length <= 10);
+  };
+ 
   function isFormFilled(formData) {
     // Implement your form validation logic here
     // Check if required fields are not empty, etc.
@@ -176,7 +193,7 @@ const Register = () => {
                    required
                     name="full_name"
                     onChange={handleChange} 
-                    value={formData.name}
+                    value={formData.full_name}
                     className={css.contactinp}
                     type="text"
                    
@@ -225,13 +242,14 @@ const Register = () => {
                     name="number"
                     value={formData.number}
                     onChange={handleChange}
-                    className={css.contactinp}
+                    className={ css.contactinp}
                     type="text"
+                    pattern="[1-9]{1}[0-9]{9}"
                     required
                     placeholder=""
-                    pattern="[0-9]{10}" 
+                    // pattern="[0-9]{10}" 
                     minLength={10}
-                    maxLength={10} 
+                    maxLength="10"
                     //  onBlur={handleMobileNumberBlur}
                    
                   />
@@ -363,17 +381,29 @@ const Register = () => {
                   >
                     <option className={css.opt} value="" disabled>
                       {" "}
-                      city
+                      state
                     </option>
 
                     {/* <option className={css.opt} value="Bengaluru">
                       Bengaluru
                     </option> */}
-                    <option className={css.opt} value="Chennai">
-                      Chennai
+                     <option className={css.opt} value="Andrapradesh">
+                   Andra pradesh
                     </option>
-                    <option className={css.opt} value="Coimbatore">
-                      Coimbatore
+                    <option className={css.opt} value="Karnataka">
+                    karnataka
+                    </option>
+                    <option className={css.opt} value="Kerala">
+                     kerala
+                    </option>
+                    <option className={css.opt} value="TamilNadu">
+                      Tamil Nadu
+                    </option>
+                    
+                   
+                   
+                    <option className={css.opt} value="Telangana">
+                   telangana
                     </option>
                     {/* <option className={css.opt} value="Hyderabad">
                       Hyderabad
