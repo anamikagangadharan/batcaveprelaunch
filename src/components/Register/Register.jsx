@@ -81,37 +81,43 @@ const Register = () => {
 
    
   };
-
+// dob autofill / oct4 night
   const handleDateChange = (e) => {
     const inputDate = e.target.value;
+    const numericDate = inputDate.replace(/[^0-9]/g, '');
 
 
-   // dob12am this is latest, worked
-
-   
-
-   // Remove any non-numeric characters
-   const numericDate = inputDate.replace(/[^0-9]/g, '');
-
-   // Format the date with slashes
-   if (numericDate.length <= 2) {
-     // Format: dd
-     setDate(numericDate);
-   } else if (numericDate.length <= 4) {
-     // Format: dd/mm
-     setDate(`${numericDate.slice(0, 2)}/${numericDate.slice(2)}`);
-   } else if (numericDate.length <= 6) {
-     // Format: dd/mm/yy
-     setDate(
-       `${numericDate.slice(0, 2)}/${numericDate.slice(2, 4)}/${numericDate.slice(4, 6)}`
-     );
-   } else if (numericDate.length <= 8) {
-     // Format: dd/mm/yyyy
-     setDate(
-       `${numericDate.slice(0, 2)}/${numericDate.slice(2, 4)}/${numericDate.slice(4, 8)}`
-     );
-   }
+    if (numericDate.length <= 8) {
+      setDate(
+        `${numericDate.slice(0, 2)}/${numericDate.slice(2, 4)}/${numericDate.slice(4, 8)}`
+      );
+       // Store the value in local storage
+       localStorage.setItem("dob", numericDate);
+    }
   }
+
+  // dob local storage
+
+// Add this useEffect to save the date value (dob) to local storage
+useEffect(() => {
+  localStorage.setItem("date", date);
+}, [date]);
+
+// ...
+
+ // Load the date value (dob) from local storage on component mount
+ useEffect(() => {
+  const storedDob = localStorage.getItem("dob");
+  if (storedDob) {
+    console.log("DOB loaded from local storage:", storedDob);
+    setDate(
+      `${storedDob.slice(0, 2)}/${storedDob.slice(2, 4)}/${storedDob.slice(4, 8)}`
+    );
+  } else {
+    console.log("DOB not found in local storage");
+  }
+}, []);
+
   
   function isFormFilled(formData) {
   
@@ -297,6 +303,7 @@ useEffect(() => {
     setIsChecked(false);
     setInputValue("");
     setCarData({ carOwnership: false, registrationNumber: "" });
+    
   };
 
   // Add an event listener for the beforeunload event to trigger handleRefresh
@@ -308,6 +315,12 @@ useEffect(() => {
       window.removeEventListener("beforeunload", handleRefresh);
     };
   }, []);
+
+
+
+
+
+  
  
   return (
     <div className={css.container}>
