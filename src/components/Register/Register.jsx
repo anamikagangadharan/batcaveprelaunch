@@ -114,8 +114,7 @@ const Register = () => {
   }
   
   function isFormFilled(formData) {
-    // Implement your form validation logic here
-    // Check if required fields are not empty, etc.
+  
     const {
       full_name,
       email,
@@ -125,15 +124,16 @@ const Register = () => {
       gender,
       city 
     } = formData;
-    return (
-      full_name.trim() !== "" &&
-      email.trim() !== "" &&
-      mobile.length !== "" &&
-      address.trim() !== "" &&
-      dob.trim() !== "" &&
-      gender.trim() !== "" &&
-      city.trim() !== "" 
-    );
+    // return (
+    //   full_name.trim() !== "" &&
+    //   email.trim() !== "" &&
+    //   mobile.length !== "" &&
+    //   address.trim() !== "" &&
+    //   dob.trim() !== "" &&
+    //   gender.trim() !== "" &&
+    //   city.trim() !== "" 
+      
+    // );
   }
 
   // Usage:
@@ -262,6 +262,8 @@ useEffect(() => {
   }
 }, []);
 
+
+
 // Save Form 1 data to localStorage whenever it changes
 
 useEffect(() => {
@@ -269,7 +271,43 @@ useEffect(() => {
 }, [formData]);
 
 
-  
+ // Remove the local storage item for form1 when the page is refreshed
+ useEffect(() => {
+  const handleBeforeUnload = (e) => {
+    localStorage.removeItem("formData");
+  };
+
+  window.addEventListener("beforeunload", handleBeforeUnload);
+
+  return () => {
+    window.removeEventListener("beforeunload", handleBeforeUnload);
+  };
+}, []); 
+
+
+
+
+// Handle the page refresh event for form2
+  const handleRefresh = () => {
+    // Clear the data in localStorage
+    localStorage.clear();
+
+    // Clear the React state
+    setFormData({});
+    setIsChecked(false);
+    setInputValue("");
+    setCarData({ carOwnership: false, registrationNumber: "" });
+  };
+
+  // Add an event listener for the beforeunload event to trigger handleRefresh
+  useEffect(() => {
+    window.addEventListener("beforeunload", handleRefresh);
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("beforeunload", handleRefresh);
+    };
+  }, []);
  
   return (
     <div className={css.container}>
