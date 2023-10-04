@@ -8,7 +8,7 @@ const RegistrationClosed = () => {
     <div className={css.wrap}>
        <div className={css.div1}>
         <span>registration closed</span>
-        <span>Your Welcome Kit is on the Way - Get Ready for an Exciting Journey with Us!</span>
+        <span>Stay Tuned for Our Next Exciting Membership Opportunity!</span>
        </div>
 
        <div className={css.div2}>

@@ -1,20 +1,24 @@
 .container{
     width: 100%;
   min-height: 100vh;
-    background: radial-gradient(36.44% 36.44% at 50.03% 50.05%, #2A2A2A 0%, rgba(5, 5, 5, 0.00) 100%);
+    /* background: radial-gradient(36.44% 36.44% at 50.03% 50.05%, #2A2A2A 0%, rgba(5, 5, 5, 0.00) 100%);
     background: radial-gradient(
         36.44% 36.44% at 50.03% 50.05%, 
         #2A2A2A 0%, 
         rgba(5, 5, 5, 0.00) 100%
-      );
+      ); */
       background: #050505;
       color: aliceblue;
       padding: 6% 6%;
       position: relative;
       display: flex;
       justify-content: center;
+      background-image: url(../../assets/giftbgshadow.svg);
+      background-size: cover;
+      background-position: center;
+     
 }
-.container::before {
+/* .container::before {
     content: "";
     position: absolute;
     top: 0;
@@ -26,10 +30,10 @@
       #2A2A2A 0%, 
       rgba(5, 5, 5, 0.00) 100%
     );
-    filter: blur(10px); /* Adjust the blur amount as needed */
-    opacity: 0.7; /* Adjust the opacity as needed */
+    filter: blur(10px); 
+    opacity: 0.7; 
   }
- 
+  */
   
   
   
@@ -42,6 +46,7 @@
     width: 100%;
     max-width: 1440px;
     gap: 4rem;
+  
 }
 
 .div1>:nth-child(1){
@@ -58,6 +63,8 @@ letter-spacing: 1.8px;
 .div2{
     z-index: 2;
     height: 185px;
+   
+   
 }
 .div2>img{
     position: inherit;
@@ -150,7 +157,7 @@ font-style: normal;
 font-weight: 500;
 line-height: 28px;
 letter-spacing: 0.96px;
-text-decoration-line: underline;
+/* text-decoration-line: underline; */
 }
 
 /* middle */
@@ -209,6 +216,9 @@ background: #666;
 
 
 @media screen and (max-width:768px){
+    .container{
+        background-image: url(../../assets/giftshadow-mobile.svg);
+    }
     .wrap{
         gap: 1rem;
     }
@@ -224,6 +234,9 @@ letter-spacing: 1.2px;
     .imgauto{
         height: 181px;
         width: 100%;
+    }
+    .div2{
+        /* background-image: url(../../assets/giftbgshadow.svg); */
     }
     .div3{
        

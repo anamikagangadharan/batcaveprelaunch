@@ -3,7 +3,7 @@
     background-image: url(../../assets/main-bg.png);
     background-size: cover;
     background-position: center;
-    background-repeat: none;
+    background-repeat: no-repeat;
     min-height: 100vh;
     display: flex;
     justify-content: center;

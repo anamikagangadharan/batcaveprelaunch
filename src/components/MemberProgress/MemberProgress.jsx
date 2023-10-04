@@ -1,5 +1,6 @@
 import React, { useState,useEffect,useRef } from 'react'
 import css from "./MemberProgress.module.css"
+import { Link } from 'react-router-dom';
 
 const MemberProgress = () => {
 
@@ -79,7 +80,7 @@ const MemberProgress = () => {
         {isVisible && ( <div className={css.progressfill} style={fillStyle}></div>)}
       </div>
 
- <button className={css.registernowbtn}>REGISTER NOW</button>
+ <Link to="/countdown"> <button className={css.registernowbtn}>REGISTER NOW</button>  </Link>
 
         </div>
       
