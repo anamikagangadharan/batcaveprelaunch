@@ -148,9 +148,11 @@ const Gift = () => {
 
           <div className={css.right}>
             <span>How to Enter?</span>
-            <span className={css.rspan}>1. Be a Batcave OG</span>
-            <span className={css.rspan}>2. Follow us on Instagram</span>
-            <span className={css.rspan}>3. Post a story, tag us</span>
+            <span className={css.rspan}>1. Must be a Batcave OG member.</span>
+            <span className={css.rspan}>2. Follow @batcave.in on Instagram.</span>
+            <span className={css.rspan}>3. Like our giveaway post.</span>
+            <span className={css.rspan}>4. Tag any 3 friends in the comments section below.</span>
+            <span className={css.rspan}>5. Share our giveaway post in your Instagram story and be sure to tag us.</span>
           </div>
         </div>
       </div>
