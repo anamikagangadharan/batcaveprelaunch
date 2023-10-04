@@ -249,6 +249,7 @@ stroke: #007AFF; */
 .opt {
   width: 30px;
   background-color: #101010;
+  
 }
 
 .proceedbtn {
@@ -725,6 +726,9 @@ letter-spacing: 0.84px;
 .forfade{
   opacity: 0.6;
   
+}
+.optgender{
+  /* color: yellow !important; */
 }
 
 

@@ -519,10 +519,15 @@ useEffect(() => {
                     id=""
                     placeholder=""
                     style={{
-                      color: formData.gender === "" ? "#666" : "#fff",
+                      color:
+                      formData.gender === "" ? "#666" :
+                      formData.gender === "MALE" ? "#fff" :
+                      formData.gender === "FEMALE" ? "#fff" : // Replace with the desired color for "Female"
+                      formData.gender === "OTHER" ? "#fff" : // Replace with the desired color for "Other"
+                      "#666", // Default color
                     }}
                   >
-                    <option className={css.opt} value="" disabled>
+                    <option  className={`${css.opt} ${css.optgender}`} value="" >
                       {" "}
                       Gender
                     </option>
@@ -549,10 +554,17 @@ useEffect(() => {
                     className={css.contactinp}
                     id=""
                     style={{
-                      color: formData.city === "" ? "#666" : "#fff",
+                      color: 
+                      formData.city === "" ? "#666" :
+                      formData.city === "Andrapradesh" ? "#fff" :
+                      formData.city === "Karnataka"? "#fff" : 
+                      formData.city === "kerala" ? "#fff" : 
+                      formData.city === "TamilNadu" ? "#fff" : 
+                      formData.city === "Telangana" ? "#fff" : 
+                      "#666", // Default color
                     }}
                   >
-                    <option className={css.opt} value="" disabled>
+                    <option className={css.opt} value="" >
                       {" "}
                       state
                     </option>
