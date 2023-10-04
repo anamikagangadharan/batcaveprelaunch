@@ -213,6 +213,18 @@ border-bottom:1px solid blue ;
   font-size: 12px;
   transform: translateY(-20px);
 }
+.carinputset.hasContent label span{
+  color:#666666;
+  font-size: 12px;
+  transform: translateY(-20px);
+
+}
+.carinputsets.hasContent label span{
+  color:#666666;
+  font-size: 12px;
+  transform: translateY(-20px);
+
+}
 
 /* .char */
 .char {
@@ -357,13 +369,15 @@ stroke: #007AFF; */
 }
 
 /* .form-control input:focus, .form-control input:valid */
-.carinputsets input:focus,
-.carinputsets input:valid {
+.carinputsets input:focus
+/* .carinputsets input:valid  */
+{
   outline: 0;
  
 }
-.carinputsets.carinputoptional input:focus,
-.carinputsets.carinputoptionalinput:valid {
+.carinputsets.carinputoptional input:focus
+/* .carinputsets.carinputoptionalinput:valid */
+ {
   outline: 0;
  
 }
@@ -400,14 +414,17 @@ stroke: #007AFF; */
 }
 
 /* .form-control input:focus+label span, .form-control input:valid+label span */
-.carinputsets input:focus + label span,
-.carinputsets input:valid + label span {
+.carinputsets input:focus + label span
+/* .carinputsets input:valid + label span  */
+{
   color: #666;
   transform: translateY(-20px);
   opacity: 1;
+  font-size: 12px;
 }
-.carinputsets.carinputoptional input:focus + label span,
-.carinputsets.carinputoptional input:valid + label span {
+.carinputsets.carinputoptional input:focus + label span
+/* .carinputsets.carinputoptional input:valid + label span  */
+{
   color: #666;
   transform: translateY(-20px);
   opacity: 1;
@@ -856,5 +873,10 @@ font-size: 14px;
   }
   .pcontent{
     font-size: 12px;
+  }
+
+  /*  */
+  .carinputsets.hasContent label span{
+    font-size: 10px;
   }
 }

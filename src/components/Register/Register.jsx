@@ -3,16 +3,18 @@ import css from "./Register.module.css";
 import Tick from "../../assets/Tick.svg";
 import { motion } from "framer-motion";
 import Hclose from "../../assets/close-hexagon.svg"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import RegImg from "../../assets/reg-image.svg"
 import { useFormContext } from '../FormContext/FormContext';
 
-import { useParams } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import DOBInput from "../DOBInput/DOBInput";
 // import DateofBirth from "../Dateofbirthpicker/DateofBirth";
 
-
+ 
 const Register = () => { 
+  const navigate = useNavigate();
+
   
 
   const [state, setState] = useState(1);
@@ -43,6 +45,7 @@ const Register = () => {
   
   const sendEmail2 = (e) => {
     e.preventDefault();
+    navigate('/checkout')
   };
   const [email, setEmail] = useState('');
   const [isValidEmail, setIsValidEmail] = useState(true);
@@ -458,6 +461,7 @@ const Register = () => {
                       type="text"
                       name=""
                       id=""
+            
                       placeholder="do you own a car?"
                     /> 
                     <input
@@ -486,6 +490,7 @@ const Register = () => {
                       name=""
                       id=""
                       placeholder=""
+                      required
                     />
                              <label className={css.label}>
         <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '00ms' }}>C</span>
@@ -523,7 +528,7 @@ const Register = () => {
                 </div>
                 
 
-                <div className={css.carinputsets}>
+                <div className={`${css.carinputsets} ${inputValue ? css.hasContent : ""}`}>
                   <input
                     className={ css.carinput}
                     // className={css.carinputoptional}
@@ -534,7 +539,7 @@ const Register = () => {
                     onFocus={handleInputFocus}
                     onChange={handleInputChange}
                     value={inputValue}
-                   required
+                  //  required
                   />
                                <label className={`${css.label} ${isFocused || inputValue ? css.labelFocused : ''}`}>
         <span className={css.char} style={{ transitionDelay: '00ms' }}>I</span>
@@ -606,9 +611,9 @@ const Register = () => {
                   </span>
                 </div>
 
-              <Link to="/checkout"> <button 
+              <button 
               type="submit"
-               className={`${css.proceedbtn} ${css.buttonWithZIndex}`}> proceed to checkout</button></Link>   
+               className={`${css.proceedbtn} ${css.buttonWithZIndex}`}> proceed to checkout</button> 
                 </div>
               </form> 
             )}

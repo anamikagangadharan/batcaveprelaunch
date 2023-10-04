@@ -138,7 +138,7 @@ const Checkout = () => {
         <span className={css.char} style={{ transitionDelay: '700ms' }}>N</span>
       
     </label>
-    <img className={`${css.tickImage} ${inputValue ? css.showImage : css.hideImage}`} src={Tick} alt="" />
+    <img className={`${css.tickImage} ${inputValueApply ? css.showImage : css.hideImage}`} src={Tick} alt="" />
                   </div>
         
                   {/* <div className={css.inputline}></div> */}
