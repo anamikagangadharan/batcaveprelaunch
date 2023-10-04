@@ -20,7 +20,8 @@
     /* margin-top: 10%; */
     min-height: 100vh;
     padding-top: 8rem;
-    padding-bottom: 8%;
+    /* padding-bottom: 8%; */
+    padding-bottom: 2%;
     padding-left: 6%;
     padding-right: 6%;
 }
@@ -90,10 +91,10 @@ letter-spacing: 0.96px;
         background-image: url(../../assets/final-mob-bg.png);
     }
 
-    .wrap{
+    /* .wrap{
         padding-bottom: 2.8rem;
        
-    }
+    } */
  
     .div1{
         gap: 0.8rem;
