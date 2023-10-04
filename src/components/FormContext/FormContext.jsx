@@ -10,6 +10,7 @@ export const useFormContext = () => {
 export function FormProvider({ children }) {
   const [showFirstForm, setShowFirstForm] = useState(true);
   const [showSecondForm, setShowSecondForm] = useState(false);
+  const [carData, setCarData] = useState({});
 
   useEffect(() => {
     const storedFormState = JSON.parse(localStorage.getItem('formState'));
@@ -20,13 +21,13 @@ export function FormProvider({ children }) {
   }, []);
 
   useEffect(() => {
-    const formState = { showFirstForm, showSecondForm };
+    const formState = { showFirstForm, showSecondForm ,carData };
     localStorage.setItem('formState', JSON.stringify(formState));
-  }, [showFirstForm, showSecondForm]);
+  }, [showFirstForm, showSecondForm , carData]);
 
   return (
-    <FormContext.Provider value={{ showFirstForm, showSecondForm, setShowFirstForm, setShowSecondForm }}>
+    <FormContext.Provider value={{ showFirstForm, showSecondForm, setShowFirstForm, setShowSecondForm,carData, setCarData }}>
       {children}
-    </FormContext.Provider>
+    </FormContext.Provider> 
   );
 }

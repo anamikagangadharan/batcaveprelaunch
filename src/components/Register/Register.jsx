@@ -26,15 +26,20 @@ const Register = () => {
   const { formId } = useParams(); // Get the URL parameter
 
 
-  const [formData, setFormData] = useState({
-    full_name: "",
-    email: "",
-    mobile: "",
-    address: "",
-    dob: "",
-    gender: "",
-    city: "",
+  const [formData, setFormData] = useState(() => {
+    const savedData = localStorage.getItem("formData");
+    return savedData ? JSON.parse(savedData) : {
+      full_name: "",
+      email: "",
+      mobile: "",
+      address: "",
+      dob: "",
+      gender: "",
+      city: "",
+    };
   });
+
+
 
   const handleSubmitFirstForm = (e) => {
     e.preventDefault();
@@ -62,7 +67,13 @@ const Register = () => {
     const inputEmail = e.target.value;
     setEmail(inputEmail);
     // Check if the input email is in a valid format
-    const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    // const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+
+    const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[a-zA-Z]{2,}$/i;  
+
+   
+
+    // const emailPattern =  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
     
     setIsValidEmail(emailPattern.test(inputEmail));    
 
@@ -172,9 +183,94 @@ const Register = () => {
   });
 
  
+//  car reg oct4
 
+const [carData, setCarData] = useState({
+  carOwnership: isChecked, // Store the checkbox value
+  registrationNumber: "",
+  // Add other car-related fields as needed
+});
+
+
+
+ // Load form data and checkbox state from localStorage on component mount
+ useEffect(() => {
+  const storedFormData = JSON.parse(localStorage.getItem("formData"));
+  const storedCheckboxState = JSON.parse(localStorage.getItem("checkboxState"));
+  
+  if (storedFormData) {
+    setFormData(storedFormData);
+  }
+
+  if (storedCheckboxState) {
+    setIsChecked(storedCheckboxState);
+  }
+}, []);
+
+// Save form data and checkbox state to localStorage whenever they change
+useEffect(() => {
+  localStorage.setItem("formData", JSON.stringify(formData));
+}, [formData]);
+
+useEffect(() => {
+  localStorage.setItem("checkboxState", JSON.stringify(isChecked));
+}, [isChecked])
+
+
+
+
+ // Load the car input field value from localStorage on component mount
+  useEffect(() => {
+    const storedInputValue = localStorage.getItem("carInputValue");
+    if (storedInputValue) {
+      setInputValue(storedInputValue);
+    }
+  }, []);
+
+  // Save the car input field value to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("carInputValue", inputValue);
+  }, [inputValue]);
+
+
+
+   // Load the car registration number value from localStorage on component mount
+   useEffect(() => {
+    const storedCarRegistrationNumber = localStorage.getItem("carRegistrationNumber");
+    if (storedCarRegistrationNumber) {
+      setCarData({
+        ...carData,
+        registrationNumber: storedCarRegistrationNumber,
+      });
+    }
+  }, []);
+
+  // Save the car registration number value to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("carRegistrationNumber", carData.registrationNumber);
+  }, [carData.registrationNumber]);
+
+// form1 local storage
+
+
+
+useEffect(() => {
+  const storedFormData = JSON.parse(localStorage.getItem("formData"));
+
+  if (storedFormData) {
+    setFormData(storedFormData);
+  }
+}, []);
+
+// Save Form 1 data to localStorage whenever it changes
+
+useEffect(() => {
+  localStorage.setItem("formData", JSON.stringify(formData));
+}, [formData]);
+
+
+  
  
-
   return (
     <div className={css.container}>
       <div className={css.wrap}>
@@ -322,8 +418,8 @@ const Register = () => {
     </label>
                   {/* <div className={css.inputline}></div> */}
                 </div>
-
-                <div className={`${css.inputset} ${formData.dob ? css.hasContent : ""}`}>
+ 
+                <div className={`${css.inputset} ${date ? css.hasContent : ""}`}>
                   <input
                     name="dob"
                     // value={formatDOB(formDate.dob)}
@@ -478,19 +574,29 @@ const Register = () => {
                       later in the Batcave Mobile App.
                     </span>{" "}
                   </div>
-                </div>
+                </div> 
 
-                <div className={css.carinputsets}>
+                <div className={`${css.carinputsets} ${carData.registrationNumber ? css.hasContent : ""}`}>
                   <div className={css.regnumbbox}>
                     <input
                       className={!isChecked ? css.inactive : css.carinput}
                       // className={ `${css.carinput} ${css.forfade}`}
                       disabled={!isChecked}
+                      
                       type="text"
-                      name=""
+                      name="registrationNumber"
+                    value={carData.registrationNumber}
+               onChange={(e) =>
+              setCarData({
+                 ...carData,
+            registrationNumber: e.target.value,
+                   })
+              } 
+                     
                       id=""
                       placeholder=""
                       required
+               
                     />
                              <label className={css.label}>
         <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '00ms' }}>C</span>
@@ -506,16 +612,16 @@ const Register = () => {
         <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '500ms' }}>R</span>
         <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '550ms' }}>A</span>
         <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '600ms' }}>T</span>
-        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '600ms' }}>I</span>
-        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '600ms' }}>O</span>
-        <span className={`${css.char} ${css.forfade}`}style={{ transitionDelay: '600ms' }}>N</span>
-        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '600ms' }}></span>
-        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '600ms' }}>N</span>
-        <span className={`${css.char} ${css.forfade}`}style={{ transitionDelay: '600ms' }}>U</span>
-        <span className={`${css.char} ${css.forfade}`}style={{ transitionDelay: '600ms' }}>M</span>
-        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '600ms' }}>B</span>
-        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '600ms' }}>E</span>
-        <span className={`${css.char} ${css.forfade}`}style={{ transitionDelay: '600ms' }}>R</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '650ms' }}>I</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '700ms' }}>O</span>
+        <span className={`${css.char} ${css.forfade}`}style={{ transitionDelay: '750ms' }}>N</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '800ms' }}></span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '800ms' }}>N</span>
+        <span className={`${css.char} ${css.forfade}`}style={{ transitionDelay: '850ms' }}>U</span>
+        <span className={`${css.char} ${css.forfade}`}style={{ transitionDelay: '880ms' }}>M</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '900ms' }}>B</span>
+        <span className={`${css.char} ${css.forfade}`} style={{ transitionDelay: '950ms' }}>E</span>
+        <span className={`${css.char} ${css.forfade}`}style={{ transitionDelay: '999ms' }}>R</span>
       
     </label>
                     <img src={Tick} alt="" />
