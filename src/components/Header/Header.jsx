@@ -1,11 +1,29 @@
 import React, { useState } from 'react'
 import css from "./Header.module.css"
 import Logo from "../../assets/VectorBat.svg"
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 
 const Header = () => {
   const [state,setState]=useState(false) 
+  const location = useLocation();
+
+  let buttonContent, buttonLink;
+
+  if (location.pathname === '/') {
+   
+    buttonLink = '/register';
+  } else {
+   
+    buttonLink = '/';
+  }
+
+
+  const headerContent = location.pathname === '/' ? (
+    <button className={css.registermainbtn}>register</button>
+  ) : (
+    <button className={css.registermainbtn}>back to home</button>
+  );
 
   const scrollDown=()=>{
     window.scrollY >= 1 ? setState(true) : setState(false);
@@ -19,11 +37,12 @@ const Header = () => {
     <div className={state? css.newcontainer: css.container}>
         <div className={css.left}>
           <Link to="/">  <img onClick={()=>window.scrollTo(0,0)} src={Logo} alt="" /> </Link> 
-            
+   
         </div>
 
         <div className={css.right}>
-       <Link to="/register"><button  className={css.registermainbtn}>REGISTER</button> </Link>    
+       {/* <Link to="/register"><button  className={css.registermainbtn}>REGISTER</button> </Link>     */}
+       <Link to={buttonLink}>{headerContent} </Link>    
 
         </div>
       
