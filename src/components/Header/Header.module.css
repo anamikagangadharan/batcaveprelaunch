@@ -70,6 +70,7 @@ letter-spacing: 0.96px;
 text-transform: uppercase;
 position: relative;
 cursor: pointer;
+/* z-index: 1; */
 }
 .registermainbtn:hover {
     animation: ani 8s linear infinite;
@@ -96,7 +97,7 @@ cursor: pointer;
     z-index: -1;
     background: linear-gradient(90deg,#03a9f4,#250681,#ffeb3b,#03a9f4);
     background-size: 400%;
-    border-radius: 35px;
+    border-radius: 6px;
     transition: 1s;
     height: 37px;
   }
