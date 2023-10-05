@@ -1,5 +1,17 @@
 .container{
     /* background-image: url(../../assets/mainbg-new.svg); */
+ background-color:#050505;
+ background-image: none;
+ background-size: cover;
+ background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* max-width: 1440px; */
+}
+.loaded{
     background-image: url(../../assets/newmainbgpng.png);
     background-position: center;
     background-size: cover;
@@ -8,8 +20,13 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    /* max-width: 1440px; */
+
 }
+
+
+
+
+
 .wrap{
     display: flex;
     flex-direction: column;
@@ -44,7 +61,12 @@
 
 @media screen and (max-width:768px){
     .container{
+      background-color: #050505;
+    }
+    .loaded{
         background-image: url(../../assets/mainbg-mobile.png);
+       
+
     }
 
 }

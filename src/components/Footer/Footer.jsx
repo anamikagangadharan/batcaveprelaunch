@@ -9,7 +9,7 @@ const Footer = () => {
 
 
   const phoneNumber = '+919786378480'; // Replace with the desired phone number
-  const message = 'Hello, this is a test message!'; // Replace with your message
+  const message = 'Hello.....'; // Replace with your message
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

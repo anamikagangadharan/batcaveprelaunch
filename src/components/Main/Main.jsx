@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useState ,useEffect} from 'react'
 import css from "./Main.module.css"
 import Batcave from "../../assets/batcavetext.svg"
-
+import backgroundImage from '../../assets/newmainbgpng.png';
 const Main = () => {
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+  useEffect(() => {
+    const image = new Image();
+    image.src = backgroundImage;
+    image.onload = handleImageLoad;
+  }, []);
+
+
   return (
-    <div className={css.container}>
+    <div onLoad={handleImageLoad} className={`${css.container} ${imageLoaded? css.loaded:""}`}>
         {/* <span className={css.bt}>batcave</span> */}
         {/* <div className={css.wrap}>
         <div className={css.div1}>
