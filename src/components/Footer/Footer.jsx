@@ -34,7 +34,7 @@ const Footer = () => {
              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
            <img src={Whatsapp} alt="" /> </a>
 
-            <a href="mailto: connect@invicious.in">    <img src={Mail} alt="" /> </a>
+            <a href="mailto: support@batcave.co.in.">    <img src={Mail} alt="" /> </a>
 
         </div>
         </div>

@@ -53,6 +53,7 @@
 .registermainbtn{
     border-radius: 6px;
 background: linear-gradient(0deg, #007AFF -0.1%, #004289 46.1%, #001934 100%), #FFF;
+background-size: 300%;
 display: flex;
 padding: 10px 24px;
 flex-direction: column;
@@ -67,7 +68,43 @@ font-weight: 400;
 line-height: normal;
 letter-spacing: 0.96px;
 text-transform: uppercase;
+position: relative;
+cursor: pointer;
 }
+.registermainbtn:hover {
+    animation: ani 8s linear infinite;
+    border: none;
+  }
+  
+  @keyframes ani {
+    0% {
+      background-position: 0%;
+    }
+  
+    100% {
+      background-position: 400%;
+    }
+  }
+
+.registermainbtn:before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    right: 6px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg,#03a9f4,#250681,#ffeb3b,#03a9f4);
+    background-size: 400%;
+    border-radius: 35px;
+    transition: 1s;
+    height: 37px;
+  }
+  .registermainbtn:hover::before {
+    filter: blur(20px);
+  }
+
+  
 @media screen and (max-width:768px){
     .container{
         width: 100%;
@@ -88,6 +125,9 @@ color: #E0E0E0;
 font-size: 10px;
 letter-spacing: 0.84px;
 
+    }
+    .registermainbtn:before {
+        height: 24px;
     }
     .left>a>img{
         /* height: 64px;

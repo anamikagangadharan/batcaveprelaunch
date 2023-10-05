@@ -515,6 +515,7 @@ background: linear-gradient(0deg, #007AFF -0.1%, #004289 46.1%, #001934 100%), #
 }
 .descript{
     text-align: left;
+    margin-top: 0.8rem;
 }
 .descript > :nth-child(1) {
   color: #999;

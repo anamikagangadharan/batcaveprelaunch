@@ -362,7 +362,7 @@ border: 1px solid #666 !important;
   letter-spacing: 0.96px;
   text-transform: uppercase;
 }
-.rcontent {
+.rcontent,.rcontent>a {
   color: #666;
   font-family: K2D;
   font-size: 14px;
@@ -372,6 +372,7 @@ border: 1px solid #666 !important;
   letter-spacing: 0.84px;
   margin-top: 0.6rem;
 }
+
 .rcontent1 {
   color: #666;
   font-family: K2D;

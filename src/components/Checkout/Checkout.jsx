@@ -226,7 +226,7 @@ const Checkout = () => {
         <span className={css.rcontent}>To request a refund for an event or activity, please contact us at refunds@batcave.co.in. Refunds will be processed within 5-7 business days, and the amount refunded will be based on the above refund policy conditions.</span>
        
        <span className={css.rhead}>Contact Us:</span>
-       <span className={css.rcontent}>If you have any questions or concerns about our refund policy, please contact us at support@batcave.co.in.</span>
+       <span className={css.rcontent}>If you have any questions or concerns about our refund policy, please contact us at <a href="mailto: support@batcave.co.in.">support@batcave.co.in.</a> </span>
         </div>
 
 
