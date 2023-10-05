@@ -13,7 +13,7 @@ const PageNotFound = () => {
            </div>
 
            <div className={css.div2}>
-        <Link to ="/"> <button className={css.btohomebtn}>BACK TO HOME</button> </Link>    
+        <Link onClick={()=>window.scrollTo(0,0)} to ="/"> <button className={css.btohomebtn}>BACK TO HOME</button> </Link>    
             <span>Follow us on instagram to hop into our giveaway</span>
            
            </div>

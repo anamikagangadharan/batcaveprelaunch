@@ -1,5 +1,18 @@
 .container{
     width: 100%;
+    background-color:#050505;
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  
+}
+.loaded{
+    width: 100%;
     background-image: url(../../assets/main-bg.png);
     background-size: cover;
     background-position: center;
@@ -85,8 +98,10 @@ line-height: 19px; /* 118.75% */
 letter-spacing: 0.96px;
 }
 @media screen and (max-width:768px){
-
-    .container{
+.container{
+    background-color: #050505;
+}
+    .loaded{
         background-image: url(../../assets/final-mob-bg.png);
     }
     .wrap{

@@ -8,7 +8,7 @@ import Mail from "../../assets/mail.svg"
 const Footer = () => {
 
 
-  const phoneNumber = '+919786378480'; // Replace with the desired phone number
+  const phoneNumber = '+918877880101'; // Replace with the desired phone number
   const message = 'Hello.....'; // Replace with your message
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -17,7 +17,7 @@ const Footer = () => {
     <div className={css.container}>
         <div className={css.wrap}>
         <div className={css.left}>
-            <span>©batcave2023</span>
+            <span>©batcave2023</span> 
 
         </div>
 

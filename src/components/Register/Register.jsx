@@ -11,9 +11,24 @@ import { useParams} from 'react-router-dom';
 import DOBInput from "../DOBInput/DOBInput";
 // import DateofBirth from "../Dateofbirthpicker/DateofBirth";
 
- 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Register = () => { 
-  const navigate = useNavigate();
+
+  const notify1 = () =>
+    toast.error(
+      "Apologies, our membership is exclusively available to individuals aged 18 and above.",
+      { containerId: "container1" }
+    );
+  const notify2 = () =>
+    toast.error("Email address already registered.", { containerId: "container2" });
+  const notify3 = () =>
+    toast.error("Mobile number already registered.", { containerId: "container3" });
+
+  const notify4 = () =>
+    toast.error("Car registration number already exist", { containerId: "container3" });
+
+  const navigate = useNavigate(); 
 
   
 
@@ -31,7 +46,7 @@ const Register = () => {
     return savedData ? JSON.parse(savedData) : {
       full_name: "",
       email: "",
-      mobile: "",
+      mobile: "", 
       address: "",
       dob: "",
       gender: "",
@@ -659,6 +674,9 @@ useEffect(() => {
                       id=""
                       placeholder=""
                       required
+                      maxLength="10"
+                      //  pattern="[A-Za-z]{2}\d{2}[A-Za-z]{1,2}\d{4}
+                      //  "
                
                     />
                              <label className={css.label}>
@@ -692,7 +710,7 @@ useEffect(() => {
          
                   {/* <div className={css.inputline}> </div> */}
                   <div className={css.dummy}>
-                  <span>Content to be added</span>
+                  <span>Should be a max of 10 digits(TN05YY1234)</span>
                 </div>
                 </div>
                 
@@ -780,7 +798,7 @@ useEffect(() => {
                   </span>
                 </div>
 
-              <button 
+              <button  onClick={()=>window.scrollTo(0,0)} 
               type="submit"
                className={`${css.proceedbtn} ${css.buttonWithZIndex}`}> proceed to checkout</button> 
                 </div>
@@ -905,6 +923,55 @@ useEffect(() => {
 
   </div>
   </motion.div>}
+  <button className={css.bt1} onClick={notify1}>Show Toast 1</button>
+      <button className={css.bt2} onClick={notify2}>Show Toast 2</button>
+      <button className={css.bt3} onClick={notify3}>Show Toast 3</button>
+      <button className={css.bt4} onClick={notify4}>Show Toast 4</button>
+
+      <ToastContainer className={css.customtoastcontainer}
+      bodyClassName={css.customtoastbody}
+        toastClassName="custom-toast-container"
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        limit={3} // Set a limit of 3 toasts per container
+        containerId="container1"
+        
+      />
+      {/* <ToastContainer
+        toastClassName="custom-toast-container"
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        limit={3} // Set a limit of 3 toasts per container
+        containerId="container2"
+      />
+      <ToastContainer
+        toastClassName="custom-toast-container"
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        limit={3} // Set a limit of 3 toasts per container
+        containerId="container3"
+      /> */}
 
     </div>
   );

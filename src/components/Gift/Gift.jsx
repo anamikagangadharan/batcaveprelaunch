@@ -47,7 +47,7 @@ const Gift = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext();
-    }, 4000); // Change content every 5 seconds
+    }, 2000); // Change content every 5 seconds
 
     return () => clearInterval(timer); // Cleanup the timer on unmount
   }, []);

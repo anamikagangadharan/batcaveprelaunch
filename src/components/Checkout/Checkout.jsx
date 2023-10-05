@@ -7,7 +7,11 @@ import { motion } from 'framer-motion';
 import Barrow from "../../assets/backarrow.svg"
 import { Link } from 'react-router-dom';
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Checkout = () => {
+  const notify = () => toast.error("Payment Unsuccessfull");
 
     const [opened,setOpened]=useState(false)
     const [sopened,setsOpened]=useState(false)
@@ -178,7 +182,7 @@ const Checkout = () => {
 
             <span className={css.agreespan}>by clicking, I AGREE WITH THE <span onClick={()=>setOpened(!opened)} className={css.spaninside}>refund policy </span> &  <span onClick={()=>setsOpened(!opened)} className={css.spaninside}>shipping policy </span></span>
 
-            <button className={css.proceedbtn}>PROCEED TO PAY</button>
+            <button onClick={notify} className={css.proceedbtn}>PROCEED TO PAY</button>
 
 
 
@@ -188,6 +192,8 @@ const Checkout = () => {
         </div>
 
        </div>
+       {/* <button onClick={notify}>button</button> */}
+       <ToastContainer  position={"bottom-center"} />
 
        {/* refund policy popup */}
      {opened && <motion.div 

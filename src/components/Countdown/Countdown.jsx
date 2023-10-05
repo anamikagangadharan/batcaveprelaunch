@@ -74,7 +74,7 @@ const Countdown = () => {
     </div>
 
     <div className={css.bottom}>
-    <Link to ="/"><button className={css.btohomebtn}>BACK TO HOME</button> </Link> 
+    <Link onClick={()=>window.scrollTo(0,0)}  to ="/"><button className={css.btohomebtn}>BACK TO HOME</button> </Link> 
           </div>
            
         </div>

@@ -731,6 +731,56 @@ letter-spacing: 0.84px;
   /* color: yellow !important; */
 }
 
+.bt1{
+  position: fixed;
+  bottom: 0px;
+  /* left: 10px; */
+  z-index: 2000;
+  background-color: rgb(7, 56, 93);
+  color: #e3e6ea;
+  padding: 2px;
+  font-size: 10px;
+}
+.bt2{
+  position: fixed;
+  bottom: 20px;
+  /* left: 200px; */
+  z-index: 2000;
+  background-color: rgb(7, 56, 93);
+  color: #e3e6ea;
+  padding: 2px;
+  font-size: 10px;
+}
+.bt3{
+  position: fixed;
+  bottom: 50px;
+  /* left: 400px; */
+  z-index: 2000;
+  background-color: rgb(7, 56, 93);
+  color: #e3e6ea;
+  padding: 2px;
+  font-size: 10px;
+}
+.bt4{
+  position: fixed;
+  bottom: 80px;
+  /* left: 400px; */
+  z-index: 2000;
+  background-color: rgb(7, 56, 93);
+  color: #e3e6ea;
+  padding: 2px;
+  font-size: 10px;
+}
+.customtoastcontainer{
+  font-size: 14px;
+ 
+ 
+}
+/* .customtoastbody{
+  background-color: #007aff;
+  padding: 0;
+} */
+
 
 @media screen and (max-width:768px){
   .container{
