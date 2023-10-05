@@ -63,17 +63,17 @@ const Cards = () => {
 
           {/* top */}
            <div className={css.rtop}>
-            <img className={css.larrow} onClick={decrement} src={LArrow} alt="" />
+            <img className={`${css.larrow} ${cards===0 ?css.larrowfade :""}`} onClick={decrement} src={LArrow} alt="" />
             <div className={css.sline}></div>
             <span>Features</span>
             <div className={css.sline}></div>
-            <img  onClick={increment} src={RArrow} alt="" />
+            <img className={`${css.rarrow} ${cards===4 ?css.rarrowfade :""}`} onClick={increment}  src={RArrow} alt="" />
 
            </div>
 
           {/* top */}
 
- 
+  
             {/* <div className={css.cardline}></div> */}
             {/* bottom */}
             <div className={css.bottomwrap}>

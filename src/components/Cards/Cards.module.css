@@ -184,6 +184,22 @@ position: absolute;
     z-index: 2;
     position: inherit;
 }
+.larrowfade{
+    z-index: 2;
+    position: inherit;
+    opacity: 0.2;
+
+}
+.rarrow{
+    z-index: 2;
+    position: inherit;
+}
+.rarrowfade{
+    z-index: 2;
+    position: inherit;
+    opacity: 0.2;
+
+}
 .bottomwrap{
     display: flex;
     flex-direction: column;
