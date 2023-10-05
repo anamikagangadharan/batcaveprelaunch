@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import css from "./Header.module.css"
-import Logo from "../../assets/VectorBat.svg"
+// import Logo from "../../assets/VectorBat.svg"
+import Logo from "../../assets/batmainlogo-withoutshadow.svg"
 import { Link, useLocation } from 'react-router-dom'
 
 
