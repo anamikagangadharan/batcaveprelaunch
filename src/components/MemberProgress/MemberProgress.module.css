@@ -59,9 +59,15 @@ border: 1px solid #FFF;
 border-radius: 6px;
 color: #FFF;
 }
+.registernowbtn:hover{
+    cursor: pointer;
+    color: rgb(36, 88, 132);
+    border: 1px solid  rgb(36, 88, 132);
+    /* border: 1px solid blue; */
+}
 @media screen and (max-width:768px){
     .progresscontainer{
-        width: 85%;
+        width: 95%;
         
     }
     

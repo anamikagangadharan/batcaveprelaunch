@@ -173,7 +173,7 @@ useEffect(() => {
     background: 'linear-gradient(to bottom, rgba(0, 122, 255, 1) 0%, rgba(0, 66, 137, 1) 50%, rgba(0, 25, 52, 1) 100%)',
     transition: 'height 0.3s', // Add a smooth transition effect
     transformOrigin: 'bottom',
-    height:"4px"
+    height:"4px", borderRadius:"10px" 
   }
 
   const [isFocused, setIsFocused] = useState(false);

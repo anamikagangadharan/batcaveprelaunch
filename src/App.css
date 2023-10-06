@@ -18,27 +18,20 @@ a{
   
 }
 
-/* input:-webkit-autofill,
+input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px rgb(5, 5, 5,1) inset !important;
    
-    border: none;
-    color: aliceblue !important;
+    border-bottom: 1px solid blue;
+ 
 }
+/* Change text color during autofill */
 input:-webkit-autofill {
-  background-color: transparent !important; 
-} */
-
-input:-webkit-autofill {
-  background-color: transparent !important;
+  -webkit-text-fill-color: #fff !important; /* Change to your desired text color */
+  
 }
 
-input:-moz-autofill {
-  background-color: transparent !important;
-}
 
-input:-ms-autofill {
-  background-color: transparent !important;
-}
+ 
