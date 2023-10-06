@@ -247,6 +247,9 @@ letter-spacing: 1.2px;
         padding: 2% 2%;
        
     }
+    .left{
+        gap: 0;
+    }
     .leftmiddlewrap{
         flex-direction: column-reverse;
         width: 100%;

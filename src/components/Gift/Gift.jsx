@@ -23,7 +23,7 @@ const Gift = () => {
       image: Gift2,
     },
     {
-      text: "All-expenses-paid BMW Museum tri",
+      text: "All-expenses-paid BMW Museum trip",
       text2: "Munich, Germany, for ",
       text3: "10 lucky members",
       image: Gift3,
