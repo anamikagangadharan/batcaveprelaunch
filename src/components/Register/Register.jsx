@@ -333,7 +333,34 @@ useEffect(() => {
 
 
 
+// t-shirt handling, local storage,  clear on refresh
 
+  // Initialize the state for the selected size and retrieve it from local storage
+  const [selectedSize, setSelectedSize] = useState(
+    localStorage.getItem('selectedSize') || ''
+  );
+
+  // Define the handleChange event handler
+  const handleChangeSize = (e) => { 
+    const newSize = e.target.value;
+    setSelectedSize(newSize);
+
+    // Store the selected size in local storage
+    localStorage.setItem('selectedSize', newSize);
+  };
+
+  // Use the useEffect hook to clear the input data on page refresh
+  useEffect(() => {
+    const clearLocalStorage = () => {
+      localStorage.removeItem('selectedSize');
+    };
+
+    window.addEventListener('beforeunload', clearLocalStorage);
+
+    return () => {
+      window.removeEventListener('beforeunload', clearLocalStorage);
+    };
+  }, []);
 
   
  
@@ -676,6 +703,7 @@ useEffect(() => {
                       placeholder=""
                       required
                       maxLength="10"
+                      minLength="8"
                       //  pattern="[A-Za-z]{2}\d{2}[A-Za-z]{1,2}\d{4}
                       //  "
                
@@ -750,18 +778,31 @@ useEffect(() => {
                   {/* <div className={css.inputline}> </div> */}
                 </div>
 
-                {/* <div className={css.carinputset}>
-                  <select
+                <div style={{marginTop:"1rem"}} className={css.carinputset}>
+                  <select style={{borderBottom:"1px solid blue",color:
+                  selectedSize===""? "#666":
+                 selectedSize==="xs"? "#fff":
+                 selectedSize==="s"? "#fff":
+                 selectedSize==="m"? "#fff":
+                 selectedSize==="l"? "#fff":
+                 selectedSize==="xl"? "#fff":
+                 selectedSize==="xxl"? "#fff":
+                               "#666", }}
                     name="size"
                     required
                     className={css.carinput}
                     id=""
                     placeholder="t - shirt size"
-                    defaultValue="" 
+                    // defaultValue="" 
+                    value={selectedSize}
+                    onChange={handleChangeSize}
                   >
                     <option className={css.opt} value="" disabled>
                       {" "}
                       t - shirt size
+                    </option>
+                    <option className={css.opt} value="xs">
+                      XS
                     </option>
                     <option className={css.opt} value="s">
                       S
@@ -772,15 +813,15 @@ useEffect(() => {
                     <option className={css.opt} value="l">
                       L
                     </option>
-                    <option className={css.opt} value="xx">
+                    <option className={css.opt} value="xl">
                       xl
                     </option>
                     <option className={css.opt} value="xxl">
                       xxl
                     </option>
                   </select>
-                  <div className={css.inputline}></div>
-                </div> */}
+                  {/* <div className={css.inputline}></div> */}
+                </div>
 
                 {/* <div className={css.btns}>
                   <button className={css.yrbtn}>yearly subscription</button>
