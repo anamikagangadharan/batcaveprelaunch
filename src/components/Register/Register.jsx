@@ -428,6 +428,7 @@ useEffect(() => {
                     // pattern="[0-9]{10}" 
                     minLength={10}
                     maxLength="10"
+                    title="Enter numbers(10 digit)"
                     //  onBlur={handleMobileNumberBlur}
                    
                   />
