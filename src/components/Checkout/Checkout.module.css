@@ -451,6 +451,7 @@ border: 1px solid #666 !important;
 
 
 @media screen and (max-width: 768px) {
+ 
   .wrap {
     flex-direction: column;
     padding-top: 80px;
@@ -519,6 +520,7 @@ border: 1px solid #666 !important;
     width: 100%;
     top: 0;
     position: fixed;
+    padding: 6% 6%;
   }
 
   .rcontent,
@@ -526,12 +528,16 @@ border: 1px solid #666 !important;
   .rhead {
     font-size: 12px;
   }
+  .rcontent,.rcontent>a{
+    margin-top: 1rem;
+  }
 
   /* shipping */
   .shipping {
     width: 100%;
     top: 0;
     position: fixed;
+    padding: 6% 6%;
   }
   .shead,
   .scontent,

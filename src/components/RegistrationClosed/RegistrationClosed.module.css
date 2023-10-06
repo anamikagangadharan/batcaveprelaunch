@@ -97,7 +97,7 @@ letter-spacing: 0.96px;
     } */
  
     .div1{
-        gap: 0.8rem;
+        gap: 12px;
     }
 
     .div1>:nth-child(1){

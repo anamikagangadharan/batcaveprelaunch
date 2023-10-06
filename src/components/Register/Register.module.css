@@ -913,6 +913,7 @@ font-size: 14px;
     width: 100%;
     top: 0;
     position: fixed;
+    padding: 6% 6%;
     /* bottom: 0; */
   }
   .thead{
@@ -925,6 +926,7 @@ font-size: 14px;
     width: 100%;
     top: 0;
     position: fixed;
+    padding: 6% 6%;
   }
   .phead{
     font-size: 12px;

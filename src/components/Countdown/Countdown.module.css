@@ -131,6 +131,7 @@ cursor: pointer;
 }
   .wrap{
       padding-bottom: 2.8rem;
+      padding-top: 7rem;
      
   }
   .div1>:nth-child(1){
@@ -144,6 +145,7 @@ cursor: pointer;
   }
   .countdowntimer{
     gap: 0;
+    margin-top: 0.5rem;
   }
   .timerbox{
     width: 4rem;

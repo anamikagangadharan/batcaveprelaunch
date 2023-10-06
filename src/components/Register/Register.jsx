@@ -944,35 +944,7 @@ useEffect(() => {
         containerId="container1"
         
       />
-      {/* <ToastContainer
-        toastClassName="custom-toast-container"
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        limit={3} // Set a limit of 3 toasts per container
-        containerId="container2"
-      />
-      <ToastContainer
-        toastClassName="custom-toast-container"
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        limit={3} // Set a limit of 3 toasts per container
-        containerId="container3"
-      /> */}
-
+     
     </div>
   );
 };
