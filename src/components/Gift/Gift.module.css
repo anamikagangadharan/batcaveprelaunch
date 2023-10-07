@@ -234,7 +234,7 @@ background: #666;
     .div1>:nth-child(1){
 
 font-family: Bruno Ace SC;
-font-size: 20px;
+font-size: 18px;
 
 line-height: 32px; /* 160% */
 letter-spacing: 1.2px;
@@ -243,6 +243,9 @@ letter-spacing: 1.2px;
     .imgauto{
         height: 181px;
         width: 100%;
+    }
+    .div1{
+        margin-top: 3rem;
     }
     .div2{
         /* background-image: url(../../assets/giftbgshadow.svg); */
