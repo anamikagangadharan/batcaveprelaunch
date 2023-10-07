@@ -24,7 +24,7 @@ const Thankyou = () => {
            </div>
 
            <div className={css.div2}>
-           <Link onClick={()=>window.scrollTo(10,0)} to ="/"><button className={css.btohomebtn}>BACK TO HOME</button> </Link> 
+           {/* <Link onClick={()=>window.scrollTo(10,0)} to ="/"><button className={css.btohomebtn}>BACK TO HOME</button> </Link>  */}
             <span>Follow us on instagram to hop into our giveaway</span>
            </div>
 

@@ -4,7 +4,8 @@ import Tick from "../../assets/Tick.svg";
 import { motion } from "framer-motion";
 import Hclose from "../../assets/close-hexagon.svg"
 import { Link, useNavigate } from "react-router-dom";
-import RegImg from "../../assets/reg-image.svg"
+import RegImgMobile from "../../assets/reg-image.svg" 
+import RegImg from "../../assets/formtextimage3.png"
 import { useFormContext } from '../FormContext/FormContext';
 
 import { useParams} from 'react-router-dom';
@@ -14,6 +15,13 @@ import DOBInput from "../DOBInput/DOBInput";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Register = () => { 
+    
+
+  const screenWidth = window.innerWidth;
+
+  // Define breakpoint widths
+  const mobileBreakpoint = 768; // Adjust as needed
+  const tabletBreakpoint = 1024; // Adjust as needed
 
   const notify1 = () =>
     toast.error(
@@ -367,10 +375,18 @@ useEffect(() => {
   return (
     <div className={css.container}>
       <div className={css.wrap}>
-        <div className={css.left}>
-          {/* <div className={css.videobox}></div> */}
-          <img src={RegImg} alt="" />
-        </div>
+        {/* <div className={css.left}>
+         
+        {screenWidth < mobileBreakpoint && (
+        <img src={RegImgMobile} alt="Mobile Image" />
+      )}
+      {screenWidth >= mobileBreakpoint && screenWidth < tabletBreakpoint && (
+        <img src={RegImg} alt="Tablet Image" />
+      )}
+      {screenWidth >= tabletBreakpoint && (
+        <p>This is the content for larger screens (e.g., desktop).</p>
+      )}
+        </div> */}
 
         <div className={css.right}>
           <div className={css.relativediv}>

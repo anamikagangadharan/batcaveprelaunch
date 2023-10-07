@@ -23,7 +23,7 @@ const Header = () => {
   const headerContent = location.pathname === '/' ? (
     <button className={css.registermainbtn}>register</button>
   ) : (
-    <button className={css.registermainbtn}>back to home</button>
+    <button className={css.registermainbtn2}>back to home</button>
   );
 
   const scrollDown=()=>{
