@@ -329,14 +329,23 @@ letter-spacing: 2.16px;
     
     }
     .cardblurbg>img{
-        /* filter: blur(10px);  */
      
-        width: 256px;
+     
+        /* width: 256px;
         height: 210px;
         object-fit: cover;
         position: inherit;
         z-index: 2;
-        left: 4%;
+        left: 4%; */
+
+        position: absolute;
+        top: 50%; /* Move the top edge of the image to the vertical center */
+        left: 63%; /* Move the left edge of the image to the horizontal center */
+        transform: translate(-50%, -50%); /* Center the image relative to its own size */
+        width: 251px;
+        height: 210px;
+        object-fit: cover;
+        z-index: 2;
         
     }
     .middle>:nth-child(2){
