@@ -65,7 +65,7 @@ const Cards = () => {
            <div className={css.rtop}>
             <img className={`${css.larrow} ${cards===0 ?css.larrowfade :""}`} onClick={decrement} src={LArrow} alt="" />
             <div className={css.sline}></div>
-            <span>Features</span>
+            <span className={css.featurespan}>Features</span>
             <div className={css.sline}></div>
             <img className={`${css.rarrow} ${cards===4 ?css.rarrowfade :""}`} onClick={increment}  src={RArrow} alt="" />
 

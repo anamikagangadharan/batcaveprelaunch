@@ -43,7 +43,7 @@ const Header = () => {
 
         <div className={css.right}>
        {/* <Link to="/register"><button  className={css.registermainbtn}>REGISTER</button> </Link>     */}
-       <Link to={buttonLink}>{headerContent} </Link>    
+       <Link onClick={()=>window.scrollTo(0,0)} to={buttonLink}>{headerContent} </Link>    
 
         </div>
       

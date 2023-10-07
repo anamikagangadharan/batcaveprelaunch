@@ -91,6 +91,10 @@ flex-shrink: 0;
         background-color: #050505;
         bottom: auto;
         padding: 4% 6%;
+        /* height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center; */
     }
     .left>:nth-child(1){
         font-size: 13px;
