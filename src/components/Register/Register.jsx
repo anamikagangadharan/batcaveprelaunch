@@ -435,7 +435,7 @@ useEffect(() => {
                 </div>
 
                 <div className={`${css.inputset} ${formData.email ? css.hasContent : ""}`}>
-                  <input
+                  <input style={{textTransform:"lowercase"}}
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
