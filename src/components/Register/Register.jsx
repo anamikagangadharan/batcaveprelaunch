@@ -524,6 +524,7 @@ useEffect(() => {
         <span className={css.char} style={{ transitionDelay: '800ms' }}>E</span>
         <span className={css.char} style={{ transitionDelay: '850ms' }}>S</span>
         <span className={css.char} style={{ transitionDelay: '900ms' }}>S</span>
+        <span className={css.char} style={{ transitionDelay: '970ms' }}>(With Pincode)</span>
       
     </label>
                   {/* <div className={css.inputline}></div> */}

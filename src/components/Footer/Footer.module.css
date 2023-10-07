@@ -4,8 +4,16 @@
     bottom: 0;
     padding: 1% 6%;
     z-index: 100;
- 
+
 }
+/* .homefooter{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 1% 6%;
+    z-index: 100;
+
+} */
 .wrap{
     width: 100%;
     /* max-width: 1440px; */
@@ -90,12 +98,19 @@ flex-shrink: 0;
         position: absolute;
         background-color: #050505;
         bottom: auto;
-        padding: 4% 6%;
-        /* height: 44px;
+        /* padding: 4% 6%; */
+        height: 44px;
         display: flex;
         align-items: center;
-        justify-content: center; */
+        justify-content: center;
     }
+    /* .homefooter{
+        position: absolute;
+        background-color: #050505;
+        bottom: auto;
+        padding: 4% 6%;
+
+    } */
     .left>:nth-child(1){
         font-size: 13px;
         letter-spacing: 0.84px;

@@ -5,6 +5,7 @@ import Insta from "../../assets/instagram.svg"
 import Whatsapp from "../../assets/whatsapp.svg"
 import Mail from "../../assets/mail.svg"
 
+
 const Footer = () => {
 
 

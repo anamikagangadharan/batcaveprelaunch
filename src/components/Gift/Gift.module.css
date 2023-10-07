@@ -88,7 +88,8 @@ letter-spacing: 1.8px;
   }
 
 .active{
-    fill: #007AFF;
+    /* fill: #007AFF; */
+    fill: #004289;
  
 }
 /* :root {
@@ -98,13 +99,17 @@ letter-spacing: 1.8px;
   }
    */
 .active>:nth-child(1){
-    fill: #007AFF;
-stroke: #007AFF;
+    /* fill: #007AFF; */
+    fill: #004289;
+    stroke: #004289;
+/* stroke: #007AFF; */
 }
 
 .active circle:last-child{
-    fill: #007AFF;
-stroke: #007AFF;;
+    /* fill: #007AFF;
+stroke: #007AFF;; */
+fill: #004289;
+stroke: #004289;
 }
 
 /* svg circle:last-child {

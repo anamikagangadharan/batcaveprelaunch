@@ -70,6 +70,15 @@ color: #FFF;
         width: 95%;
         
     }
+    .div1>:nth-child(1){
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.84px;
+    }
+    .registernowbtn{
+        padding: 10px 18px;
+        font-size: 14px;
+    }
     
 }
 

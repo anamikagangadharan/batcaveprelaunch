@@ -79,7 +79,7 @@ cursor: pointer;
   
   .registermainbtn2{
     display: inline-flex;
-    padding: 10px 24px;
+    padding: 10px 18px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
@@ -87,7 +87,7 @@ cursor: pointer;
     border: 1px solid #999;
     color: #999;
     font-family: K2D;
-    font-size: 16px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 275;
     line-height: normal;
@@ -123,6 +123,11 @@ cursor: pointer;
   }
   .registermainbtn:hover::before {
     filter: blur(20px);
+  }
+  .registermainbtn2:hover{
+    cursor: pointer;
+    color: rgb(36, 88, 132);
+    border: 1px solid  rgb(36, 88, 132);
   }
 
   
@@ -161,6 +166,7 @@ letter-spacing: 0.84px;
       letter-spacing: 0.84px;
 
   }
+ 
     .left>a>img{
         /* height: 64px;
         width: 104px; */

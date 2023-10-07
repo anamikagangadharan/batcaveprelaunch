@@ -234,6 +234,7 @@ text-transform: capitalize;
 .bottomcontent{
     text-align: left;
     /* margin-left: 2rem; */
+    height: 88px;
 }
 .bottomcontent>:nth-child(1){
     color: #666;
@@ -248,10 +249,21 @@ text-transform: capitalize;
 .newbottom{
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+   gap: 12px;
 }
-.newbottom>span{
+.newbottom>:nth-child(1){
     color: #999;
+    font-family: K2D;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 275;
+    line-height: normal;
+    letter-spacing: 0.84px;
+    text-align: left;
+
+}
+.newbottom>:nth-child(2){
+    color: #666;
     font-family: K2D;
     font-size: 14px;
     font-style: normal;
@@ -268,9 +280,10 @@ text-transform: capitalize;
     }
     .div1{
         padding: 4%;
+        margin-top: 3.2rem;
     }
     .div1>:nth-child(1){
-font-size: 20px;
+font-size: 18px;
 
 letter-spacing: 1.2px;
 
