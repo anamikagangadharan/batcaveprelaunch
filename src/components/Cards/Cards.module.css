@@ -194,21 +194,25 @@ position: absolute;
 .larrow{
     z-index: 2;
     position: inherit;
+    cursor: pointer;
 }
 .larrowfade{
     z-index: 2;
     position: inherit;
     opacity: 0.2;
+    cursor:default;
 
 }
 .rarrow{
     z-index: 2;
     position: inherit;
+    cursor: pointer;
 }
 .rarrowfade{
     z-index: 2;
     position: inherit;
     opacity: 0.2;
+    cursor:default;
 
 }
 .bottomwrap{

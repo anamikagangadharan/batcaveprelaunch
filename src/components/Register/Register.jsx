@@ -601,7 +601,7 @@ useEffect(() => {
                       formData.city === "" ? "#666" :
                       formData.city === "Andrapradesh" ? "#fff" :
                       formData.city === "Karnataka"? "#fff" : 
-                      formData.city === "kerala" ? "#fff" : 
+                      formData.city === "Kerala" ? "#fff" : 
                       formData.city === "TamilNadu" ? "#fff" : 
                       formData.city === "Telangana" ? "#fff" : 
                       "#666", // Default color
