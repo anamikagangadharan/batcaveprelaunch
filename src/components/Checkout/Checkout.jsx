@@ -1,33 +1,208 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import css from "./Checkout.module.css"
+import axios from 'axios';
 
 import Tick from "../../assets/Tick.svg";
 import Hclose from '../../assets/close-hexagon.svg'
 import { motion } from 'framer-motion';
 import Barrow from "../../assets/backarrow.svg"
 import { Link } from 'react-router-dom';
+// import { cashfreeSandbox } from 'cashfree-dropjs';
+import Cashfree from 'cashfree-dropjs';
+// Use import { cashfreeProd } from 'cashfree-dropjs'; for production
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
+// const drop = new cashfree(options);
+
+const clientId = ' TEST36894926ff0ed516529b3d6754949863';
+const clientSecret = 'TEST5ef3f05321339e1bfa9d7d4747f28720a5da63db';
+
 const Checkout = () => {
-  const notify = () => toast.error("Payment Unsuccessfull");
+  // const notify = () => toast.error("Payment Unsuccessfull");
 
     const [opened,setOpened]=useState(false)
     const [sopened,setsOpened]=useState(false)
     const [inputValue, setInputValue] = useState(''); // Define inputValue state
     const [inputValueApply, setInputValueApply] = useState(''); // Define inputValue state
+    const [couponCode, setCouponCode] = useState('');   //bckend
+    const [userId, setUserId] = useState('');   //bckend
+    const [totalAmount, setTotalAmount] = useState(14999); // Default total amount //bckend
+    const [discount, setDiscount] = useState(0); // To store the discount amount  //bckend
+    // const [influencerCode, setInfluencerCode] = useState('');  //bckend
+    const [orderId, setOrderId] = useState('');               //bckend
+    const [orderAmount, setOrderAmount] = useState(0);        //bckend
+    const [paymentSessionId, setPaymentSessionId] = useState(''); // Store the payment session ID
 
 
+
+
+    // const paymentSessionId = "your_payment_session_id"; // Replace with the actual payment_session_id
+
+  
+
+    useEffect(() => {
+      // Fetch the payment session ID from your backend
+      axios.post('/getpaymentsessionid', {
+        userId: userId, // Replace with the actual user IDuserId,
+        couponCode: couponCode, // Replace with the actual coupon codecouponCode
+      })
+        .then((response) => {
+          setPaymentSessionId(response.data.paymentSessionId);
+        })
+        .catch((error) => {
+          console.error('Failed to get payment session ID:', error);
+        });
+    }, []);
     
+
+
+
+  useEffect(() => {
+    // Include the Cashfree Drop SDK script based on your environment (sandbox or production)
+    const script = document.createElement('script');
+    script.src = 'https://sdk.cashfree.com/js/ui/2.0.0/cashfree.sandbox.js'; // Use the production URL for live transactions
+    script.async = true;
+    script.onload = () => {
+      // Initialize Cashfree Drop
+      const dropinConfig = {
+        components: ["order-details", "card", "netbanking", "app", "upi"],
+        onSuccess: function (data) {
+           // Redirect the user to a "Thank You" page
+           window.location.href = '/thankyou';
+          // Handle success (e.g., display a success message)
+          console.log('Payment succeeded:', data);
+        },
+        onFailure: function (data) {
+          toast.error('Payment failed.');
+          // Handle failure (e.g., display an error message)
+          console.log('Payment failed:', data);
+        },
+        // style: {
+        //   backgroundColor: "#ffffff",
+        //   color: "#11385b",
+        //   fontFamily: "Lato",
+        //   fontSize: "14px",
+        //   errorColor: "#ff0000",
+        //   theme: "light",
+        // },
+      };
+
+      // const cashfree = new Cashfree(paymentSessionId);
+      // const cashfree = new cashfreeSandbox.Cashfree(); // Initialize Cashfree
+      const cashfree = new Cashfree({ clientId, clientSecret });
+
+
+      // Render the payment form
+      cashfree.drop(document.getElementById("paymentForm"), {
+        ...dropinConfig,
+        paymentSessionId: paymentSessionId, // Pass the payment session ID
+      });
+      // dropinConfig);
+    };
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, [paymentSessionId]);
+
+  // return (
+  //   <div>
+  //     <h2>Payment Form</h2>
+  //     <div id="paymentForm"></div>
+  //   </div>
+  // );
+// };
+
+
+
+
+    // const currency = 'INR'; // Define currency with the appropriate value //bckend 
+
     const handleInputChange = (e) => {
       setInputValue(e.target.value); // Update inputValue when the input changes
     };
-    const handleInputChangeApply = (e) => {
-      setInputValueApply(e.target.value); // Update inputValue when the input changes
-    };
+    // const handleInputChangeApply = (e) => {
+    //   setInputValueApply(e.target.value); // Update inputValue when the input changes
+    // };
   
-  return (
+
+
+
+    const handleApplyCoupon = async () => {
+      try {
+        const response = await axios.post('http://localhost:3000/validatecoupon', { couponCode });
+        // const response = await axios.post('http://localhost:3000/validatecoupon', { couponCode }, { withCredentials: true })
+
+        console.log(response.data); // debug
+  
+        if (response.data.success) {
+
+          // Update the discount state with the discount amount
+           setDiscount(response.data.discount);
+
+            // Calculate the new total amount with the discount applied
+            const newTotalAmount = totalAmount - response.data.discount;
+
+            // Update the total amount state
+            setTotalAmount(newTotalAmount);
+
+          toast.success('Coupon applied successfully');
+        } else {
+          toast.error('Invalid coupon code');
+        }
+      } catch (error) {
+        console.error('Error applying coupon code:', error.message);
+        // toast.error('An error occurred while applying the coupon code');
+      }
+    };
+
+    
+  // //automatc validtn
+  //   useEffect(() => {
+  //     const couponInput = document.getElementById('coupon-input');
+  
+  //     couponInput.addEventListener('input', (e) => {
+  //       const newCouponCode = e.target.value;
+  //       setCouponCode(newCouponCode);
+  //       handleApplyCoupon(newCouponCode);
+  //     });
+  
+  //     return () => {
+  //       couponInput.removeEventListener('input', () => {});
+  //     };
+  //   }, [totalAmount]);
+  
+
+
+      // Function to handle the payment process
+    const handlePayment = async () => {
+      try {
+        const response = await axios.post('http://localhost:3000/createorder', {
+          userId: 'user123', // Replace with the actual user ID   //CHANGES
+          couponCode: couponCode ,                                               //related to payment backend
+          // Include other user details here (name, email, phone)
+        });
+        setOrderId(response.data.order_id);
+        setOrderAmount(response.data.order_amount);
+  
+        // Initialize Cashfree payment here using orderId and orderAmount
+      } catch (error) {
+        console.error('Failed to create order:', error);
+      }
+    // };
+  
+   
+
+    
+    
+    return ( 
+
     <div className={css.container}>
 
        <div className={css.wrap}>
@@ -121,9 +296,23 @@ const Checkout = () => {
 
   <div className={css.inputset}>
                   <div className={css.applydiv}>
-                    <input className={css.contactinp} type="text" placeholder="" required
-                    value={inputValueApply}
-                    onChange={(e) => handleInputChangeApply(e)}/>
+                    <input className={css.contactinp}   id="coupon-input" type="text" placeholder="" required
+                    // value={
+                      // inputValueApply}
+                    // onChange={(e) =>
+                    //  handleInputChangeApply(e)}
+                    //  />
+
+                    value={couponCode}
+                    
+            onChange={(e) => setCouponCode(e.target.value)}
+            // onKeyUp={(e) => {
+            //   if (e.key === 'Enter') {
+            //     handleApplyCoupon();
+            //   }
+            // }}
+          />
+            {/* /> */}
                    
                               <label className={css.label}>
                               {/* <span className={`${css.char} ${inputValue ? css.showImage : ''}`} style={{ transitionDelay: '00ms' }}>Abbb</span> */}
@@ -142,10 +331,12 @@ const Checkout = () => {
         <span className={css.char} style={{ transitionDelay: '700ms' }}>N</span>
       
     </label>
-    <img className={`${css.tickImage} ${inputValueApply ? css.showImage : css.hideImage}`} src={Tick} alt="" />
+    {/* <img className={`${css.tickImage} ${inputValueApply ? css.showImage : css.hideImage}`} src={Tick} alt="" /> */}
+    <img className={`${css.tickImage} ${couponCode ? css.showImage : css.hideImage}`} src={Tick} alt=""   onClick={handleApplyCoupon} // Add this line
+ />         
                   </div>
         
-                  {/* <div className={css.inputline}></div> */}
+                
 
                   </div>
         </div>
@@ -165,24 +356,29 @@ const Checkout = () => {
                 <span>membership cost</span>
                 <span>₹ 14,999</span>
             </div>
-            {/* <div className={css.line}>
-                <span>standard discount</span>
-                <span>-₹ 3,000</span>
-            </div> */}
+            
+
             <div className={css.line}>
                 <span>coupon</span>
-                <span>₹ 14,999</span>
+                {/* <span>₹ 14,999</span> */}
+                {/* <span>₹ {discount > 0 ? (14999 - discount) : 0} </span> */}
+                <span>₹ {discount || 0} </span>
+
             </div>
             <div className={css.plainline}></div>
 
+
             <div className={css.gtotal}>
                 <span>grand total</span>
-                <span>₹ 13,001</span>
+                {/* <span>₹ 13,001</span> */}
+                <span>₹ {discount > 0 ? (14999 - discount) : 14999} </span>
             </div>
 
             <span className={css.agreespan}>by clicking, I AGREE WITH THE <span onClick={()=>setOpened(!opened)} className={css.spaninside}>refund policy </span> &  <span onClick={()=>setsOpened(!opened)} className={css.spaninside}>shipping policy </span></span>
 
-            <button onClick={notify} className={css.proceedbtn}>PROCEED TO PAY</button>
+            {/* <button onClick={notify} className={css.proceedbtn}>PROCEED TO PAY</button> */}
+            <button onClick={handlePayment} className={css.proceedbtn}>PROCEED TO PAY</button>
+
 
 
 
@@ -301,6 +497,7 @@ const Checkout = () => {
       
     </div>
   )
+}
 }
 
 export default Checkout

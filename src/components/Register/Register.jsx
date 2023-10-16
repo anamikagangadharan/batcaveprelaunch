@@ -7,14 +7,77 @@ import { Link, useNavigate } from "react-router-dom";
 import RegImgMobile from "../../assets/reg-image.svg" 
 import RegImg from "../../assets/formtextimage3.png"
 import { useFormContext } from '../FormContext/FormContext';
-
+import axios from 'axios';
 import { useParams} from 'react-router-dom';
 import DOBInput from "../DOBInput/DOBInput";
 // import DateofBirth from "../Dateofbirthpicker/DateofBirth";
+// import Razorpay from 'razorpay';
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 const Register = () => { 
+
+    const [carRegistrationNumber, setCarRegistrationNumber] = useState('');
+    const [carDetails, setCarDetails] = useState(null);  // Backend 
+    // const currency = 'INR'; // Define currency with the appropriate value //bckend 
+
+
+    // const [couponCode, setCouponCode] = useState('');   //bckend
+    // const [totalAmount, setTotalAmount] = useState(14999); // Default total amount //bckend
+
+
+    
+
+
+    
+  const handleTickClick = async () => {
+    try {
+      // Make an API call to fetch car details based on the registration number
+      // const response = await axios.post('http://localhost:3000/fetchdetails, {carRegistrationNumber});  //bckend for car api
+      const response = await axios.post('http://localhost:3000/fetchdetails', {carRegistrationNumber}) // CHECK
+      if (response.status === 200) {
+        // Car details fetched successfully, set them in the state
+        setCarDetails(response.data.carDetails);
+      } else {
+        // Handle error appropriately, e.g., show an error message
+        console.error('Failed to fetch car details');
+      }
+    } catch (error) {
+      // Handle any other errors, e.g., network error
+      console.error('Error:', error); // Backend error
+    }
+  };
+
+
+
+
+
+
+  // const handleProceedToCheckout = async () => {
+  //   try {
+  //     // Send a POST request to create the payment order
+  //     const response = await axios.post('http://localhost:3000/createorder', { amount: 14999, currency: currency || 'INR' });
+  
+  //     // Check if the response indicates success (you can modify this condition as needed)
+  //     if (response.status === 200 && response.data.id) {
+  //       const orderId = response.data.id; // Retrieve the order ID from the response
+  //       navigate(`/checkout/${orderId}`); // Navigate to the checkout page with the order ID as a parameter
+  //     } else {
+  //       // Handle the case where the payment order creation was not successful
+  //       console.error('Error creating payment order:', response);
+  //       // You can show an error message to the user or handle it accordingly
+  //     }
+  //   } catch (error) {
+  //     // Handle any network errors or exceptions
+  //     console.error('Error creating payment order:', error);
+  //     // You can show an error message to the user or handle it accordingly
+  //   }
+  // };
+  
+  
+  
+
     
 
   const screenWidth = window.innerWidth;
@@ -64,14 +127,35 @@ const Register = () => {
 
 
 
-  const handleSubmitFirstForm = (e) => {
+  // const handleSubmitFirstForm = (e) => {
+    const handleSubmitFirstForm = async (e) => {
     e.preventDefault();
-    setShowFirstForm(false);
-    setShowSecondForm(true);
+
+    try {
+      // Send user data to the server
+      const response = await axios.post('http://localhost:3000/users', formData);
+
+      // Handle success (you may want to navigate to the next page)
+      console.log('User data saved:', response.data);
+      setShowFirstForm(false);
+      setShowSecondForm(true);
+    } catch (error) {
+      // Handle errors, e.g., show an error message to the user
+      console.error('Error saving user data:', error);
+    }
   };
 
+  //   setShowFirstForm(false);
+  //   setShowSecondForm(true);
+  // };
+
+
+
+
   
-  const sendEmail2 = (e) => {
+
+  
+  const sendEmail2 = (e) => {   //second form
     e.preventDefault();
     navigate('/checkout')
   };
@@ -375,19 +459,6 @@ useEffect(() => {
   return (
     <div className={css.container}>
       <div className={css.wrap}>
-        {/* <div className={css.left}>
-         
-        {screenWidth < mobileBreakpoint && (
-        <img src={RegImgMobile} alt="Mobile Image" />
-      )}
-      {screenWidth >= mobileBreakpoint && screenWidth < tabletBreakpoint && (
-        <img src={RegImg} alt="Tablet Image" />
-      )}
-      {screenWidth >= tabletBreakpoint && (
-        <p>This is the content for larger screens (e.g., desktop).</p>
-      )}
-        </div> */}
-
         <div className={css.right}>
           <div className={css.relativediv}>
           <div className={css.rotate}>
@@ -680,7 +751,8 @@ useEffect(() => {
                       type="text"
                       name=""
                       id=""
-            
+                      value={carRegistrationNumber}
+                      onChange={(e) => setCarRegistrationNumber(e.target.value)}
                       placeholder="do you own a car?"
                     /> 
                     <input
@@ -751,7 +823,10 @@ useEffect(() => {
         <span className={`${css.char} ${css.forfade}`}style={{ transitionDelay: '999ms' }}>R</span>
       
     </label>
+
+                    <button onClick={handleTickClick}>
                     <img src={Tick} alt="" />
+                    </button>
                   </div>
          
                   {/* <div className={css.inputline}> </div> */}
@@ -840,10 +915,6 @@ useEffect(() => {
                   {/* <div className={css.inputline}></div> */}
                 </div>
 
-                {/* <div className={css.btns}>
-                  <button className={css.yrbtn}>yearly subscription</button>
-                  <button className={css.labtn}>Lifetime access</button>
-                </div> */}
 
                 </div>
 
@@ -857,9 +928,16 @@ useEffect(() => {
                   </span>
                 </div>
 
-              <button  onClick={()=>window.scrollTo(0,0)} 
+              <button  onClick={()=>window.scrollTo(0,0)}                                             //replaced with below
               type="submit"
                className={`${css.proceedbtn} ${css.buttonWithZIndex}`}> proceed to checkout</button> 
+
+
+
+            {/* <button onClick={handleProceedToCheckout} // for going to paymnt pg                   //backend for redirecting to checkout razorpay
+              type="button" // coz its not a form
+              className={`${css.proceedbtn} ${css.buttonWithZIndex}`}> proceed to checkout</button>   */}
+
                 </div>
               </form> 
             )}
