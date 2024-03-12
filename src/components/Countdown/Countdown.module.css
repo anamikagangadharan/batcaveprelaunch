@@ -1,5 +1,17 @@
 .container{
     width: 100%;
+    background-image: url(../../assets/Coming-soon-new.png);
+    /* background-image: url(../../assets/Comingsoon-1.png); */
+
+    background-size:cover;
+    background-position:center;
+    background-repeat: none;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    /* width: 100%;
     background-image: url(../../assets/main-bg.png);
     background-size: cover;
     background-position: center;
@@ -8,20 +20,28 @@
     display: flex;
 
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; */
+  
+}
+.GetReady{
+margin-top: -25px;
+}
+
+.CountdownBegin{
+  margin-bottom: 10px;
 }
 .wrap{
-    max-width: 1440px;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* gap: 1rem; */
-    padding-top: 8rem;
-    padding-bottom: 8%;
-    padding-left: 6%;
-    padding-right: 6%;
+  max-width: 1440px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* gap: 1rem; */
+  padding-top: 8rem;
+  padding-bottom: 8%;
+  padding-left: 6%;
+  padding-right: 6%;
 }
 .div1{
     display: flex;
@@ -43,7 +63,7 @@ text-transform: uppercase;
     color: #FFF;
 text-align: center;
 font-family: IBM Plex Mono;
-font-size: 18px;
+font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -65,8 +85,8 @@ text-transform: uppercase;
   }
   
   .timer {
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 40px;
+    font-weight: 700;
     color: #333;
   }
   
@@ -83,7 +103,7 @@ text-transform: uppercase;
   .timer{
     color: #B7BCD7;
 font-family: K2D;
-font-size: 80px;
+font-size: 40px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -92,7 +112,7 @@ text-transform: uppercase;
   .timerlabel{
     color: #9CA1B8;
     font-family: IBM Plex Mono;
-    font-size: 14px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -127,7 +147,9 @@ cursor: pointer;
 
 @media screen and (max-width:768px){
   .container{
-    background-image: url(../../assets/final-mob-bg.png);
+    /* background-image: url(../../assets/final-mob-bg.png); */
+    background-image: url(../../assets/mbl-Coming-soon-new.png);
+
 }
   .wrap{
       padding-bottom: 2.8rem;

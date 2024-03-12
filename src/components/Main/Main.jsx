@@ -1,7 +1,9 @@
 import React, { useState ,useEffect} from 'react'
 import css from "./Main.module.css"
 import Batcave from "../../assets/batcavetext.svg"
-import backgroundImage from '../../assets/newmainbgpng.png';
+import backgroundImage from '../../assets/Countdown.png';
+// import backgroundImage from '../../assets/Bg.png';
+
 const Main = () => {
 
   const [imageLoaded, setImageLoaded] = useState(false);

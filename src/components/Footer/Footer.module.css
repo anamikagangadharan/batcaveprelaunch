@@ -16,12 +16,17 @@
 } */
 .wrap{
     width: 100%;
-    /* max-width: 1440px; */
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
+    gap: 10px;
+  
+}
+
+.wrap img{
+    margin: 0 5px;
 }
 .left>:nth-child(1){
-    color: #E0E0E0;
+    color: white;
 font-family: K2D;
 font-size: 14px;
 font-style: normal;
