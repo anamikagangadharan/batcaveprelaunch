@@ -37,7 +37,7 @@ const Footer = () => {
 
           <a href="tel:7550057267"><img src={Whatsapp} alt="" /></a>
 
-          <a href="mailto: info@batcave.in.">    <img src={Mail} alt="" /> </a>
+          <a href="mailto: info@batcave.club">    <img src={Mail} alt="" /> </a>
 
         </div>
       </div>
